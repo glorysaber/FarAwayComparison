@@ -1,0 +1,14 @@
+//
+//  Debug.xcconfig
+//  FarAwayComparison
+//
+//  Created by Stephen Kac on 2/16/20.
+//  Copyright © 2020 Stephen Kac. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+WEATHERBIT_API_KEY = 09af5683581442d0ac9cef7160fe835d
+WEATHERBIT_API_URL = https:\/\/api.weatherbit.io/v2.0/current
+SWAPI_URL = https:\/\/swapi.dev/api/
