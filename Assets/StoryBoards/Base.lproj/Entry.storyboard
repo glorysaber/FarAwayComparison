@@ -10,7 +10,7 @@
         <!--Terms ViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Terms ViewController" customClass="ViewController" customModule="FarAwayComparison" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TermsViewController" id="BYZ-38-t0r" userLabel="Terms ViewController" customClass="TermsViewController" customModule="FarAwayComparison" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,6 +49,9 @@ This text will be pulled from a resource.
                                 <state key="normal" title="I Agree">
                                     <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="iAgreeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AFi-ym-vgZ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="©Stephen Kac" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1c-CN-xft">
                                 <rect key="frame" x="20" y="846" width="88" height="16"/>
@@ -73,6 +76,10 @@ This text will be pulled from a resource.
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="iAgreeButton" destination="57c-vB-vxm" id="0nN-PI-8Pa"/>
+                        <outlet property="termsTextView" destination="8Fc-pA-Bfr" id="8xq-mN-eYO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,7 +88,7 @@ This text will be pulled from a resource.
         <!--Permissions ViewController-->
         <scene sceneID="oeB-Hh-aNp">
             <objects>
-                <viewController id="ADI-Lf-NeU" userLabel="Permissions ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PermissionsVC" id="ADI-Lf-NeU" userLabel="Permissions ViewController" customClass="PermissionsViewController" customModule="FarAwayComparison" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16e-8H-XTM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,6 +111,9 @@ This text will be pulled from a resource.
                                 <state key="normal" title="Allow Location Services">
                                     <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="allowLocationButtonPressed:" destination="ADI-Lf-NeU" eventType="touchUpInside" id="y5r-9r-nHI"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="©Stephen Kac" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CK9-7o-3S7">
                                 <rect key="frame" x="20" y="846" width="88" height="16"/>
@@ -125,6 +135,10 @@ This text will be pulled from a resource.
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WYF-nE-22i"/>
                     </view>
+                    <connections>
+                        <outlet property="allowLocationButton" destination="b3C-19-FrO" id="Wnq-XF-aAB"/>
+                        <outlet property="explanationLabel" destination="oGD-Vx-DR6" id="32C-jx-HoQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bq8-SM-u7g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
