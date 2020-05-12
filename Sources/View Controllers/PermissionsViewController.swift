@@ -8,19 +8,23 @@
 
 import UIKit
 
+// MARK: - PermissionsViewController
 class PermissionsViewController: UIViewController {
   
   static let storyboardID = String(describing: TermsViewController.self)
   
+  // MARK: - IBOutlets
   @IBOutlet weak var explanationLabel: UILabel!
   @IBOutlet weak var allowLocationButton: UIButton!
   
-  
+  // MARK: - View events
   override func viewDidLoad() {
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
   }
+  
+  // MARK: - IBActions
   
   @IBAction func allowLocationButtonPressed(_ sender: UIButton) {
   }
