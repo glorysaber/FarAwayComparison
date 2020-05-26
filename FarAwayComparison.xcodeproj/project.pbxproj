@@ -11,10 +11,12 @@
 		CC31D99F240745A2002D68B7 /* MockJSONRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC31D99D24074576002D68B7 /* MockJSONRequest.swift */; };
 		CC60416123F1A2A50035705A /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC60416023F1A2A50035705A /* ApiClient.swift */; };
 		CC60416323F1A7EF0035705A /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC60416223F1A7EF0035705A /* WeatherAPI.swift */; };
+		CC87F37E246A0DAD00E15EFD /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC87F37D246A0DAD00E15EFD /* Weather.storyboard */; };
+		CC87F380246AF65800E15EFD /* PermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC87F37F246AF65800E15EFD /* PermissionsViewController.swift */; };
 		CC8E5F5023E1F8D900893D8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8E5F4F23E1F8D900893D8A /* AppDelegate.swift */; };
 		CC8E5F5223E1F8D900893D8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8E5F5123E1F8D900893D8A /* SceneDelegate.swift */; };
-		CC8E5F5423E1F8D900893D8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8E5F5323E1F8D900893D8A /* ViewController.swift */; };
-		CC8E5F5723E1F8D900893D8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC8E5F5523E1F8D900893D8A /* Main.storyboard */; };
+		CC8E5F5423E1F8D900893D8A /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8E5F5323E1F8D900893D8A /* TermsViewController.swift */; };
+		CC8E5F5723E1F8D900893D8A /* Entry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC8E5F5523E1F8D900893D8A /* Entry.storyboard */; };
 		CC8E5F5923E1F8D900893D8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC8E5F5823E1F8D900893D8A /* Assets.xcassets */; };
 		CC8E5F5C23E1F8D900893D8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC8E5F5A23E1F8D900893D8A /* LaunchScreen.storyboard */; };
 		CC8E5F7223E1F8DA00893D8A /* FarAwayComparisonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8E5F7123E1F8DA00893D8A /* FarAwayComparisonUITests.swift */; };
@@ -48,11 +50,13 @@
 		CC31D99D24074576002D68B7 /* MockJSONRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJSONRequest.swift; sourceTree = "<group>"; };
 		CC60416023F1A2A50035705A /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		CC60416223F1A7EF0035705A /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
+		CC87F37D246A0DAD00E15EFD /* Weather.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Weather.storyboard; sourceTree = "<group>"; };
+		CC87F37F246AF65800E15EFD /* PermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
 		CC8E5F4C23E1F8D900893D8A /* FarAwayComparison.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FarAwayComparison.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC8E5F4F23E1F8D900893D8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC8E5F5123E1F8D900893D8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CC8E5F5323E1F8D900893D8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CC8E5F5623E1F8D900893D8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CC8E5F5323E1F8D900893D8A /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		CC8E5F5623E1F8D900893D8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Entry.storyboard; sourceTree = "<group>"; };
 		CC8E5F5823E1F8D900893D8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC8E5F5B23E1F8D900893D8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC8E5F5D23E1F8D900893D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -120,6 +124,15 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		CC87F381246AFC1F00E15EFD /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CC8E5F5323E1F8D900893D8A /* TermsViewController.swift */,
+				CC87F37F246AF65800E15EFD /* PermissionsViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		CC8E5F4323E1F8D900893D8A = {
 			isa = PBXGroup;
 			children = (
@@ -149,7 +162,7 @@
 				CC60415F23F1A1EF0035705A /* Common */,
 				CC48FEE723E9301000494BD7 /* App */,
 				CC8E5F5123E1F8D900893D8A /* SceneDelegate.swift */,
-				CC8E5F5323E1F8D900893D8A /* ViewController.swift */,
+				CC87F381246AFC1F00E15EFD /* View Controllers */,
 				CCBB983B23F99B2E00E53D22 /* MainBundleInfo.swift */,
 			);
 			path = Sources;
@@ -206,7 +219,8 @@
 		CCBB983A23F9991B00E53D22 /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
-				CC8E5F5523E1F8D900893D8A /* Main.storyboard */,
+				CC8E5F5523E1F8D900893D8A /* Entry.storyboard */,
+				CC87F37D246A0DAD00E15EFD /* Weather.storyboard */,
 				CC8E5F5A23E1F8D900893D8A /* LaunchScreen.storyboard */,
 			);
 			path = StoryBoards;
@@ -333,8 +347,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC8E5F5C23E1F8D900893D8A /* LaunchScreen.storyboard in Resources */,
+				CC87F37E246A0DAD00E15EFD /* Weather.storyboard in Resources */,
 				CC8E5F5923E1F8D900893D8A /* Assets.xcassets in Resources */,
-				CC8E5F5723E1F8D900893D8A /* Main.storyboard in Resources */,
+				CC8E5F5723E1F8D900893D8A /* Entry.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,11 +374,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC8E5F5423E1F8D900893D8A /* ViewController.swift in Sources */,
+				CC8E5F5423E1F8D900893D8A /* TermsViewController.swift in Sources */,
 				CC8E5F5023E1F8D900893D8A /* AppDelegate.swift in Sources */,
 				CC8E5F5223E1F8D900893D8A /* SceneDelegate.swift in Sources */,
 				CC60416323F1A7EF0035705A /* WeatherAPI.swift in Sources */,
 				CC60416123F1A2A50035705A /* ApiClient.swift in Sources */,
+				CC87F380246AF65800E15EFD /* PermissionsViewController.swift in Sources */,
 				CCBB984023F9DABF00E53D22 /* SWAPI.swift in Sources */,
 				CCBB983C23F99B2E00E53D22 /* MainBundleInfo.swift in Sources */,
 				CCD1C5F323F9F316003B57B5 /* Logging.swift in Sources */,
@@ -405,12 +421,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CC8E5F5523E1F8D900893D8A /* Main.storyboard */ = {
+		CC8E5F5523E1F8D900893D8A /* Entry.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CC8E5F5623E1F8D900893D8A /* Base */,
 			);
-			name = Main.storyboard;
+			name = Entry.storyboard;
 			sourceTree = "<group>";
 		};
 		CC8E5F5A23E1F8D900893D8A /* LaunchScreen.storyboard */ = {
@@ -475,7 +491,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -529,7 +545,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
