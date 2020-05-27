@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TermsViewController" customModule="FarAwayComparison" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2bz-uV-Obl">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfm-dH-WGh">
+                    <rect key="frame" x="20" y="44" width="374" height="41"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                    <color key="textColor" red="0.90980392160000001" green="0.87058823529999996" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tCg-75-nI1">
+                    <rect key="frame" x="20" y="93" width="374" height="709"/>
+                    <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <string key="text">The App FarAway Comparison, which will be referred to as “App”, is provided free of charge with no warranty of any kind. 
+
+Terms, and images used are being used under United States of America fair use and are not endorsing this product.
+
+The App uses 3rd party services services and data sent is subject to their privacy policies.
+
+WeatherBit
+https://www.weatherbit.io/privacy
+
+SWAPI
+https://swapi.dev
+
+This text will be pulled from a resource.
+
+
+</string>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nT0-ac-WfZ">
+                    <rect key="frame" x="182.5" y="810" width="49" height="30"/>
+                    <state key="normal" title="I Agree">
+                        <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="©Stephen Kac" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PiN-LH-bTs">
+                    <rect key="frame" x="20" y="846" width="88" height="16"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                    <color key="textColor" red="0.90980392160000001" green="0.87058823529999996" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="d9l-MG-ASn" firstAttribute="trailing" secondItem="Dfm-dH-WGh" secondAttribute="trailing" constant="20" id="Cb7-KT-ANr"/>
+                <constraint firstItem="Dfm-dH-WGh" firstAttribute="top" secondItem="d9l-MG-ASn" secondAttribute="top" id="Fg9-uK-mV8"/>
+                <constraint firstItem="Dfm-dH-WGh" firstAttribute="leading" secondItem="d9l-MG-ASn" secondAttribute="leading" constant="20" id="Ke2-0I-B62"/>
+                <constraint firstItem="PiN-LH-bTs" firstAttribute="leading" secondItem="d9l-MG-ASn" secondAttribute="leading" constant="20" id="PZV-z0-qRr"/>
+                <constraint firstItem="tCg-75-nI1" firstAttribute="top" secondItem="Dfm-dH-WGh" secondAttribute="bottom" constant="8" id="RZe-GL-auH"/>
+                <constraint firstItem="nT0-ac-WfZ" firstAttribute="centerX" secondItem="2bz-uV-Obl" secondAttribute="centerX" id="XAE-92-UCX"/>
+                <constraint firstItem="PiN-LH-bTs" firstAttribute="top" secondItem="nT0-ac-WfZ" secondAttribute="bottom" constant="6" id="izF-Ah-CVu"/>
+                <constraint firstItem="PiN-LH-bTs" firstAttribute="bottom" secondItem="d9l-MG-ASn" secondAttribute="bottom" id="niA-U7-nTF"/>
+                <constraint firstItem="d9l-MG-ASn" firstAttribute="trailing" secondItem="tCg-75-nI1" secondAttribute="trailing" constant="20" id="okE-3Y-3iX"/>
+                <constraint firstItem="nT0-ac-WfZ" firstAttribute="top" secondItem="tCg-75-nI1" secondAttribute="bottom" constant="8" id="tRb-A4-11b"/>
+                <constraint firstItem="tCg-75-nI1" firstAttribute="leading" secondItem="d9l-MG-ASn" secondAttribute="leading" constant="20" id="wUi-aA-rF1"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="d9l-MG-ASn"/>
+            <point key="canvasLocation" x="-390" y="66"/>
+        </view>
+    </objects>
+</document>

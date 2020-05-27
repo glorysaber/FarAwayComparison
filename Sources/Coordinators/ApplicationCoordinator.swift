@@ -12,19 +12,21 @@ class ApplicationCoordinator: Coordinator {
 
   let window: UIWindow
   let rootViewController: UINavigationController
+	let termsCoordinator: TermsCoordinator
   
   init(window: UIWindow) {
     
     self.window = window
     rootViewController = UINavigationController()
     rootViewController.navigationBar.prefersLargeTitles = true
-    
-  
+
+		termsCoordinator = TermsCoordinator(presenter: rootViewController)
+
   }
   
   func start() {
     window.rootViewController = rootViewController
-    // Start next coordinator
+		termsCoordinator.start()
     window.makeKeyAndVisible()
   }
   

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Permissions ViewController-->
+        <scene sceneID="SeL-XK-qyU">
+            <objects>
+                <viewController storyboardIdentifier="PermissionsVC" id="B2m-tk-2M1" userLabel="Permissions ViewController" customClass="PermissionsViewController" customModule="FarAwayComparison" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VID-s1-2QV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Permissions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDJ-zl-fR2">
+                                <rect key="frame" x="20" y="44" width="374" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <color key="textColor" red="0.90980392160000001" green="0.87058823529999996" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location is used to get local weather information from the WeatherBit service." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tu9-SN-bEy">
+                                <rect key="frame" x="20" y="98" width="374" height="42.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWk-Mb-mFH">
+                                <rect key="frame" x="127" y="148" width="162" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Allow Location Services">
+                                    <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="allowLocationButtonPressed:" destination="B2m-tk-2M1" eventType="touchUpInside" id="xbT-t1-HNS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="©Stephen Kac" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Rb-vO-lRD">
+                                <rect key="frame" x="20" y="846" width="88" height="16"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <color key="textColor" red="0.90980392160000001" green="0.87058823529999996" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JDJ-zl-fR2" firstAttribute="leading" secondItem="9Hu-UR-vyd" secondAttribute="leading" constant="20" id="5M4-vO-bUQ"/>
+                            <constraint firstItem="Tu9-SN-bEy" firstAttribute="leading" secondItem="9Hu-UR-vyd" secondAttribute="leading" constant="20" id="EuC-aM-f8J"/>
+                            <constraint firstItem="9Hu-UR-vyd" firstAttribute="trailing" secondItem="Tu9-SN-bEy" secondAttribute="trailing" constant="20" id="Nna-eJ-RhV"/>
+                            <constraint firstItem="JDJ-zl-fR2" firstAttribute="top" secondItem="9Hu-UR-vyd" secondAttribute="top" id="QTo-wY-FMU"/>
+                            <constraint firstItem="4Rb-vO-lRD" firstAttribute="leading" secondItem="9Hu-UR-vyd" secondAttribute="leading" constant="20" id="UDc-iW-uFj"/>
+                            <constraint firstItem="Tu9-SN-bEy" firstAttribute="top" secondItem="JDJ-zl-fR2" secondAttribute="bottom" constant="13" id="aVQ-gV-271"/>
+                            <constraint firstItem="4Rb-vO-lRD" firstAttribute="bottom" secondItem="9Hu-UR-vyd" secondAttribute="bottom" id="erE-Yb-j0l"/>
+                            <constraint firstItem="9Hu-UR-vyd" firstAttribute="trailing" secondItem="JDJ-zl-fR2" secondAttribute="trailing" constant="20" id="ywd-zV-5wp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9Hu-UR-vyd"/>
+                    </view>
+                    <connections>
+                        <outlet property="allowLocationButton" destination="IWk-Mb-mFH" id="aef-WZ-ADd"/>
+                        <outlet property="explanationLabel" destination="Tu9-SN-bEy" id="G7X-Vz-NWH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EL8-Rk-gFU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-38" y="175"/>
+        </scene>
+    </scenes>
+</document>

@@ -10,9 +10,15 @@ import UIKit
 
 // MARK: - TermsViewController -
 
+protocol TermsViewControllerDelegate: class {
+
+	func termsViewControllerDidAgree()
+}
+
+
 class TermsViewController: UIViewController {
   
-  static let storyboardID = String(describing: TermsViewController.self)
+  weak var delegate: TermsViewControllerDelegate?
   
   // MARK: - IBoutlets
   @IBOutlet weak var termsTextView: UITextView!
@@ -28,8 +34,11 @@ class TermsViewController: UIViewController {
   // MARK: - IBActions
   
   @IBAction func iAgreeButtonPressed(_ sender: UIButton) {
-    
+		delegate?.termsViewControllerDidAgree()
   }
   
 }
 
+extension TermsViewController: Storyboarded {
+	static var storyboardName: String = "Entry"
+}
