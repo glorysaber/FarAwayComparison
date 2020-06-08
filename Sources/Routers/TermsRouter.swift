@@ -1,5 +1,5 @@
 //
-//  TermsCoordinator.swift
+//  TermsRouter.swift
 //  FarAwayComparison
 //
 //  Created by Stephen Kac on 5/27/20.
@@ -8,15 +8,13 @@
 
 import UIKit
 
-class TermsCoordinator: Coordinator {
+class TermsRouter: Routers {
 
 	private let presenter: UINavigationController
 	private var termsViewController: TermsViewController?
 
 	init(presenter: UINavigationController) {
-
 		self.presenter = presenter
-
 	}
 
 	func start() {
@@ -31,9 +29,9 @@ class TermsCoordinator: Coordinator {
 
 }
 
-extension TermsCoordinator: TermsViewControllerDelegate {
+extension TermsRouter: TermsViewControllerDelegate {
 	func termsViewControllerDidAgree() {
-
+			
 	}
 
 }

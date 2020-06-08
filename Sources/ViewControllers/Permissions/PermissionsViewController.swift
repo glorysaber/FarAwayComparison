@@ -46,3 +46,7 @@ class PermissionsViewController: UIViewController {
    */
   
 }
+
+extension PermissionsViewController: Storyboarded {
+	static var storyboardName: String = "Permissions"
+}

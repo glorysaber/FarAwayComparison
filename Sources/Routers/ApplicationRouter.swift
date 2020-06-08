@@ -1,5 +1,5 @@
 //
-//  ApplicationCoordinator.swift
+//  ApplicationRouter.swift
 //  FarAwayComparison
 //
 //  Created by Stephen Kac on 5/26/20.
@@ -8,25 +8,24 @@
 
 import UIKit
 
-class ApplicationCoordinator: Coordinator {
+class ApplicationRouter: Routers {
 
   let window: UIWindow
   let rootViewController: UINavigationController
-	let termsCoordinator: TermsCoordinator
+	let termsRouter: TermsRouter
   
   init(window: UIWindow) {
     
     self.window = window
     rootViewController = UINavigationController()
-    rootViewController.navigationBar.prefersLargeTitles = true
+		rootViewController.navigationBar.isHidden = true
 
-		termsCoordinator = TermsCoordinator(presenter: rootViewController)
-
+		termsRouter = TermsRouter(presenter: rootViewController)
   }
   
   func start() {
     window.rootViewController = rootViewController
-		termsCoordinator.start()
+		termsRouter.start()
     window.makeKeyAndVisible()
   }
   

@@ -40,5 +40,5 @@ class TermsViewController: UIViewController {
 }
 
 extension TermsViewController: Storyboarded {
-	static var storyboardName: String = "Entry"
+	static var storyboardName: String = "Terms"
 }
