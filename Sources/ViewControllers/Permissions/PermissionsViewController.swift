@@ -8,10 +8,15 @@
 
 import UIKit
 
+protocol PermissionsViewControllerDelegate: class {
+
+	func permissionsViewControllerPermissionsGranted()
+}
+
 // MARK: - PermissionsViewController
 class PermissionsViewController: UIViewController {
-  
-  static let storyboardID = String(describing: TermsViewController.self)
+
+	weak var delegate: PermissionsViewControllerDelegate?
   
   // MARK: - IBOutlets
   @IBOutlet weak var explanationLabel: UILabel!
@@ -27,6 +32,7 @@ class PermissionsViewController: UIViewController {
   // MARK: - IBActions
   
   @IBAction func allowLocationButtonPressed(_ sender: UIButton) {
+		delegate?.permissionsViewControllerPermissionsGranted()
   }
   
   /*
@@ -39,4 +45,8 @@ class PermissionsViewController: UIViewController {
    }
    */
   
+}
+
+extension PermissionsViewController: Storyboarded {
+	static var storyboardName: String = "Permissions"
 }
