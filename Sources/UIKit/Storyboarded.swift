@@ -15,7 +15,6 @@ protocol Storyboarded {
 	static var instantiationRequiresCreator: Bool { get }
 
 	static func instantiate(creator: ((NSCoder) -> Self?)?) -> Self
-
 }
 
 extension Storyboarded {

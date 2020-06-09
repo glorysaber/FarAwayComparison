@@ -11,25 +11,28 @@ import UIKit
 class ApplicationRouter: Routers {
 
   let window: UIWindow
-  let rootViewController: UINavigationController
-	let termsRouter: TermsRouter
+  weak var rootViewController: RootViewController?
+	var termsRouter: TermsRouter?
   
   init(window: UIWindow) {
-    
     self.window = window
-    rootViewController = UINavigationController()
-		rootViewController.navigationBar.isHidden = true
-
-		termsRouter = TermsRouter(presenter: rootViewController)
   }
   
   func start() {
-    window.rootViewController = rootViewController
-		termsRouter.start()
+		let rootViewController = RootViewController.instantiate()
+		rootViewController.delegate = self
+		self.rootViewController = rootViewController
+
+		termsRouter = TermsRouter(presenter: FullScreenViewControllerPresenter(presentingViewController: rootViewController))
+
+		window.rootViewController = rootViewController
     window.makeKeyAndVisible()
   }
   
-  
-  
-  
+}
+
+extension ApplicationRouter: RootViewControllerDelegate {
+	func rootViewControllerDidMoveToParent() {
+			termsRouter?.start()
+	}
 }

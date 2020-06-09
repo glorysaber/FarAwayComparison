@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="236.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="0od-R8-DKg" userLabel="V Stack Standard Info">
-                                        <rect key="frame" x="0.0" y="0.0" width="261" height="236.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="260.5" height="236.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Just Like Tatooine" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WrR-c7-7OQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="260" height="41"/>
@@ -46,14 +46,14 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="uht-ej-tqB" userLabel="Population">
-                                                <rect key="frame" x="0.0" y="186.5" width="129.5" height="50"/>
+                                                <rect key="frame" x="0.0" y="186.5" width="260.5" height="50"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.3" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zil-LV-X7C">
                                                         <rect key="frame" x="0.0" y="1.5" width="81" height="47.5"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200k" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJy-Kp-XrA">
-                                                        <rect key="frame" x="90" y="14.5" width="39.5" height="20.5"/>
+                                                        <rect key="frame" x="90" y="14.5" width="170.5" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -67,10 +67,10 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="vOC-8p-g7K">
-                                        <rect key="frame" x="261" y="0.0" width="153" height="236.5"/>
+                                        <rect key="frame" x="260.5" y="0.0" width="153.5" height="236.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlanetDiameter" translatesAutoresizingMaskIntoConstraints="NO" id="b76-xr-sIG">
-                                                <rect key="frame" x="0.0" y="0.0" width="153" height="236.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="153.5" height="236.5"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uml-9z-hYp">

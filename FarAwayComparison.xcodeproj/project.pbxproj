@@ -40,6 +40,10 @@
 		CCBB984023F9DABF00E53D22 /* SWAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB983F23F9DABF00E53D22 /* SWAPI.swift */; };
 		CCC31A1E248EF12F00D499E4 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC31A1D248EF12F00D499E4 /* RootViewController.swift */; };
 		CCC31A21248EF18000D499E4 /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCC31A20248EF18000D499E4 /* Root.storyboard */; };
+		CCC31A27248EF3EA00D499E4 /* UIViewController+FullScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC31A26248EF3EA00D499E4 /* UIViewController+FullScreen.swift */; };
+		CCC31A29248EF7CF00D499E4 /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC31A28248EF7CF00D499E4 /* ViewControllerPresenter.swift */; };
+		CCC31A2C248F022400D499E4 /* FullScreenViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC31A2B248F022400D499E4 /* FullScreenViewControllerPresenter.swift */; };
+		CCC31A2E248F024700D499E4 /* UIViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC31A2D248F024700D499E4 /* UIViewControllerPresenter.swift */; };
 		CCD1C5F323F9F316003B57B5 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD1C5F223F9F316003B57B5 /* Logging.swift */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +105,10 @@
 		CCBB983F23F9DABF00E53D22 /* SWAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPI.swift; sourceTree = "<group>"; };
 		CCC31A1D248EF12F00D499E4 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		CCC31A20248EF18000D499E4 /* Root.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
+		CCC31A26248EF3EA00D499E4 /* UIViewController+FullScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+FullScreen.swift"; sourceTree = "<group>"; };
+		CCC31A28248EF7CF00D499E4 /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
+		CCC31A2B248F022400D499E4 /* FullScreenViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenViewControllerPresenter.swift; sourceTree = "<group>"; };
+		CCC31A2D248F024700D499E4 /* UIViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerPresenter.swift; sourceTree = "<group>"; };
 		CCD1C5F223F9F316003B57B5 /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,14 +141,13 @@
 		CC0D6ECD247E098500051A7F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				CC155A8F247F03F200830A83 /* Storyboarded.swift */,
 				CCC31A1F248EF15E00D499E4 /* Root */,
 				CC155A86247EEDAD00830A83 /* Permissions */,
 				CC87F381246AFC1F00E15EFD /* Terms */,
 				CC0D6ECE247E099500051A7F /* MainWeather */,
 				CCC31A24248EF2CB00D499E4 /* WeatherDetail */,
 				CCC31A23248EF2BE00D499E4 /* ForeignComparison */,
-				CCC31A22248EF29600D499E4 /* Weather */,
+				CCC31A22248EF29600D499E4 /* WeatherContainer */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -239,6 +246,7 @@
 		CC8E5F4E23E1F8D900893D8A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				CCC31A25248EF3BD00D499E4 /* UIKit */,
 				CC0D6ECF247E09B500051A7F /* Routers */,
 				CC0D6ECD247E098500051A7F /* ViewControllers */,
 				CC60415F23F1A1EF0035705A /* Common */,
@@ -319,13 +327,13 @@
 			path = Root;
 			sourceTree = "<group>";
 		};
-		CCC31A22248EF29600D499E4 /* Weather */ = {
+		CCC31A22248EF29600D499E4 /* WeatherContainer */ = {
 			isa = PBXGroup;
 			children = (
 				CC0D6ED7247E0AF100051A7F /* WeatherViewController.swift */,
 				CC0D6ED8247E0AF100051A7F /* WeatherViewController.xib */,
 			);
-			path = Weather;
+			path = WeatherContainer;
 			sourceTree = "<group>";
 		};
 		CCC31A23248EF2BE00D499E4 /* ForeignComparison */ = {
@@ -344,6 +352,26 @@
 				CC0D6EE2247E0BBC00051A7F /* WeatherDetailViewController.xib */,
 			);
 			path = WeatherDetail;
+			sourceTree = "<group>";
+		};
+		CCC31A25248EF3BD00D499E4 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				CCC31A2A248F020100D499E4 /* ViewControllerPresenter */,
+				CC155A8F247F03F200830A83 /* Storyboarded.swift */,
+				CCC31A26248EF3EA00D499E4 /* UIViewController+FullScreen.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		CCC31A2A248F020100D499E4 /* ViewControllerPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				CCC31A28248EF7CF00D499E4 /* ViewControllerPresenter.swift */,
+				CCC31A2D248F024700D499E4 /* UIViewControllerPresenter.swift */,
+				CCC31A2B248F022400D499E4 /* FullScreenViewControllerPresenter.swift */,
+			);
+			path = ViewControllerPresenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -490,19 +518,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC155A8C247EF2A500830A83 /* TermsRouter.swift in Sources */,
+				CCC31A27248EF3EA00D499E4 /* UIViewController+FullScreen.swift in Sources */,
 				CC0D6EE6247E0DB500051A7F /* Routers.swift in Sources */,
 				CCC31A1E248EF12F00D499E4 /* RootViewController.swift in Sources */,
 				CC8E5F5423E1F8D900893D8A /* TermsViewController.swift in Sources */,
 				CC0D6EE3247E0BBC00051A7F /* WeatherDetailViewController.swift in Sources */,
 				CC8E5F5023E1F8D900893D8A /* AppDelegate.swift in Sources */,
 				CC155A9A247F298A00830A83 /* PermissionsRouter.swift in Sources */,
+				CCC31A2C248F022400D499E4 /* FullScreenViewControllerPresenter.swift in Sources */,
 				CC0D6ED4247E0A6800051A7F /* MainWeatherViewContainer.swift in Sources */,
 				CC0D6EE8247E0DF400051A7F /* ApplicationRouter.swift in Sources */,
 				CC8E5F5223E1F8D900893D8A /* SceneDelegate.swift in Sources */,
 				CC155A90247F03F200830A83 /* Storyboarded.swift in Sources */,
 				CC0D6EDD247E0B7900051A7F /* ForeignComparisonViewController.swift in Sources */,
 				CC60416323F1A7EF0035705A /* WeatherAPI.swift in Sources */,
+				CCC31A2E248F024700D499E4 /* UIViewControllerPresenter.swift in Sources */,
 				CC60416123F1A2A50035705A /* ApiClient.swift in Sources */,
+				CCC31A29248EF7CF00D499E4 /* ViewControllerPresenter.swift in Sources */,
 				CC87F380246AF65800E15EFD /* PermissionsViewController.swift in Sources */,
 				CCBB984023F9DABF00E53D22 /* SWAPI.swift in Sources */,
 				CCBB983C23F99B2E00E53D22 /* MainBundleInfo.swift in Sources */,

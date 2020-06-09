@@ -10,17 +10,17 @@ import UIKit
 
 class PermissionsRouter: Routers {
 
-	private let presenter: UINavigationController
-	private var permissionsViewController: PermissionsViewController?
+	private let presenter: ViewControllerPresenter
+	private weak var permissionsViewController: PermissionsViewController?
 
-	init(presenter: UINavigationController) {
+	init(presenter: ViewControllerPresenter) {
 		self.presenter = presenter
 	}
 
 	func start() {
 		let permissionsViewController = PermissionsViewController.instantiate()
 		permissionsViewController.delegate = self
-		presenter.pushViewController(permissionsViewController, animated: true)
+		presenter.present(permissionsViewController)
 		self.permissionsViewController = permissionsViewController
 	}
 

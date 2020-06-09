@@ -10,28 +10,29 @@ import UIKit
 
 class TermsRouter: Routers {
 
-	private let presenter: UINavigationController
-	private var termsViewController: TermsViewController?
+	private let presenter: ViewControllerPresenter
+	private weak var termsViewController: TermsViewController?
+	private var permissionsRouter: PermissionsRouter?
 
-	init(presenter: UINavigationController) {
+	init(presenter: ViewControllerPresenter) {
 		self.presenter = presenter
 	}
 
 	func start() {
 		let termsViewController = TermsViewController.instantiate()
 		termsViewController.delegate = self
-		presenter.pushViewController(termsViewController, animated: true)
+		presenter.present(termsViewController)
 		self.termsViewController = termsViewController
 	}
-
-
-
 
 }
 
 extension TermsRouter: TermsViewControllerDelegate {
 	func termsViewControllerDidAgree() {
-			
+		guard let termsViewController = termsViewController else { return }
+		let permissionsRouter = PermissionsRouter(presenter: UIViewControllerPresenter(presentingViewController: termsViewController, animated: true))
+		permissionsRouter.start()
+		self.permissionsRouter = permissionsRouter
 	}
 
 }

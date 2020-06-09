@@ -10,7 +10,7 @@
         <!--Permissions ViewController-->
         <scene sceneID="SeL-XK-qyU">
             <objects>
-                <viewController storyboardIdentifier="PermissionsVC" id="B2m-tk-2M1" userLabel="Permissions ViewController" customClass="PermissionsViewController" customModule="FarAwayComparison" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PermissionsViewController" id="B2m-tk-2M1" userLabel="Permissions ViewController" customClass="PermissionsViewController" customModule="FarAwayComparison" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VID-s1-2QV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
