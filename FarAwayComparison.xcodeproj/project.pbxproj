@@ -46,6 +46,8 @@
 		CCC31A2E248F024700D499E4 /* UIViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC31A2D248F024700D499E4 /* UIViewControllerPresenter.swift */; };
 		CCD1C5F323F9F316003B57B5 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD1C5F223F9F316003B57B5 /* Logging.swift */; };
 		CCD88D6424A25CFD00456D0B /* ForeignComparisonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD88D6324A25CFD00456D0B /* ForeignComparisonView.swift */; };
+		CCD88D6624A26BD500456D0B /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD88D6524A26BD500456D0B /* WeatherView.swift */; };
+		CCD88D6924A26DBF00456D0B /* ImageAndLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD88D6824A26DBF00456D0B /* ImageAndLabelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +114,8 @@
 		CCC31A2D248F024700D499E4 /* UIViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerPresenter.swift; sourceTree = "<group>"; };
 		CCD1C5F223F9F316003B57B5 /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
 		CCD88D6324A25CFD00456D0B /* ForeignComparisonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeignComparisonView.swift; sourceTree = "<group>"; };
+		CCD88D6524A26BD500456D0B /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		CCD88D6824A26DBF00456D0B /* ImageAndLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAndLabelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				CC0D6ED7247E0AF100051A7F /* WeatherViewController.swift */,
+				CCD88D6524A26BD500456D0B /* WeatherView.swift */,
 				CC0D6ED8247E0AF100051A7F /* WeatherViewController.xib */,
 			);
 			path = Weather;
@@ -352,6 +357,7 @@
 		CCC31A25248EF3BD00D499E4 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				CCD88D6A24A26DC600456D0B /* ReusableViews */,
 				CCC31A2A248F020100D499E4 /* ViewControllerPresenter */,
 				CC155A8F247F03F200830A83 /* Storyboarded.swift */,
 				CCC31A26248EF3EA00D499E4 /* UIViewController+FullScreen.swift */,
@@ -367,6 +373,14 @@
 				CCC31A2B248F022400D499E4 /* FullScreenViewControllerPresenter.swift */,
 			);
 			path = ViewControllerPresenter;
+			sourceTree = "<group>";
+		};
+		CCD88D6A24A26DC600456D0B /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				CCD88D6824A26DBF00456D0B /* ImageAndLabelView.swift */,
+			);
+			path = ReusableViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -517,11 +531,13 @@
 				CC0D6EE6247E0DB500051A7F /* Routers.swift in Sources */,
 				CCC31A1E248EF12F00D499E4 /* RootViewController.swift in Sources */,
 				CC8E5F5423E1F8D900893D8A /* TermsViewController.swift in Sources */,
+				CCD88D6924A26DBF00456D0B /* ImageAndLabelView.swift in Sources */,
 				CC0D6EE3247E0BBC00051A7F /* WeatherDetailViewController.swift in Sources */,
 				CCD88D6424A25CFD00456D0B /* ForeignComparisonView.swift in Sources */,
 				CC8E5F5023E1F8D900893D8A /* AppDelegate.swift in Sources */,
 				CC155A9A247F298A00830A83 /* PermissionsRouter.swift in Sources */,
 				CCC31A2C248F022400D499E4 /* FullScreenViewControllerPresenter.swift in Sources */,
+				CCD88D6624A26BD500456D0B /* WeatherView.swift in Sources */,
 				CC0D6ED4247E0A6800051A7F /* MainWeatherViewContainer.swift in Sources */,
 				CC0D6EE8247E0DF400051A7F /* ApplicationRouter.swift in Sources */,
 				CC8E5F5223E1F8D900893D8A /* SceneDelegate.swift in Sources */,
@@ -867,7 +883,7 @@
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
+				minimumVersion = 4.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
