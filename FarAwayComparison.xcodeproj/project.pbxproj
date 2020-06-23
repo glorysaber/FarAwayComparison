@@ -149,7 +149,7 @@
 				CC0D6ECE247E099500051A7F /* MainWeather */,
 				CCC31A24248EF2CB00D499E4 /* WeatherDetail */,
 				CCC31A23248EF2BE00D499E4 /* ForeignComparison */,
-				CCC31A22248EF29600D499E4 /* WeatherContainer */,
+				CCC31A22248EF29600D499E4 /* Weather */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -321,13 +321,13 @@
 			path = Root;
 			sourceTree = "<group>";
 		};
-		CCC31A22248EF29600D499E4 /* WeatherContainer */ = {
+		CCC31A22248EF29600D499E4 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
 				CC0D6ED7247E0AF100051A7F /* WeatherViewController.swift */,
 				CC0D6ED8247E0AF100051A7F /* WeatherViewController.xib */,
 			);
-			path = WeatherContainer;
+			path = Weather;
 			sourceTree = "<group>";
 		};
 		CCC31A23248EF2BE00D499E4 /* ForeignComparison */ = {
