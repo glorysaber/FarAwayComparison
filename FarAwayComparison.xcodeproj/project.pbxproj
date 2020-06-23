@@ -45,6 +45,7 @@
 		CCC31A2C248F022400D499E4 /* FullScreenViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC31A2B248F022400D499E4 /* FullScreenViewControllerPresenter.swift */; };
 		CCC31A2E248F024700D499E4 /* UIViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC31A2D248F024700D499E4 /* UIViewControllerPresenter.swift */; };
 		CCD1C5F323F9F316003B57B5 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD1C5F223F9F316003B57B5 /* Logging.swift */; };
+		CCD88D6424A25CFD00456D0B /* ForeignComparisonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD88D6324A25CFD00456D0B /* ForeignComparisonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		CCC31A2B248F022400D499E4 /* FullScreenViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenViewControllerPresenter.swift; sourceTree = "<group>"; };
 		CCC31A2D248F024700D499E4 /* UIViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerPresenter.swift; sourceTree = "<group>"; };
 		CCD1C5F223F9F316003B57B5 /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
+		CCD88D6324A25CFD00456D0B /* ForeignComparisonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeignComparisonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,7 +260,6 @@
 		CC8E5F6523E1F8DA00893D8A /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				CCB2CA32248EEBA8008EEA42 /* Screens */,
 				CC8E5F8323E2158000893D8A /* AlamoFireTests.swift */,
 				CC31D99D24074576002D68B7 /* MockJSONRequest.swift */,
 				CCBB983D23F9A49800E53D22 /* WeatherApiTests.swift */,
@@ -291,13 +292,6 @@
 				CC8E5F8623E2442700893D8A /* README.md */,
 			);
 			path = Documentation;
-			sourceTree = "<group>";
-		};
-		CCB2CA32248EEBA8008EEA42 /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Screens;
 			sourceTree = "<group>";
 		};
 		CCBB983923F998DE00E53D22 /* Config */ = {
@@ -340,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				CC0D6EDB247E0B7900051A7F /* ForeignComparisonViewController.swift */,
+				CCD88D6324A25CFD00456D0B /* ForeignComparisonView.swift */,
 				CC0D6EDC247E0B7900051A7F /* ForeignComparisonViewController.xib */,
 			);
 			path = ForeignComparison;
@@ -523,6 +518,7 @@
 				CCC31A1E248EF12F00D499E4 /* RootViewController.swift in Sources */,
 				CC8E5F5423E1F8D900893D8A /* TermsViewController.swift in Sources */,
 				CC0D6EE3247E0BBC00051A7F /* WeatherDetailViewController.swift in Sources */,
+				CCD88D6424A25CFD00456D0B /* ForeignComparisonView.swift in Sources */,
 				CC8E5F5023E1F8D900893D8A /* AppDelegate.swift in Sources */,
 				CC155A9A247F298A00830A83 /* PermissionsRouter.swift in Sources */,
 				CCC31A2C248F022400D499E4 /* FullScreenViewControllerPresenter.swift in Sources */,
@@ -870,8 +866,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 4.9.1;
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
