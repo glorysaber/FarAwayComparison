@@ -193,6 +193,25 @@
 			path = Permissions;
 			sourceTree = "<group>";
 		};
+		CC2B6A0424A3B0E500C64FCE /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CC8E5F8323E2158000893D8A /* AlamoFireTests.swift */,
+				CC31D99D24074576002D68B7 /* MockJSONRequest.swift */,
+				CC2B6A0524A3B0F500C64FCE /* Networking Model */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		CC2B6A0524A3B0F500C64FCE /* Networking Model */ = {
+			isa = PBXGroup;
+			children = (
+				CCBB983D23F9A49800E53D22 /* WeatherApiTests.swift */,
+				CC187370240B1F2C009DD9F2 /* SWApiTests.swift */,
+			);
+			path = "Networking Model";
+			sourceTree = "<group>";
+		};
 		CC48FEE323E756B600494BD7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,10 +289,7 @@
 		CC8E5F6523E1F8DA00893D8A /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				CC8E5F8323E2158000893D8A /* AlamoFireTests.swift */,
-				CC31D99D24074576002D68B7 /* MockJSONRequest.swift */,
-				CCBB983D23F9A49800E53D22 /* WeatherApiTests.swift */,
-				CC187370240B1F2C009DD9F2 /* SWApiTests.swift */,
+				CC2B6A0424A3B0E500C64FCE /* Networking */,
 				CC8E5F6823E1F8DA00893D8A /* Info.plist */,
 			);
 			path = UnitTests;
