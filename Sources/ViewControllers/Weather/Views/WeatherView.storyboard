@@ -13,7 +13,7 @@
         <scene sceneID="gTj-0D-2nf">
             <objects>
                 <viewController storyboardIdentifier="WeatherViewController" id="5MX-Hd-xmm" customClass="WeatherViewController" customModule="FarAwayComparison" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zJf-tE-5og" customClass="WeatherView" customModule="FarAwayComparison" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zJf-tE-5og" customClass="WeatherMainView" customModule="FarAwayComparison" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -120,12 +120,12 @@
                             <outlet property="cloudCoverageView" destination="ii9-sP-7mi" id="rSK-Vg-a9L"/>
                             <outlet property="cloudSnow" destination="CHQ-Do-K1b" id="han-Cq-CYw"/>
                             <outlet property="horizontalWeatherInfo" destination="4W3-y3-CKF" id="f1f-Dc-qOa"/>
+                            <outlet property="rainChance" destination="AM5-24-ZVN" id="ve7-fO-a5B"/>
                             <outlet property="temperatureView" destination="Mg7-K0-kmR" id="RVj-4R-pwt"/>
                             <outlet property="uvIndexView" destination="Rx1-5j-r5A" id="kOb-Xw-ydy"/>
                             <outlet property="verticalWeatherInfo" destination="SpR-Cf-QAk" id="pYT-dk-Wz0"/>
                             <outlet property="visibilityView" destination="LD8-7V-ua6" id="arR-4T-b4P"/>
                             <outlet property="weatherBreifImage" destination="Ohu-a6-m0l" id="6XI-4r-abg"/>
-                            <outlet property="weatherChance" destination="AM5-24-ZVN" id="ve7-fO-a5B"/>
                             <outlet property="weatherDescriptionLabel" destination="EOk-Ox-Da9" id="4Fz-cO-9Fm"/>
                         </connections>
                     </view>

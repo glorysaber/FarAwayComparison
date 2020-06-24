@@ -24,16 +24,16 @@ class WeatherViewTests: XCTestCase {
 		XCTAssertNotNil(sut.uvIndexView)
 		XCTAssertNotNil(sut.cloudCoverageView)
 		XCTAssertNotNil(sut.visibilityView)
-		XCTAssertNotNil(sut.weatherChance)
+		XCTAssertNotNil(sut.rainChance)
 		XCTAssertNotNil(sut.cloudSnow)
 		XCTAssertNotNil(sut.cloudBolt)
 	}
 
 
-	func makeSUT() -> WeatherView {
+	func makeSUT() -> WeatherMainView {
 		vc = WeatherViewController.instantiate()
 
-		guard let viewSUT = vc?.view as? WeatherView else {
+		guard let viewSUT = vc?.view as? WeatherMainView else {
 			fatalError("View was not of expected type or did not exist")
 		}
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeatherView: UIView {
+class WeatherMainView: UIView {
 	@IBOutlet weak var weatherDescriptionLabel: UILabel!
 	@IBOutlet weak var weatherBreifImage: UIImageView!
 
@@ -20,7 +20,7 @@ class WeatherView: UIView {
 	@IBOutlet weak var cloudCoverageView: ImageAndLabelView!
 	@IBOutlet weak var visibilityView: ImageAndLabelView!
 	
-	@IBOutlet weak var weatherChance: ImageAndLabelView!
+	@IBOutlet weak var rainChance: ImageAndLabelView!
 	@IBOutlet weak var cloudSnow: ImageAndLabelView!
 	@IBOutlet weak var cloudBolt: ImageAndLabelView!
 }
