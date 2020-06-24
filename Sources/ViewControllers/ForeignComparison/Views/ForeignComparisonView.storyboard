@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9m2-eN-MYj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9m2-eN-MYj">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,17 +29,17 @@
                                         <rect key="frame" x="0.0" y="49" width="414" height="171.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pxY-hw-43m">
-                                                <rect key="frame" x="0.0" y="0.0" width="107.5" height="171.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="111.5" height="171.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="6tv-jU-FRZ" customClass="ImageAndLabelView" customModule="FarAwayComparison" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="107.5" height="82"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="111.5" height="82"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="Landscape"/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="Desert"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="9em-KI-AWw" customClass="ImageAndLabelView" customModule="FarAwayComparison" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="90" width="107.5" height="81.5"/>
+                                                        <rect key="frame" x="0.0" y="90" width="111.5" height="81.5"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="person.3" catalog="system"/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="200k"/>
@@ -47,7 +48,7 @@
                                                 </subviews>
                                             </stackView>
                                             <containerView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="200" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZd-h4-ftj" customClass="Planet">
-                                                <rect key="frame" x="115.5" y="0.0" width="298.5" height="171.5"/>
+                                                <rect key="frame" x="119.5" y="0.0" width="294.5" height="171.5"/>
                                                 <connections>
                                                     <segue destination="dYP-Br-oaU" kind="embed" id="dID-ka-kuW"/>
                                                 </connections>
@@ -103,6 +104,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZgS-jk-vnW"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="sF2-2x-vuk" secondAttribute="bottom" id="0AO-od-n5i"/>
@@ -110,7 +112,6 @@
                             <constraint firstAttribute="trailing" secondItem="sF2-2x-vuk" secondAttribute="trailing" id="RNz-99-aYn"/>
                             <constraint firstItem="sF2-2x-vuk" firstAttribute="top" secondItem="azE-Oj-eaF" secondAttribute="top" id="W7H-pX-DUD"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ZgS-jk-vnW"/>
                         <connections>
                             <outlet property="atmosphereStack" destination="cJf-nV-60n" id="aFi-rD-2q4"/>
                             <outlet property="bottomHorizontalStack" destination="Wu7-cx-tRA" id="HD8-oR-YSs"/>
@@ -132,6 +133,9 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="400"/>
+                    <connections>
+                        <outlet property="mainView" destination="azE-Oj-eaF" id="0ib-TY-FaM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="708-x6-mrB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -146,12 +150,32 @@
             <point key="canvasLocation" x="807" y="203"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="6tv-jU-FRZ">
+            <size key="intrinsicContentSize" width="168.5" height="70.5"/>
+        </designable>
+        <designable name="9em-KI-AWw">
+            <size key="intrinsicContentSize" width="99.5" height="38"/>
+        </designable>
+        <designable name="NjW-yE-3nE">
+            <size key="intrinsicContentSize" width="143" height="53.5"/>
+        </designable>
+        <designable name="a5t-Lg-RE2">
+            <size key="intrinsicContentSize" width="208.5" height="133.5"/>
+        </designable>
+        <designable name="cJf-nV-60n">
+            <size key="intrinsicContentSize" width="76.5" height="37.5"/>
+        </designable>
+        <designable name="eIp-kT-v7f">
+            <size key="intrinsicContentSize" width="178" height="90.5"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Landscape" width="93" height="50"/>
         <image name="PlanetRotation" width="114" height="113"/>
         <image name="PlanetYearlyRotation" width="81" height="70"/>
         <image name="Water" width="96" height="33"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
-        <image name="wind" catalog="system" width="128" height="103"/>
+        <image name="wind" catalog="system" width="128" height="101"/>
     </resources>
 </document>

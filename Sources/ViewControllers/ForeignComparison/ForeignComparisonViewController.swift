@@ -9,7 +9,8 @@
 import UIKit
 
 class ForeignComparisonViewController: UIViewController {
-
+	@IBOutlet weak var mainView: ForeignComparisonView!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
