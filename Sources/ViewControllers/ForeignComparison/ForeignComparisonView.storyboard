@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,18 +29,26 @@
                                         <rect key="frame" x="0.0" y="49" width="414" height="171.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pxY-hw-43m">
-                                                <rect key="frame" x="0.0" y="0.0" width="59" height="171.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="111.5" height="171.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="6tv-jU-FRZ" customClass="ImageAndLabelView" customModule="FarAwayComparison" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="59" height="82"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="111.5" height="82"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="Landscape"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Desert"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="9em-KI-AWw" customClass="ImageAndLabelView" customModule="FarAwayComparison" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="90" width="59" height="81.5"/>
+                                                        <rect key="frame" x="0.0" y="90" width="111.5" height="81.5"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="person.3" catalog="system"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="200k"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
                                             </stackView>
                                             <containerView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="200" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZd-h4-ftj" customClass="Planet">
-                                                <rect key="frame" x="67" y="0.0" width="347" height="171.5"/>
+                                                <rect key="frame" x="119.5" y="0.0" width="294.5" height="171.5"/>
                                                 <connections>
                                                     <segue destination="dYP-Br-oaU" kind="embed" id="dID-ka-kuW"/>
                                                 </connections>
@@ -54,9 +63,16 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="eIp-kT-v7f" customClass="ImageAndLabelView" customModule="FarAwayComparison" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="203" height="82"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="304 Days"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="NjW-yE-3nE" customClass="ImageAndLabelView" customModule="FarAwayComparison" customModuleProvider="target">
                                                         <rect key="frame" x="211" y="0.0" width="203" height="82"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="Water"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="1%"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
                                             </stackView>
@@ -65,9 +81,17 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="a5t-Lg-RE2" customClass="ImageAndLabelView" customModule="FarAwayComparison" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="203" height="81.5"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="PlanetRotation"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="23 Hours"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="cJf-nV-60n" customClass="ImageAndLabelView" customModule="FarAwayComparison" customModuleProvider="target">
                                                         <rect key="frame" x="211" y="0.0" width="203" height="81.5"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="wind" catalog="system"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Arid"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
                                             </stackView>
@@ -79,6 +103,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZgS-jk-vnW"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="sF2-2x-vuk" secondAttribute="bottom" id="0AO-od-n5i"/>
@@ -107,22 +132,29 @@
     </scenes>
     <designables>
         <designable name="6tv-jU-FRZ">
-            <size key="intrinsicContentSize" width="59" height="41"/>
+            <size key="intrinsicContentSize" width="168.5" height="70.5"/>
         </designable>
         <designable name="9em-KI-AWw">
-            <size key="intrinsicContentSize" width="59" height="41"/>
+            <size key="intrinsicContentSize" width="99.5" height="38"/>
         </designable>
         <designable name="NjW-yE-3nE">
-            <size key="intrinsicContentSize" width="59" height="41"/>
+            <size key="intrinsicContentSize" width="143" height="53.5"/>
         </designable>
         <designable name="a5t-Lg-RE2">
-            <size key="intrinsicContentSize" width="59" height="41"/>
+            <size key="intrinsicContentSize" width="208.5" height="133.5"/>
         </designable>
         <designable name="cJf-nV-60n">
-            <size key="intrinsicContentSize" width="59" height="41"/>
+            <size key="intrinsicContentSize" width="76.5" height="37.5"/>
         </designable>
         <designable name="eIp-kT-v7f">
-            <size key="intrinsicContentSize" width="59" height="41"/>
+            <size key="intrinsicContentSize" width="112" height="41"/>
         </designable>
     </designables>
+    <resources>
+        <image name="Landscape" width="93" height="50"/>
+        <image name="PlanetRotation" width="114" height="113"/>
+        <image name="Water" width="96" height="33"/>
+        <image name="person.3" catalog="system" width="128" height="62"/>
+        <image name="wind" catalog="system" width="128" height="101"/>
+    </resources>
 </document>
