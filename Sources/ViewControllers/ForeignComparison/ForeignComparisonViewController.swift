@@ -28,3 +28,7 @@ class ForeignComparisonViewController: UIViewController {
     */
 
 }
+
+extension ForeignComparisonViewController: Storyboarded {
+	static let storyboardName: String = "ForeignComparisonView"
+}

@@ -34,6 +34,7 @@
 		CC8E5F7223E1F8DA00893D8A /* FarAwayComparisonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8E5F7123E1F8DA00893D8A /* FarAwayComparisonUITests.swift */; };
 		CC8E5F8223E2156600893D8A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CC8E5F8123E2156600893D8A /* Alamofire */; };
 		CC8E5F8423E2158000893D8A /* AlamoFireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8E5F8323E2158000893D8A /* AlamoFireTests.swift */; };
+		CC92E1C724A3E116007A4925 /* ForeignComparisonViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC92E1C624A3E116007A4925 /* ForeignComparisonViewTests.swift */; };
 		CC9754CF24A2C72C00110DB0 /* WeatherView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9754CE24A2C72C00110DB0 /* WeatherView.storyboard */; };
 		CC9754D124A2D3FE00110DB0 /* ForeignComparisonView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9754D024A2D3FE00110DB0 /* ForeignComparisonView.storyboard */; };
 		CC9754D324A2D49E00110DB0 /* PlanetView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9754D224A2D49E00110DB0 /* PlanetView.storyboard */; };
@@ -104,6 +105,7 @@
 		CC8E5F7323E1F8DA00893D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC8E5F8323E2158000893D8A /* AlamoFireTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFireTests.swift; sourceTree = "<group>"; };
 		CC8E5F8623E2442700893D8A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CC92E1C624A3E116007A4925 /* ForeignComparisonViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeignComparisonViewTests.swift; sourceTree = "<group>"; };
 		CC9754CE24A2C72C00110DB0 /* WeatherView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeatherView.storyboard; sourceTree = "<group>"; };
 		CC9754D024A2D3FE00110DB0 /* ForeignComparisonView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForeignComparisonView.storyboard; sourceTree = "<group>"; };
 		CC9754D224A2D49E00110DB0 /* PlanetView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlanetView.storyboard; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				CC2B6A0924A3B1A000C64FCE /* PlanetViewTests.swift */,
+				CC92E1C624A3E116007A4925 /* ForeignComparisonViewTests.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				CC31D99F240745A2002D68B7 /* MockJSONRequest.swift in Sources */,
 				CC187371240B1F2C009DD9F2 /* SWApiTests.swift in Sources */,
 				CC2B6A0A24A3B1A000C64FCE /* PlanetViewTests.swift in Sources */,
+				CC92E1C724A3E116007A4925 /* ForeignComparisonViewTests.swift in Sources */,
 				CC8E5F8423E2158000893D8A /* AlamoFireTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
