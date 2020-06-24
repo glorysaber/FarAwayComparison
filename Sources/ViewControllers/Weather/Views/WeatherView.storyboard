@@ -12,7 +12,7 @@
         <!--Weather View Controller-->
         <scene sceneID="gTj-0D-2nf">
             <objects>
-                <viewController id="5MX-Hd-xmm" customClass="WeatherViewController" customModule="FarAwayComparison" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WeatherViewController" id="5MX-Hd-xmm" customClass="WeatherViewController" customModule="FarAwayComparison" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zJf-tE-5og" customClass="WeatherView" customModule="FarAwayComparison" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -133,6 +133,9 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="400"/>
+                    <connections>
+                        <outlet property="mainView" destination="zJf-tE-5og" id="nhu-eR-Wq6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oJg-ff-Mgj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
