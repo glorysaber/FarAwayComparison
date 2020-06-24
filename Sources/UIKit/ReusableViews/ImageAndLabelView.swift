@@ -11,20 +11,12 @@ import UIKit
 @IBDesignable
 class ImageAndLabelView: UIView {
 
-	private lazy var containerStackView: UIStackView = {
-		let containerStackView = UIStackView()
-		containerStackView.translatesAutoresizingMaskIntoConstraints = false
-		containerStackView.axis = .horizontal
-		return containerStackView
-	}()
-
 	@objc private lazy var imageView: UIImageView = {
 		let imageView = UIImageView()
 		imageView.translatesAutoresizingMaskIntoConstraints = false
 		imageView.image = UIImage(systemName: "thermometer")
 		imageView.tintColor = .white
 		imageView.contentMode = .scaleAspectFit
-
 		return imageView
 	}()
 
@@ -42,34 +34,8 @@ class ImageAndLabelView: UIView {
 
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
-		guard let containerStackView = coder.decodeObject(forKey: "StackView") as? UIStackView else {
-			return nil
-		}
 
-		self.containerStackView = containerStackView
-
-		guard let imageView = containerStackView.arrangedSubviews.first as? UIImageView else {
-			return nil
-		}
-
-		guard let labelView = containerStackView.arrangedSubviews.last as? UILabel else {
-			return nil
-		}
-
-		self.imageView = imageView
-		label = labelView
-
-		guard let constraint = imageView.constraints.first else {
-			return nil
-		}
-
-		imageViewHeightConstraint = constraint
-
-		addObservationToImage()
-	}
-
-	override func encode(with coder: NSCoder) {
-		coder.encode(containerStackView, forKey: "StackView")
+		setupViews()
 	}
 
 	override init(frame: CGRect) {
@@ -80,55 +46,47 @@ class ImageAndLabelView: UIView {
 	private func setupViews() {
 		clipsToBounds = true
 		backgroundColor = .clear
-		addSubview(containerStackView)
-		containerStackView.addArrangedSubview(imageView)
-		containerStackView.addArrangedSubview(label)
+		addSubview(imageView)
+		addSubview(label)
 		layoutViews()
 	}
 
-	fileprivate func addObservationToImage() {
-		observation = observe(\.imageView.image) { [weak self] (object, change) in
-			guard let image = change.newValue as? UIImage else {
-				return
-			}
-			self?.changeimageRatioConstraint(height: image.size.height, width: image.size.width)
-		}
-	}
 
 	private func layoutViews() {
-		// Stack View
-		NSLayoutConstraint.activate(
-			[containerStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-			 containerStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-			 containerStackView.topAnchor.constraint(equalTo: topAnchor),
-			 containerStackView.bottomAnchor.constraint(equalTo: bottomAnchor)
-			 ])
+		// textView
 
-		
+		NSLayoutConstraint.activate(
+			[label.trailingAnchor.constraint(equalTo: trailingAnchor),
+			 label.topAnchor.constraint(equalTo: topAnchor),
+			 label.bottomAnchor.constraint(equalTo: bottomAnchor),
+			 label.leadingAnchor.constraint(equalToSystemSpacingAfter: imageView.trailingAnchor, multiplier: 0)
+		])
+
+		label.setContentHuggingPriority(.required, for: .horizontal)
 
 		// Image view layout
 		imageView.setContentHuggingPriority(.required, for: .horizontal)
 		imageView.setContentHuggingPriority(.init(0), for: .vertical)
 
+		NSLayoutConstraint.activate(
+			[imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+			 imageView.topAnchor.constraint(equalTo: topAnchor),
+			 imageView.bottomAnchor.constraint(equalTo: bottomAnchor)
+		])
+
+
 		if let image = imageView.image {
 			changeimageRatioConstraint(height: image.size.height, width: image.size.width)
 		}
 
-		// Stack View contents layout
-		containerStackView.spacing = 8
-		containerStackView.distribution = .fill
-		containerStackView.alignment = .fill
-
 		addObservationToImage()
 	}
-
-	override class func prepareForInterfaceBuilder() {}
 
 	func changeimageRatioConstraint(height: CGFloat, width: CGFloat) {
 		if let imageViewHeightConstraint = imageViewHeightConstraint {
 			imageView.removeConstraint(imageViewHeightConstraint)
 		}
-		
+
 		imageViewHeightConstraint = {
 			// Constraint to make sure UIImageView is same ratio as its image
 			let imageViewHeightConstraint = NSLayoutConstraint(
@@ -141,9 +99,27 @@ class ImageAndLabelView: UIView {
 				constant: 0)
 
 			// Lowering priority to allow other cosntraints to take priority
-			imageViewHeightConstraint.priority = .required - 1
+//			imageViewHeightConstraint.priority = .required - 1
 			imageView.addConstraint(imageViewHeightConstraint)
 			return imageViewHeightConstraint
+		}()
+	}
+
+	fileprivate func addObservationToImage() {
+		observation = observe(\.imageView.image) { [weak self] (object, change) in
+			guard let image = change.newValue as? UIImage else {
+				return
+			}
+			self?.changeimageRatioConstraint(height: image.size.height, width: image.size.width)
+		}
+	}
+
+	override class func prepareForInterfaceBuilder() {}
+
+	override var intrinsicContentSize: CGSize {
+		return {
+			CGSize(width: label.intrinsicContentSize.width + (imageView.image?.size.width ?? imageView.intrinsicContentSize.width) + 24,
+						 height: label.intrinsicContentSize.height + (imageView.image?.size.height ?? imageView.intrinsicContentSize.height))
 		}()
 	}
 }
@@ -154,6 +130,9 @@ extension ImageAndLabelView {
 			imageView.image
 		}
 		set {
+			defer {
+				invalidateIntrinsicContentSize()
+			}
 			imageView.image = newValue
 		}
 	}
@@ -163,6 +142,9 @@ extension ImageAndLabelView {
 			label.text
 		}
 		set {
+			defer {
+				invalidateIntrinsicContentSize()
+			}
 			label.text = newValue
 		}
 	}

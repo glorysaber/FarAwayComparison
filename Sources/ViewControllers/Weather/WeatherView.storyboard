@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5MX-Hd-xmm">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Weather View Controller-->
+        <scene sceneID="gTj-0D-2nf">
+            <objects>
+                <viewController id="5MX-Hd-xmm" customClass="WeatherViewController" customModule="FarAwayComparison" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zJf-tE-5og" customClass="WeatherView" customModule="FarAwayComparison" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" text="It's Sunny" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EOk-Ox-Da9">
+                                <rect key="frame" x="0.0" y="0.0" width="144" height="60"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="sun.max" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ohu-a6-m0l">
+                                <rect key="frame" x="83" y="-3" width="331" height="345.5"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="regular"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SpR-Cf-QAk" userLabel="Vertical Info">
+                                <rect key="frame" x="0.0" y="68" width="83" height="264"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Mg7-K0-kmR" userLabel="Temperature" customClass="ImageAndLabelView" customModule="FarAwayComparison" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="83" height="60"/>
+                                        <viewLayoutGuide key="safeArea" id="eRP-Ta-jF2"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="79℉"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="thermometer" catalog="system"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Rx1-5j-r5A" userLabel="UV Index" customClass="ImageAndLabelView" customModule="FarAwayComparison" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="68" width="83" height="60"/>
+                                        <viewLayoutGuide key="safeArea" id="eRS-20-wEK"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="9"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="sun.max.fill" catalog="system"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="ii9-sP-7mi" userLabel="Cloud Coverage" customClass="ImageAndLabelView" customModule="FarAwayComparison" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="136" width="83" height="60"/>
+                                        <viewLayoutGuide key="safeArea" id="B88-VO-5l8"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="11%  "/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="cloud" catalog="system"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="LD8-7V-ua6" userLabel="Visibility" customClass="ImageAndLabelView" customModule="FarAwayComparison" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="204" width="83" height="60"/>
+                                        <viewLayoutGuide key="safeArea" id="Cuh-kz-jwj"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="12km"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="eye" catalog="system"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4W3-y3-CKF" userLabel="Horizontal Weather Stack">
+                                <rect key="frame" x="0.0" y="340" width="414" height="60"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AM5-24-ZVN" userLabel="Rain Chance" customClass="ImageAndLabelView" customModule="FarAwayComparison" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="132.5" height="60"/>
+                                        <viewLayoutGuide key="safeArea" id="tK7-WT-uHz"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="12km"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="cloud.rain" catalog="system"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CHQ-Do-K1b" userLabel="Cloud Snow" customClass="ImageAndLabelView" customModule="FarAwayComparison" customModuleProvider="target">
+                                        <rect key="frame" x="140.5" y="0.0" width="133" height="60"/>
+                                        <viewLayoutGuide key="safeArea" id="fFW-e5-voW"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="12km"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="cloud.snow" catalog="system"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pd6-DV-718" userLabel="Cloud Bolt" customClass="ImageAndLabelView" customModule="FarAwayComparison" customModuleProvider="target">
+                                        <rect key="frame" x="281.5" y="0.0" width="132.5" height="60"/>
+                                        <viewLayoutGuide key="safeArea" id="M7B-jt-5cJ"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="12km"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="cloud.bolt" catalog="system"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oeR-I0-xYa"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SpR-Cf-QAk" firstAttribute="top" secondItem="EOk-Ox-Da9" secondAttribute="bottom" constant="8" symbolic="YES" id="23I-ac-cK4"/>
+                            <constraint firstItem="4W3-y3-CKF" firstAttribute="top" secondItem="SpR-Cf-QAk" secondAttribute="bottom" constant="8" symbolic="YES" id="2pR-bC-8wb"/>
+                            <constraint firstItem="4W3-y3-CKF" firstAttribute="leading" secondItem="zJf-tE-5og" secondAttribute="leading" id="4fp-N7-oFE"/>
+                            <constraint firstAttribute="trailing" secondItem="4W3-y3-CKF" secondAttribute="trailing" id="CrV-gI-UMI"/>
+                            <constraint firstAttribute="trailing" secondItem="Ohu-a6-m0l" secondAttribute="trailing" id="GX4-xQ-PTU"/>
+                            <constraint firstItem="Ohu-a6-m0l" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SpR-Cf-QAk" secondAttribute="trailing" id="HGb-Y6-rXm"/>
+                            <constraint firstAttribute="bottom" secondItem="4W3-y3-CKF" secondAttribute="bottom" id="TMI-Yq-ZKa"/>
+                            <constraint firstItem="EOk-Ox-Da9" firstAttribute="leading" secondItem="zJf-tE-5og" secondAttribute="leading" id="Zc8-zd-dgk"/>
+                            <constraint firstItem="SpR-Cf-QAk" firstAttribute="leading" secondItem="zJf-tE-5og" secondAttribute="leading" id="a2M-Cn-joI"/>
+                            <constraint firstItem="Ohu-a6-m0l" firstAttribute="leading" secondItem="SpR-Cf-QAk" secondAttribute="trailing" priority="749" id="adZ-OL-ygp"/>
+                            <constraint firstItem="Ohu-a6-m0l" firstAttribute="top" secondItem="zJf-tE-5og" secondAttribute="top" id="d6U-os-Ci4"/>
+                            <constraint firstItem="EOk-Ox-Da9" firstAttribute="height" secondItem="4W3-y3-CKF" secondAttribute="height" id="e1M-Sm-lI6"/>
+                            <constraint firstItem="4W3-y3-CKF" firstAttribute="top" secondItem="Ohu-a6-m0l" secondAttribute="bottom" priority="749" id="er0-Ge-b6C"/>
+                            <constraint firstItem="EOk-Ox-Da9" firstAttribute="top" secondItem="zJf-tE-5og" secondAttribute="top" id="hTE-W5-l6u"/>
+                            <constraint firstItem="Rx1-5j-r5A" firstAttribute="height" secondItem="4W3-y3-CKF" secondAttribute="height" id="pNW-Fp-exZ"/>
+                            <constraint firstItem="Ohu-a6-m0l" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EOk-Ox-Da9" secondAttribute="trailing" constant="-63" id="yq2-vK-xX0"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="cloudBolt" destination="pd6-DV-718" id="nmS-qh-qxN"/>
+                            <outlet property="cloudCoverageView" destination="ii9-sP-7mi" id="rSK-Vg-a9L"/>
+                            <outlet property="cloudSnow" destination="CHQ-Do-K1b" id="han-Cq-CYw"/>
+                            <outlet property="horizontalWeatherInfo" destination="4W3-y3-CKF" id="f1f-Dc-qOa"/>
+                            <outlet property="temperatureView" destination="Mg7-K0-kmR" id="RVj-4R-pwt"/>
+                            <outlet property="uvIndexView" destination="Rx1-5j-r5A" id="kOb-Xw-ydy"/>
+                            <outlet property="verticalWeatherInfo" destination="SpR-Cf-QAk" id="pYT-dk-Wz0"/>
+                            <outlet property="visibilityView" destination="LD8-7V-ua6" id="arR-4T-b4P"/>
+                            <outlet property="weatherBreifImage" destination="Ohu-a6-m0l" id="6XI-4r-abg"/>
+                            <outlet property="weatherChance" destination="AM5-24-ZVN" id="ve7-fO-a5B"/>
+                            <outlet property="weatherDescriptionLabel" destination="EOk-Ox-Da9" id="4Fz-cO-9Fm"/>
+                        </connections>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="414" height="400"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oJg-ff-Mgj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="142" y="-8"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="AM5-24-ZVN">
+            <size key="intrinsicContentSize" width="86.5" height="42"/>
+        </designable>
+        <designable name="CHQ-Do-K1b">
+            <size key="intrinsicContentSize" width="86.5" height="42.5"/>
+        </designable>
+        <designable name="LD8-7V-ua6">
+            <size key="intrinsicContentSize" width="90.5" height="37"/>
+        </designable>
+        <designable name="Mg7-K0-kmR">
+            <size key="intrinsicContentSize" width="76" height="41"/>
+        </designable>
+        <designable name="Rx1-5j-r5A">
+            <size key="intrinsicContentSize" width="55.5" height="41"/>
+        </designable>
+        <designable name="ii9-sP-7mi">
+            <size key="intrinsicContentSize" width="85" height="35.5"/>
+        </designable>
+        <designable name="pd6-DV-718">
+            <size key="intrinsicContentSize" width="86.5" height="42.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="cloud" catalog="system" width="128" height="87"/>
+        <image name="cloud.bolt" catalog="system" width="128" height="128"/>
+        <image name="cloud.rain" catalog="system" width="128" height="125"/>
+        <image name="cloud.snow" catalog="system" width="128" height="128"/>
+        <image name="eye" catalog="system" width="128" height="81"/>
+        <image name="sun.max" catalog="system" width="128" height="124"/>
+        <image name="sun.max.fill" catalog="system" width="128" height="124"/>
+        <image name="thermometer" catalog="system" width="93" height="128"/>
+    </resources>
+</document>

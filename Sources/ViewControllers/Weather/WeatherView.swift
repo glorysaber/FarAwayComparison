@@ -9,24 +9,18 @@
 import UIKit
 
 class WeatherView: UIView {
-	@IBOutlet weak var weatherDescriptionlabel: UILabel!
+	@IBOutlet weak var weatherDescriptionLabel: UILabel!
+	@IBOutlet weak var weatherBreifImage: UIImageView!
 
-	@IBOutlet weak var horizontalWeatherStack: UIStackView!
+	@IBOutlet weak var verticalWeatherInfo: UIStackView!
+	@IBOutlet weak var horizontalWeatherInfo: UIStackView!
 
-	@IBOutlet weak var rainChanceStack: UIStackView!
-	@IBOutlet weak var rainChanceImage: UIImageView!
-	@IBOutlet weak var rainchanceLabel: UILabel!
-
-	@IBOutlet weak var snowChanceStack: UIStackView!
-	@IBOutlet weak var cloudChanceImage: UIImageView!
-	@IBOutlet weak var cloudChanceLabel: UILabel!
-
-	@IBOutlet weak var lightningChanceStack: UIStackView!
-	@IBOutlet weak var lightningChanceImage: UIImageView!
-	@IBOutlet weak var ligtningChanceLabel: UILabel!
-
-	@IBOutlet weak var weatherImage: UIImageView!
+	@IBOutlet weak var temperatureView: ImageAndLabelView!
+	@IBOutlet weak var uvIndexView: ImageAndLabelView!
+	@IBOutlet weak var cloudCoverageView: ImageAndLabelView!
+	@IBOutlet weak var visibilityView: ImageAndLabelView!
 	
-	@IBOutlet weak var verticalStack: UIStackView!
-	
+	@IBOutlet weak var weatherChance: ImageAndLabelView!
+	@IBOutlet weak var cloudSnow: ImageAndLabelView!
+	@IBOutlet weak var cloudBolt: ImageAndLabelView!
 }
