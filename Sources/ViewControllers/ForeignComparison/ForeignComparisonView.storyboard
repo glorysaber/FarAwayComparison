@@ -65,6 +65,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="203" height="82"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="304 Days"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="PlanetYearlyRotation"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="NjW-yE-3nE" customClass="ImageAndLabelView" customModule="FarAwayComparison" customModuleProvider="target">
@@ -111,6 +112,22 @@
                             <constraint firstAttribute="trailing" secondItem="sF2-2x-vuk" secondAttribute="trailing" id="RNz-99-aYn"/>
                             <constraint firstItem="sF2-2x-vuk" firstAttribute="top" secondItem="azE-Oj-eaF" secondAttribute="top" id="W7H-pX-DUD"/>
                         </constraints>
+                        <connections>
+                            <outlet property="atmosphereStack" destination="cJf-nV-60n" id="aFi-rD-2q4"/>
+                            <outlet property="bottomHorizontalStack" destination="Wu7-cx-tRA" id="HD8-oR-YSs"/>
+                            <outlet property="bottomVerticalStack" destination="vGm-DC-y6R" id="w4C-ZE-WF3"/>
+                            <outlet property="comaprisonLabel" destination="ufJ-4A-TgR" id="XJy-ID-UyJ"/>
+                            <outlet property="earthDayEquivalenceStack" destination="a5t-Lg-RE2" id="dWT-YS-5g0"/>
+                            <outlet property="earthYearEquivalenceStack" destination="eIp-kT-v7f" id="wA1-OW-xWf"/>
+                            <outlet property="midHorizontalStack" destination="5to-3g-40L" id="KQt-fT-8z6"/>
+                            <outlet property="planetContainerView" destination="SZd-h4-ftj" id="rZB-fX-24u"/>
+                            <outlet property="populationStack" destination="9em-KI-AWw" id="d5D-FV-FMB"/>
+                            <outlet property="rootVerticalStackView" destination="sF2-2x-vuk" id="qpN-Yg-rsA"/>
+                            <outlet property="terrainView" destination="6tv-jU-FRZ" id="x5Q-Pr-ar0"/>
+                            <outlet property="topHorizontalStackView" destination="JDa-0h-0aq" id="6eX-uT-vgQ"/>
+                            <outlet property="verticalStackStandardInfo" destination="pxY-hw-43m" id="KhJ-a6-cUa"/>
+                            <outlet property="waterCoverageStack" destination="NjW-yE-3nE" id="WAO-ar-Kb1"/>
+                        </connections>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -147,12 +164,13 @@
             <size key="intrinsicContentSize" width="76.5" height="37.5"/>
         </designable>
         <designable name="eIp-kT-v7f">
-            <size key="intrinsicContentSize" width="112" height="41"/>
+            <size key="intrinsicContentSize" width="178" height="90.5"/>
         </designable>
     </designables>
     <resources>
         <image name="Landscape" width="93" height="50"/>
         <image name="PlanetRotation" width="114" height="113"/>
+        <image name="PlanetYearlyRotation" width="81" height="70"/>
         <image name="Water" width="96" height="33"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="wind" catalog="system" width="128" height="101"/>
