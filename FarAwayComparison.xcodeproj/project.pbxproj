@@ -35,6 +35,9 @@
 		CC8E5F8223E2156600893D8A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CC8E5F8123E2156600893D8A /* Alamofire */; };
 		CC8E5F8423E2158000893D8A /* AlamoFireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8E5F8323E2158000893D8A /* AlamoFireTests.swift */; };
 		CC9754CF24A2C72C00110DB0 /* WeatherView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9754CE24A2C72C00110DB0 /* WeatherView.storyboard */; };
+		CC9754D124A2D3FE00110DB0 /* ForeignComparisonView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9754D024A2D3FE00110DB0 /* ForeignComparisonView.storyboard */; };
+		CC9754D324A2D49E00110DB0 /* PlanetView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9754D224A2D49E00110DB0 /* PlanetView.storyboard */; };
+		CC9754D524A2D51F00110DB0 /* ForeignPlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9754D424A2D51F00110DB0 /* ForeignPlanetView.swift */; };
 		CCBB983C23F99B2E00E53D22 /* MainBundleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB983B23F99B2E00E53D22 /* MainBundleInfo.swift */; };
 		CCBB983E23F9A49800E53D22 /* WeatherApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB983D23F9A49800E53D22 /* WeatherApiTests.swift */; };
 		CCBB984023F9DABF00E53D22 /* SWAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB983F23F9DABF00E53D22 /* SWAPI.swift */; };
@@ -102,6 +105,9 @@
 		CC8E5F8323E2158000893D8A /* AlamoFireTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFireTests.swift; sourceTree = "<group>"; };
 		CC8E5F8623E2442700893D8A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CC9754CE24A2C72C00110DB0 /* WeatherView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeatherView.storyboard; sourceTree = "<group>"; };
+		CC9754D024A2D3FE00110DB0 /* ForeignComparisonView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForeignComparisonView.storyboard; sourceTree = "<group>"; };
+		CC9754D224A2D49E00110DB0 /* PlanetView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlanetView.storyboard; sourceTree = "<group>"; };
+		CC9754D424A2D51F00110DB0 /* ForeignPlanetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeignPlanetView.swift; sourceTree = "<group>"; };
 		CCBB983823F997CC00E53D22 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		CCBB983B23F99B2E00E53D22 /* MainBundleInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBundleInfo.swift; sourceTree = "<group>"; };
 		CCBB983D23F9A49800E53D22 /* WeatherApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiTests.swift; sourceTree = "<group>"; };
@@ -298,6 +304,16 @@
 			path = Documentation;
 			sourceTree = "<group>";
 		};
+		CC9754D624A2D52D00110DB0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CCD88D6324A25CFD00456D0B /* ForeignComparisonView.swift */,
+				CC9754D424A2D51F00110DB0 /* ForeignPlanetView.swift */,
+				CC9754D224A2D49E00110DB0 /* PlanetView.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CCBB983923F998DE00E53D22 /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,7 +355,8 @@
 			isa = PBXGroup;
 			children = (
 				CC0D6EDB247E0B7900051A7F /* ForeignComparisonViewController.swift */,
-				CCD88D6324A25CFD00456D0B /* ForeignComparisonView.swift */,
+				CC9754D024A2D3FE00110DB0 /* ForeignComparisonView.storyboard */,
+				CC9754D624A2D52D00110DB0 /* Views */,
 				CC0D6EDC247E0B7900051A7F /* ForeignComparisonViewController.xib */,
 			);
 			path = ForeignComparison;
@@ -499,7 +516,9 @@
 				CC155A96247F0AB700830A83 /* Terms.storyboard in Resources */,
 				CC155A98247F0AE200830A83 /* Permissions.storyboard in Resources */,
 				CC9754CF24A2C72C00110DB0 /* WeatherView.storyboard in Resources */,
+				CC9754D124A2D3FE00110DB0 /* ForeignComparisonView.storyboard in Resources */,
 				CC0D6EE4247E0BBC00051A7F /* WeatherDetailViewController.xib in Resources */,
+				CC9754D324A2D49E00110DB0 /* PlanetView.storyboard in Resources */,
 				CC0D6EDE247E0B7900051A7F /* ForeignComparisonViewController.xib in Resources */,
 				CC8E5F5923E1F8D900893D8A /* Assets.xcassets in Resources */,
 			);
@@ -552,6 +571,7 @@
 				CCBB983C23F99B2E00E53D22 /* MainBundleInfo.swift in Sources */,
 				CCD1C5F323F9F316003B57B5 /* Logging.swift in Sources */,
 				CC0D6ED9247E0AF100051A7F /* WeatherViewController.swift in Sources */,
+				CC9754D524A2D51F00110DB0 /* ForeignPlanetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

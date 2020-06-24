@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gYV-yb-LLV">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="9h0-0t-8mb">
+            <objects>
+                <viewController id="gYV-yb-LLV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hvl-pk-RgW" customClass="ForeignPlanetView" customModule="FarAwayComparison" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="326" height="171"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlanetDiameter" translatesAutoresizingMaskIntoConstraints="NO" id="EZV-ld-ZhQ">
+                                <rect key="frame" x="127.5" y="0.0" width="171" height="171"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EZV-ld-ZhQ" secondAttribute="height" multiplier="1:1" id="XVk-VB-8QD"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3h-ya-lFu">
+                                <rect key="frame" x="193" y="55.5" width="40.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1G" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhC-z9-e1J">
+                                <rect key="frame" x="203" y="95.5" width="20" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EZV-ld-ZhQ" secondAttribute="trailing" id="69X-fO-Eqy"/>
+                            <constraint firstItem="EZV-ld-ZhQ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Hvl-pk-RgW" secondAttribute="top" id="6Wy-Ji-tUT"/>
+                            <constraint firstItem="bhC-z9-e1J" firstAttribute="centerX" secondItem="EZV-ld-ZhQ" secondAttribute="centerX" id="BUA-3K-q1n"/>
+                            <constraint firstItem="bhC-z9-e1J" firstAttribute="centerY" secondItem="EZV-ld-ZhQ" secondAttribute="centerY" constant="20" id="EDF-iR-TBM"/>
+                            <constraint firstItem="E3h-ya-lFu" firstAttribute="centerX" secondItem="EZV-ld-ZhQ" secondAttribute="centerX" id="HAU-Ib-0Pa"/>
+                            <constraint firstItem="EZV-ld-ZhQ" firstAttribute="centerY" secondItem="Hvl-pk-RgW" secondAttribute="centerY" priority="250" constant="-50" id="Img-dx-fd6"/>
+                            <constraint firstItem="EZV-ld-ZhQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hvl-pk-RgW" secondAttribute="leading" id="L1o-zL-lh1"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="EZV-ld-ZhQ" secondAttribute="bottom" id="SE4-qJ-4Ki"/>
+                            <constraint firstItem="EZV-ld-ZhQ" firstAttribute="centerX" secondItem="Hvl-pk-RgW" secondAttribute="centerX" priority="500" constant="50" id="Y3o-H4-q1g"/>
+                            <constraint firstItem="E3h-ya-lFu" firstAttribute="centerY" secondItem="EZV-ld-ZhQ" secondAttribute="centerY" constant="-20" id="jIL-Kp-P5w"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="diameterLabel" destination="E3h-ya-lFu" id="XRJ-5Q-gzN"/>
+                            <outlet property="earthGravityUnitsLabel" destination="bhC-z9-e1J" id="mJS-GP-eTF"/>
+                        </connections>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="326" height="171"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xxo-m6-IPK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="271" y="157"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="PlanetDiameter" width="338" height="334"/>
+    </resources>
+</document>

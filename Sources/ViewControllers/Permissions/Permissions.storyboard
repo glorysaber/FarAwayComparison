@@ -45,28 +45,16 @@
                                 <color key="textColor" red="0.90980392160000001" green="0.87058823529999996" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3rX-L1-Nkd">
-                                <rect key="frame" x="87" y="328" width="240" height="240"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="2qj-NR-QA1"/>
-                                    <constraint firstAttribute="width" constant="240" id="bZe-RQ-AXy"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="gaI-IK-eP4" kind="embed" id="FG4-wB-B9M"/>
-                                </connections>
-                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9Hu-UR-vyd"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="JDJ-zl-fR2" firstAttribute="leading" secondItem="9Hu-UR-vyd" secondAttribute="leading" constant="20" id="5M4-vO-bUQ"/>
                             <constraint firstItem="Tu9-SN-bEy" firstAttribute="leading" secondItem="9Hu-UR-vyd" secondAttribute="leading" constant="20" id="EuC-aM-f8J"/>
-                            <constraint firstItem="3rX-L1-Nkd" firstAttribute="centerY" secondItem="VID-s1-2QV" secondAttribute="centerY" id="N8E-jT-5El"/>
                             <constraint firstItem="9Hu-UR-vyd" firstAttribute="trailing" secondItem="Tu9-SN-bEy" secondAttribute="trailing" constant="20" id="Nna-eJ-RhV"/>
                             <constraint firstItem="JDJ-zl-fR2" firstAttribute="top" secondItem="9Hu-UR-vyd" secondAttribute="top" id="QTo-wY-FMU"/>
                             <constraint firstItem="4Rb-vO-lRD" firstAttribute="leading" secondItem="9Hu-UR-vyd" secondAttribute="leading" constant="20" id="UDc-iW-uFj"/>
                             <constraint firstItem="Tu9-SN-bEy" firstAttribute="top" secondItem="JDJ-zl-fR2" secondAttribute="bottom" constant="13" id="aVQ-gV-271"/>
-                            <constraint firstItem="3rX-L1-Nkd" firstAttribute="centerX" secondItem="VID-s1-2QV" secondAttribute="centerX" id="cnw-05-Gv2"/>
                             <constraint firstItem="4Rb-vO-lRD" firstAttribute="bottom" secondItem="9Hu-UR-vyd" secondAttribute="bottom" id="erE-Yb-j0l"/>
                             <constraint firstItem="9Hu-UR-vyd" firstAttribute="trailing" secondItem="JDJ-zl-fR2" secondAttribute="trailing" constant="20" id="ywd-zV-5wp"/>
                         </constraints>
@@ -79,14 +67,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EL8-Rk-gFU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-39.130434782608695" y="174.77678571428569"/>
-        </scene>
-        <!--WeatherView-->
-        <scene sceneID="6TD-6j-kmF">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="WeatherView" storyboardName="WeatherView" id="gaI-IK-eP4" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qnR-Bo-Ehc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="622" y="168"/>
         </scene>
     </scenes>
     <resources>
