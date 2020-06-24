@@ -10,7 +10,6 @@
 		CC0D6ED4247E0A6800051A7F /* MainWeatherViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D6ED3247E0A6800051A7F /* MainWeatherViewContainer.swift */; };
 		CC0D6ED9247E0AF100051A7F /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D6ED7247E0AF100051A7F /* WeatherViewController.swift */; };
 		CC0D6EDD247E0B7900051A7F /* ForeignComparisonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D6EDB247E0B7900051A7F /* ForeignComparisonViewController.swift */; };
-		CC0D6EDE247E0B7900051A7F /* ForeignComparisonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC0D6EDC247E0B7900051A7F /* ForeignComparisonViewController.xib */; };
 		CC0D6EE3247E0BBC00051A7F /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D6EE1247E0BBC00051A7F /* WeatherDetailViewController.swift */; };
 		CC0D6EE4247E0BBC00051A7F /* WeatherDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC0D6EE2247E0BBC00051A7F /* WeatherDetailViewController.xib */; };
 		CC0D6EE6247E0DB500051A7F /* Routers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D6EE5247E0DB500051A7F /* Routers.swift */; };
@@ -22,6 +21,7 @@
 		CC155A98247F0AE200830A83 /* Permissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC155A97247F0AE200830A83 /* Permissions.storyboard */; };
 		CC155A9A247F298A00830A83 /* PermissionsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC155A99247F298A00830A83 /* PermissionsRouter.swift */; };
 		CC187371240B1F2C009DD9F2 /* SWApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC187370240B1F2C009DD9F2 /* SWApiTests.swift */; };
+		CC2B6A0A24A3B1A000C64FCE /* PlanetViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2B6A0924A3B1A000C64FCE /* PlanetViewTests.swift */; };
 		CC31D99F240745A2002D68B7 /* MockJSONRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC31D99D24074576002D68B7 /* MockJSONRequest.swift */; };
 		CC60416123F1A2A50035705A /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC60416023F1A2A50035705A /* ApiClient.swift */; };
 		CC60416323F1A7EF0035705A /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC60416223F1A7EF0035705A /* WeatherAPI.swift */; };
@@ -74,7 +74,6 @@
 		CC0D6ED3247E0A6800051A7F /* MainWeatherViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWeatherViewContainer.swift; sourceTree = "<group>"; };
 		CC0D6ED7247E0AF100051A7F /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		CC0D6EDB247E0B7900051A7F /* ForeignComparisonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeignComparisonViewController.swift; sourceTree = "<group>"; };
-		CC0D6EDC247E0B7900051A7F /* ForeignComparisonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForeignComparisonViewController.xib; sourceTree = "<group>"; };
 		CC0D6EE1247E0BBC00051A7F /* WeatherDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewController.swift; sourceTree = "<group>"; };
 		CC0D6EE2247E0BBC00051A7F /* WeatherDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherDetailViewController.xib; sourceTree = "<group>"; };
 		CC0D6EE5247E0DB500051A7F /* Routers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routers.swift; sourceTree = "<group>"; };
@@ -86,6 +85,7 @@
 		CC155A97247F0AE200830A83 /* Permissions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Permissions.storyboard; sourceTree = "<group>"; };
 		CC155A99247F298A00830A83 /* PermissionsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsRouter.swift; sourceTree = "<group>"; };
 		CC187370240B1F2C009DD9F2 /* SWApiTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWApiTests.swift; sourceTree = "<group>"; };
+		CC2B6A0924A3B1A000C64FCE /* PlanetViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetViewTests.swift; sourceTree = "<group>"; };
 		CC31D99D24074576002D68B7 /* MockJSONRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJSONRequest.swift; sourceTree = "<group>"; };
 		CC60416023F1A2A50035705A /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		CC60416223F1A7EF0035705A /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
@@ -212,6 +212,30 @@
 			path = "Networking Model";
 			sourceTree = "<group>";
 		};
+		CC2B6A0624A3B14400C64FCE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CC2B6A0724A3B15800C64FCE /* ForeignComparison */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CC2B6A0724A3B15800C64FCE /* ForeignComparison */ = {
+			isa = PBXGroup;
+			children = (
+				CC2B6A0824A3B18200C64FCE /* Views */,
+			);
+			path = ForeignComparison;
+			sourceTree = "<group>";
+		};
+		CC2B6A0824A3B18200C64FCE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CC2B6A0924A3B1A000C64FCE /* PlanetViewTests.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CC48FEE323E756B600494BD7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +313,7 @@
 		CC8E5F6523E1F8DA00893D8A /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				CC2B6A0624A3B14400C64FCE /* ViewControllers */,
 				CC2B6A0424A3B0E500C64FCE /* Networking */,
 				CC8E5F6823E1F8DA00893D8A /* Info.plist */,
 			);
@@ -323,6 +348,7 @@
 		CC9754D624A2D52D00110DB0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CC9754D024A2D3FE00110DB0 /* ForeignComparisonView.storyboard */,
 				CCD88D6324A25CFD00456D0B /* ForeignComparisonView.swift */,
 				CC9754D424A2D51F00110DB0 /* ForeignPlanetView.swift */,
 				CC9754D224A2D49E00110DB0 /* PlanetView.storyboard */,
@@ -371,9 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				CC0D6EDB247E0B7900051A7F /* ForeignComparisonViewController.swift */,
-				CC9754D024A2D3FE00110DB0 /* ForeignComparisonView.storyboard */,
 				CC9754D624A2D52D00110DB0 /* Views */,
-				CC0D6EDC247E0B7900051A7F /* ForeignComparisonViewController.xib */,
 			);
 			path = ForeignComparison;
 			sourceTree = "<group>";
@@ -535,7 +559,6 @@
 				CC9754D124A2D3FE00110DB0 /* ForeignComparisonView.storyboard in Resources */,
 				CC0D6EE4247E0BBC00051A7F /* WeatherDetailViewController.xib in Resources */,
 				CC9754D324A2D49E00110DB0 /* PlanetView.storyboard in Resources */,
-				CC0D6EDE247E0B7900051A7F /* ForeignComparisonViewController.xib in Resources */,
 				CC8E5F5923E1F8D900893D8A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -598,6 +621,7 @@
 				CCBB983E23F9A49800E53D22 /* WeatherApiTests.swift in Sources */,
 				CC31D99F240745A2002D68B7 /* MockJSONRequest.swift in Sources */,
 				CC187371240B1F2C009DD9F2 /* SWApiTests.swift in Sources */,
+				CC2B6A0A24A3B1A000C64FCE /* PlanetViewTests.swift in Sources */,
 				CC8E5F8423E2158000893D8A /* AlamoFireTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -759,6 +783,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N3S44ULQD4;
 				INFOPLIST_FILE = Sources/Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -777,6 +802,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N3S44ULQD4;
 				INFOPLIST_FILE = Sources/Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -796,7 +822,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N3S44ULQD4;
 				INFOPLIST_FILE = UnitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -818,7 +844,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N3S44ULQD4;
 				INFOPLIST_FILE = UnitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
