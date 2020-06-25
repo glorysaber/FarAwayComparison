@@ -22,9 +22,22 @@ class ForeignComparisonViewControllerTests: XCTestCase {
 		XCTAssertEqual(sut.mainView, sut.view)
 	}
 
+	func test_viewDoesShow_population() {
+		let sut = makeSUT()
+		let model = makeForeignComparisonModel()
+
+		sut.show(viewModel: model)
+
+		XCTAssertEqual(model.population, sut.mainView.populationStack.text)
+	}
+
 	func makeSUT() -> ForeignComparisonViewController {
 		let sut = ForeignComparisonViewController.instantiate()
 		_ = sut.view
 		return sut
+	}
+
+	func makeForeignComparisonModel() -> ForeignComparisonViewModel {
+		ForeignComparisonViewModel(population: "11k")
 	}
 }

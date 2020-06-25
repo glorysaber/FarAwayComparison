@@ -10,7 +10,7 @@ import UIKit
 
 class WeatherViewController: UIViewController, WeatherView {
 
-	@IBOutlet weak var mainView: WeatherMainView!
+	@IBOutlet weak var mainView: WeatherViewBinder!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()

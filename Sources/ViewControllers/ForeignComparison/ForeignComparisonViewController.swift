@@ -8,14 +8,18 @@
 
 import UIKit
 
-class ForeignComparisonViewController: UIViewController {
-	@IBOutlet weak var mainView: ForeignComparisonView!
+class ForeignComparisonViewController: UIViewController, ForeignComparisonView {
+	@IBOutlet weak var mainView: ForeignComparisonViewBinder!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+
+	func show(viewModel: ForeignComparisonViewModel) {
+		mainView.populationStack.text = viewModel.population
+	}
 
 }
 

@@ -31,10 +31,10 @@ class ForeignComparisonViewTests: XCTestCase {
 	}
 
 
-	func makeSUT() -> ForeignComparisonView {
+	func makeSUT() -> ForeignComparisonViewBinder {
 		let vc = ForeignComparisonViewController.instantiate()
 
-		guard let viewSUT = vc.view as? ForeignComparisonView else {
+		guard let viewSUT = vc.view as? ForeignComparisonViewBinder else {
 			fatalError("View was not of expected type or did not exist")
 		}
 

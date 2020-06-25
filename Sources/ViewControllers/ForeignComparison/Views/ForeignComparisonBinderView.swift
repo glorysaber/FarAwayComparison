@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ForeignComparisonView: UIView {
+class ForeignComparisonBinderView: UIView {
 	@IBOutlet weak var rootVerticalStackView: UIStackView!
 
 	@IBOutlet weak var topHorizontalStackView: UIStackView!

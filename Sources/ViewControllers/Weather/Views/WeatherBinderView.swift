@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeatherMainView: UIView {
+class WeatherBinderView: UIView {
 	@IBOutlet weak var weatherDescriptionLabel: UILabel!
 	@IBOutlet weak var weatherBreifImage: UIImageView!
 
