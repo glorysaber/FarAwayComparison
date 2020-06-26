@@ -9,5 +9,22 @@
 import Foundation
 
 struct ForeignComparisonViewModel {
+	/// Population of the planet
 	let population: String
+	/// Gravity measured in earth gravity units
+	let planetEarthGComparison: String
+	/// Diameter of the planet
+	let planetDiameter: String
+	///	description of planet
+	let description: String
+	/// terrain type of planet
+	let terrainType: String
+	/// Earth Days equal to 1 year of the foreign planet
+	let earthYearEquivalence: String
+	/// Earth hours equivalent to 1 foreign day
+	let earthDayEquivalence: String
+	/// percentage of the surface which is covered by water
+	let waterCoverage: String
+	/// the type of atmoshphere E.G. Arid
+	let atmosphereType: String
 }

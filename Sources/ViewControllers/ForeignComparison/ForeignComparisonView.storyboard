@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9m2-eN-MYj">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -11,33 +13,33 @@
         <scene sceneID="Xab-RU-sW7">
             <objects>
                 <viewController storyboardIdentifier="ForeignComparisonViewController" id="9m2-eN-MYj" customClass="ForeignComparisonViewController" customModule="FarAwayComparison" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azE-Oj-eaF" customClass="ForeignComparisonViewBinder" customModule="FarAwayComparison" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azE-Oj-eaF" customClass="ForeignComparisonBinderView" customModule="FarAwayComparison" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sF2-2x-vuk">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Just Like Tatooine" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufJ-4A-TgR">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="41"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JDa-0h-0aq">
-                                        <rect key="frame" x="0.0" y="49" width="414" height="171.5"/>
+                                        <rect key="frame" x="0.0" y="136" width="414" height="128"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pxY-hw-43m">
-                                                <rect key="frame" x="0.0" y="0.0" width="168.5" height="171.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="168.5" height="128"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="6tv-jU-FRZ" customClass="ImageAndLabelView" customModule="FarAwayComparison" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="168.5" height="82"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="168.5" height="60"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="Landscape"/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="Desert"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="9em-KI-AWw" customClass="ImageAndLabelView" customModule="FarAwayComparison" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="90" width="168.5" height="81.5"/>
+                                                        <rect key="frame" x="0.0" y="68" width="168.5" height="60"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="person.3" catalog="system"/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="200k"/>
@@ -45,29 +47,65 @@
                                                     </view>
                                                 </subviews>
                                             </stackView>
-                                            <containerView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="200" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZd-h4-ftj" customClass="Planet">
-                                                <rect key="frame" x="176.5" y="0.0" width="237.5" height="171.5"/>
+                                            <view contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" insetsLayoutMarginsFromSafeArea="NO" id="DiL-cR-BtY" customClass="ForeignPlanetView" customModule="FarAwayComparison" customModuleProvider="target">
+                                                <rect key="frame" x="176.5" y="0.0" width="237.5" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlanetDiameter" translatesAutoresizingMaskIntoConstraints="NO" id="vKE-yQ-Flc">
+                                                        <rect key="frame" x="105" y="0.0" width="128" height="128"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="vKE-yQ-Flc" secondAttribute="height" multiplier="1:1" id="WEV-SZ-ejV"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upg-nO-Qsn">
+                                                        <rect key="frame" x="148.5" y="34" width="40.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1G" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjw-JJ-ePE">
+                                                        <rect key="frame" x="159" y="74" width="20" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <viewLayoutGuide key="safeArea" id="csj-qG-Xww"/>
+                                                <constraints>
+                                                    <constraint firstItem="vKE-yQ-Flc" firstAttribute="top" relation="greaterThanOrEqual" secondItem="DiL-cR-BtY" secondAttribute="top" id="1xN-OT-vAa"/>
+                                                    <constraint firstItem="Upg-nO-Qsn" firstAttribute="centerX" secondItem="vKE-yQ-Flc" secondAttribute="centerX" id="59u-sn-txF"/>
+                                                    <constraint firstItem="vKE-yQ-Flc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DiL-cR-BtY" secondAttribute="leading" id="895-7Y-gbM"/>
+                                                    <constraint firstItem="Upg-nO-Qsn" firstAttribute="centerY" secondItem="vKE-yQ-Flc" secondAttribute="centerY" constant="-20" id="8EM-Jr-tfz"/>
+                                                    <constraint firstItem="Kjw-JJ-ePE" firstAttribute="centerY" secondItem="vKE-yQ-Flc" secondAttribute="centerY" constant="20" id="DOZ-Ap-0wZ"/>
+                                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="vKE-yQ-Flc" secondAttribute="bottom" id="IvQ-7Z-78y"/>
+                                                    <constraint firstItem="vKE-yQ-Flc" firstAttribute="centerX" secondItem="DiL-cR-BtY" secondAttribute="centerX" priority="500" constant="50" id="RIl-EE-qfA"/>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vKE-yQ-Flc" secondAttribute="trailing" id="Zs6-Mq-A7p"/>
+                                                    <constraint firstItem="Kjw-JJ-ePE" firstAttribute="centerX" secondItem="vKE-yQ-Flc" secondAttribute="centerX" id="g9C-1G-BKW"/>
+                                                    <constraint firstItem="vKE-yQ-Flc" firstAttribute="centerY" secondItem="DiL-cR-BtY" secondAttribute="centerY" priority="250" constant="-50" id="vLg-4i-ki5"/>
+                                                </constraints>
                                                 <connections>
-                                                    <segue destination="dYP-Br-oaU" kind="embed" id="dID-ka-kuW"/>
+                                                    <outlet property="diameterLabel" destination="Upg-nO-Qsn" id="GZa-9P-ZcU"/>
+                                                    <outlet property="earthGravityUnitsLabel" destination="Kjw-JJ-ePE" id="Zhs-Nu-h7v"/>
                                                 </connections>
-                                            </containerView>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vGm-DC-y6R">
-                                        <rect key="frame" x="0.0" y="228.5" width="414" height="171.5"/>
+                                        <rect key="frame" x="0.0" y="272" width="414" height="128"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5to-3g-40L">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="eIp-kT-v7f" customClass="ImageAndLabelView" customModule="FarAwayComparison" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="203" height="82"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="203" height="60"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="304 Days"/>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="PlanetYearlyRotation"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="NjW-yE-3nE" customClass="ImageAndLabelView" customModule="FarAwayComparison" customModuleProvider="target">
-                                                        <rect key="frame" x="211" y="0.0" width="203" height="82"/>
+                                                        <rect key="frame" x="211" y="0.0" width="203" height="60"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="Water"/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="1%"/>
@@ -76,17 +114,17 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Wu7-cx-tRA">
-                                                <rect key="frame" x="0.0" y="90" width="414" height="81.5"/>
+                                                <rect key="frame" x="0.0" y="68" width="414" height="60"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="a5t-Lg-RE2" customClass="ImageAndLabelView" customModule="FarAwayComparison" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="203" height="81.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="203" height="60"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="PlanetRotation"/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="23 Hours"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="cJf-nV-60n" customClass="ImageAndLabelView" customModule="FarAwayComparison" customModuleProvider="target">
-                                                        <rect key="frame" x="211" y="0.0" width="203" height="81.5"/>
+                                                        <rect key="frame" x="211" y="0.0" width="203" height="60"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="wind" catalog="system"/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="Arid"/>
@@ -114,11 +152,11 @@
                             <outlet property="atmosphereStack" destination="cJf-nV-60n" id="aFi-rD-2q4"/>
                             <outlet property="bottomHorizontalStack" destination="Wu7-cx-tRA" id="HD8-oR-YSs"/>
                             <outlet property="bottomVerticalStack" destination="vGm-DC-y6R" id="w4C-ZE-WF3"/>
-                            <outlet property="comaprisonLabel" destination="ufJ-4A-TgR" id="XJy-ID-UyJ"/>
+                            <outlet property="comparisonLabel" destination="ufJ-4A-TgR" id="XJy-ID-UyJ"/>
                             <outlet property="earthDayEquivalenceStack" destination="a5t-Lg-RE2" id="dWT-YS-5g0"/>
                             <outlet property="earthYearEquivalenceStack" destination="eIp-kT-v7f" id="wA1-OW-xWf"/>
                             <outlet property="midHorizontalStack" destination="5to-3g-40L" id="KQt-fT-8z6"/>
-                            <outlet property="planetContainerView" destination="SZd-h4-ftj" id="rZB-fX-24u"/>
+                            <outlet property="planetContainerView" destination="DiL-cR-BtY" id="Wal-ou-nb2"/>
                             <outlet property="populationStack" destination="9em-KI-AWw" id="d5D-FV-FMB"/>
                             <outlet property="rootVerticalStackView" destination="sF2-2x-vuk" id="qpN-Yg-rsA"/>
                             <outlet property="terrainView" destination="6tv-jU-FRZ" id="x5Q-Pr-ar0"/>
@@ -139,17 +177,30 @@
             </objects>
             <point key="canvasLocation" x="295.6521739130435" y="202.90178571428569"/>
         </scene>
-        <!--PlanetView-->
-        <scene sceneID="JiQ-8B-oos">
-            <objects>
-                <viewControllerPlaceholder storyboardName="PlanetView" id="dYP-Br-oaU" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iFW-NP-Lbq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="807" y="203"/>
-        </scene>
     </scenes>
+    <designables>
+        <designable name="6tv-jU-FRZ">
+            <size key="intrinsicContentSize" width="168.5" height="70.5"/>
+        </designable>
+        <designable name="9em-KI-AWw">
+            <size key="intrinsicContentSize" width="99.5" height="38"/>
+        </designable>
+        <designable name="NjW-yE-3nE">
+            <size key="intrinsicContentSize" width="143" height="53.5"/>
+        </designable>
+        <designable name="a5t-Lg-RE2">
+            <size key="intrinsicContentSize" width="208.5" height="133.5"/>
+        </designable>
+        <designable name="cJf-nV-60n">
+            <size key="intrinsicContentSize" width="76.5" height="37.5"/>
+        </designable>
+        <designable name="eIp-kT-v7f">
+            <size key="intrinsicContentSize" width="178" height="90.5"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Landscape" width="93" height="50"/>
+        <image name="PlanetDiameter" width="338" height="334"/>
         <image name="PlanetRotation" width="114" height="113"/>
         <image name="PlanetYearlyRotation" width="81" height="70"/>
         <image name="Water" width="96" height="33"/>

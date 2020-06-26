@@ -30,10 +30,10 @@ class WeatherViewTests: XCTestCase {
 	}
 
 
-	func makeSUT() -> WeatherViewBinder {
+	func makeSUT() -> WeatherBinderView {
 		vc = WeatherViewController.instantiate()
 
-		guard let viewSUT = vc?.view as? WeatherViewBinder else {
+		guard let viewSUT = vc?.view as? WeatherBinderView else {
 			fatalError("View was not of expected type or did not exist")
 		}
 

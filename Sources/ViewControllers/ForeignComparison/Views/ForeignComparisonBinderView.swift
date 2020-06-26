@@ -17,7 +17,7 @@ class ForeignComparisonBinderView: UIView {
 
 	@IBOutlet weak var verticalStackStandardInfo: UIStackView!
 
-	@IBOutlet weak var comaprisonLabel: UILabel!
+	@IBOutlet weak var comparisonLabel: UILabel!
 
 	@IBOutlet weak var terrainView: ImageAndLabelView!
 
