@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CC06D92724A57B8D00A7AA8C /* MainWeatherViewContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC06D92624A57B8D00A7AA8C /* MainWeatherViewContainerTests.swift */; };
 		CC0A160A24A57EF20048701D /* TermsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0A160924A57EF20048701D /* TermsViewControllerTests.swift */; };
-		CC0A160C24A580780048701D /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0A160B24A580780048701D /* TermsView.swift */; };
 		CC0A160E24A63CB90048701D /* PermissionsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0A160D24A63CB90048701D /* PermissionsViewControllerTests.swift */; };
 		CC0A161224A640290048701D /* PermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0A161124A640290048701D /* PermissionsView.swift */; };
 		CC0A161424A64EE10048701D /* Terms.strings in Resources */ = {isa = PBXBuildFile; fileRef = CC0A161324A64EE10048701D /* Terms.strings */; };
@@ -29,6 +28,9 @@
 		CC2500DE24A3F5CB00165CEA /* WeatherViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2500DD24A3F5CB00165CEA /* WeatherViewControllerTests.swift */; };
 		CC2500E024A3FC1D00165CEA /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2500DF24A3FC1D00165CEA /* WeatherViewModel.swift */; };
 		CC2500E224A3FC3800165CEA /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2500E124A3FC3800165CEA /* WeatherView.swift */; };
+		CC2806BB24A675E500ED7DA1 /* TermsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2806BA24A675E500ED7DA1 /* TermsPresenter.swift */; };
+		CC2806BF24A6761F00ED7DA1 /* TermsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2806BE24A6761F00ED7DA1 /* TermsPresenterTests.swift */; };
+		CC2806C124A6786E00ED7DA1 /* FetchTermsTextUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2806C024A6786E00ED7DA1 /* FetchTermsTextUseCase.swift */; };
 		CC31D99F240745A2002D68B7 /* MockJSONRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC31D99D24074576002D68B7 /* MockJSONRequest.swift */; };
 		CC3FE12D24A53B8F0030A74B /* PlanetInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3FE12C24A53B8F0030A74B /* PlanetInfoView.swift */; };
 		CC60416123F1A2A50035705A /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC60416023F1A2A50035705A /* ApiClient.swift */; };
@@ -81,7 +83,6 @@
 /* Begin PBXFileReference section */
 		CC06D92624A57B8D00A7AA8C /* MainWeatherViewContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWeatherViewContainerTests.swift; sourceTree = "<group>"; };
 		CC0A160924A57EF20048701D /* TermsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewControllerTests.swift; sourceTree = "<group>"; };
-		CC0A160B24A580780048701D /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
 		CC0A160D24A63CB90048701D /* PermissionsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsViewControllerTests.swift; sourceTree = "<group>"; };
 		CC0A161124A640290048701D /* PermissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsView.swift; sourceTree = "<group>"; };
 		CC0A161324A64EE10048701D /* Terms.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Terms.strings; sourceTree = "<group>"; };
@@ -101,6 +102,9 @@
 		CC2500DD24A3F5CB00165CEA /* WeatherViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewControllerTests.swift; sourceTree = "<group>"; };
 		CC2500DF24A3FC1D00165CEA /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		CC2500E124A3FC3800165CEA /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		CC2806BA24A675E500ED7DA1 /* TermsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsPresenter.swift; sourceTree = "<group>"; };
+		CC2806BE24A6761F00ED7DA1 /* TermsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsPresenterTests.swift; sourceTree = "<group>"; };
+		CC2806C024A6786E00ED7DA1 /* FetchTermsTextUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTermsTextUseCase.swift; sourceTree = "<group>"; };
 		CC31D99D24074576002D68B7 /* MockJSONRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJSONRequest.swift; sourceTree = "<group>"; };
 		CC3FE12C24A53B8F0030A74B /* PlanetInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetInfoView.swift; sourceTree = "<group>"; };
 		CC60416023F1A2A50035705A /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				CC0A160924A57EF20048701D /* TermsViewControllerTests.swift */,
+				CC2806BE24A6761F00ED7DA1 /* TermsPresenterTests.swift */,
 			);
 			path = Terms;
 			sourceTree = "<group>";
@@ -345,8 +350,9 @@
 			isa = PBXGroup;
 			children = (
 				CC8E5F5323E1F8D900893D8A /* TermsViewController.swift */,
-				CC0A160B24A580780048701D /* TermsView.swift */,
 				CC155A95247F0AB700830A83 /* Terms.storyboard */,
+				CC2806BA24A675E500ED7DA1 /* TermsPresenter.swift */,
+				CC2806C024A6786E00ED7DA1 /* FetchTermsTextUseCase.swift */,
 			);
 			path = Terms;
 			sourceTree = "<group>";
@@ -578,7 +584,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Stephen Kac";
 				TargetAttributes = {
 					CC8E5F4B23E1F8D900893D8A = {
@@ -674,6 +680,8 @@
 				CC2500E024A3FC1D00165CEA /* WeatherViewModel.swift in Sources */,
 				CC3FE12D24A53B8F0030A74B /* PlanetInfoView.swift in Sources */,
 				CC2500E224A3FC3800165CEA /* WeatherView.swift in Sources */,
+				CC2806BB24A675E500ED7DA1 /* TermsPresenter.swift in Sources */,
+				CC2806C124A6786E00ED7DA1 /* FetchTermsTextUseCase.swift in Sources */,
 				CC60416323F1A7EF0035705A /* WeatherAPI.swift in Sources */,
 				CCC31A2E248F024700D499E4 /* UIViewControllerPresenter.swift in Sources */,
 				CC60416123F1A2A50035705A /* ApiClient.swift in Sources */,
@@ -683,7 +691,6 @@
 				CCBB983C23F99B2E00E53D22 /* MainBundleInfo.swift in Sources */,
 				CCD1C5F323F9F316003B57B5 /* Logging.swift in Sources */,
 				CC0D6ED9247E0AF100051A7F /* WeatherViewController.swift in Sources */,
-				CC0A160C24A580780048701D /* TermsView.swift in Sources */,
 				CC9754D524A2D51F00110DB0 /* ForeignPlanetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -698,6 +705,7 @@
 				CC06D92724A57B8D00A7AA8C /* MainWeatherViewContainerTests.swift in Sources */,
 				CC0A160A24A57EF20048701D /* TermsViewControllerTests.swift in Sources */,
 				CC1D192724A3E78A00B1DC21 /* PlanetInfoViewControllerTests.swift in Sources */,
+				CC2806BF24A6761F00ED7DA1 /* TermsPresenterTests.swift in Sources */,
 				CC92E1C724A3E116007A4925 /* PlanetInfoViewTests.swift in Sources */,
 				CC2500DE24A3F5CB00165CEA /* WeatherViewControllerTests.swift in Sources */,
 				CC0A160E24A63CB90048701D /* PermissionsViewControllerTests.swift in Sources */,
@@ -768,6 +776,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -828,6 +837,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

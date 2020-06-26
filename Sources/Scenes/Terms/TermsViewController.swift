@@ -39,8 +39,8 @@ class TermsViewController: UIViewController {
   
 }
 
-extension TermsViewController: TermsView {
-	func show(terms: String) {
+extension TermsViewController: TermsPresenterOutput {
+	func present(terms: String) {
 		termsTextView.text = terms
 	}
 }

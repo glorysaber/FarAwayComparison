@@ -24,7 +24,7 @@ class TermsViewControllerTests: XCTestCase {
 		let sut = makeSUT()
 		let terms = "Terms Test"
 
-		sut.show(terms: terms)
+		sut.present(terms: terms)
 
 		XCTAssertEqual(terms, sut.termsTextView.text)
 	}
