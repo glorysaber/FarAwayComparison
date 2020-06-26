@@ -17,7 +17,7 @@ protocol TermsViewControllerDelegate: class {
 
 
 class TermsViewController: UIViewController {
-  
+
   weak var delegate: TermsViewControllerDelegate?
   
   // MARK: - IBoutlets
@@ -37,6 +37,12 @@ class TermsViewController: UIViewController {
 		delegate?.termsViewControllerDidAgree()
   }
   
+}
+
+extension TermsViewController: TermsView {
+	func show(terms: String) {
+		termsTextView.text = terms
+	}
 }
 
 extension TermsViewController: Storyboarded {

@@ -7,27 +7,59 @@
 //
 
 import XCTest
+@testable import FarAwayComparison
 
 class TermsViewControllerTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+	func test_show_terms() {
+		let sut = makeSUT()
+		let terms = "Terms Test"
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+		sut.show(terms: terms)
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+		XCTAssertEqual(terms, sut.termsTextView.text)
+	}
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+	func test_VC_instatiation_performance() throws {
+		self.measure {
+			_ = makeSUT()
+		}
+	}
+
+	func test_delegate_didAgree() {
+		let sut = makeSUT()
+		var didAgree = false
+
+		let delegate = SUTDelegate() {
+			didAgree = true
+		}
+
+		sut.delegate = delegate
+
+		sut.iAgreeButtonPressed(UIButton())
+
+		XCTAssert(didAgree)
+	}
+
+	// MARK: - Helpers
+
+	private func makeSUT() -> TermsViewController {
+		let vc = TermsViewController.instantiate()
+		_ = vc.view
+		return vc
+	}
+
+
+	private class SUTDelegate: TermsViewControllerDelegate {
+		let closure: ()->Void
+
+		func termsViewControllerDidAgree() {
+			closure()
+		}
+
+		init(_ closure: @escaping ()->Void)  {
+			self.closure = closure
+		}
+	}
 
 }
