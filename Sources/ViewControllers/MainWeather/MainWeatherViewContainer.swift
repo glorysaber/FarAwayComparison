@@ -10,4 +10,19 @@ import UIKit
 
 class MainWeatherViewContainer: UIViewController {
 
+	@IBOutlet weak var stackView: UIStackView!
+
+	override func viewDidLoad() {
+		let weatherViewController = WeatherViewController.instantiate()
+		addChild(weatherViewController)
+		stackView.addArrangedSubview(weatherViewController.view)
+
+		let planetInfoViewController = WeatherViewController.instantiate()
+		addChild(planetInfoViewController)
+		stackView.addArrangedSubview(planetInfoViewController.view)
+	}
+}
+
+extension MainWeatherViewContainer: Storyboarded {
+	static var storyboardName: String = "Weather"
 }

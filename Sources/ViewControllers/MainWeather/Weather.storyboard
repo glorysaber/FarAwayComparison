@@ -11,30 +11,13 @@
         <!--Main Weather View Controller-->
         <scene sceneID="3wg-6D-4qd">
             <objects>
-                <viewController title="Main Weather View Controller" id="Wb6-na-Pe1" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainWeatherViewContainer" title="Main Weather View Controller" id="Wb6-na-Pe1" customClass="MainWeatherViewContainer" customModule="FarAwayComparison" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Snx-Kc-DYi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="RGl-Fb-82U">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="REn-Mi-gvc">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
-                                        <connections>
-                                            <segue destination="w33-4q-gBa" kind="embed" id="i4d-pH-nyM"/>
-                                        </connections>
-                                    </containerView>
-                                    <containerView hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7qm-uW-hRz" userLabel="CurrentWeatherDetail">
-                                        <rect key="frame" x="0.0" y="333.5" width="375" height="0.0"/>
-                                    </containerView>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jmx-x4-2U1">
-                                        <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
-                                        <connections>
-                                            <segue destination="G7y-uF-ojC" kind="embed" id="WYt-1Z-vEq"/>
-                                        </connections>
-                                    </containerView>
-                                </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="E40-mP-Joi"/>
@@ -46,26 +29,13 @@
                             <constraint firstItem="RGl-Fb-82U" firstAttribute="leading" secondItem="E40-mP-Joi" secondAttribute="leading" id="rbJ-AW-Xsr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="stackView" destination="RGl-Fb-82U" id="hV5-rf-Otg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VM3-3m-1k5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1202" y="22"/>
-        </scene>
-        <!--WeatherView-->
-        <scene sceneID="mty-9g-uGT">
-            <objects>
-                <viewControllerPlaceholder storyboardName="WeatherView" id="w33-4q-gBa" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o6l-ft-8eN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-401" y="-215"/>
-        </scene>
-        <!--PlanetInfoView-->
-        <scene sceneID="0jh-FV-GlE">
-            <objects>
-                <viewControllerPlaceholder storyboardName="PlanetInfoView" id="G7y-uF-ojC" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hd3-3H-0z9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-391" y="151"/>
         </scene>
     </scenes>
 </document>

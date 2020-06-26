@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC06D92724A57B8D00A7AA8C /* MainWeatherViewContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC06D92624A57B8D00A7AA8C /* MainWeatherViewContainerTests.swift */; };
+		CC0A160A24A57EF20048701D /* TermsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0A160924A57EF20048701D /* TermsViewControllerTests.swift */; };
 		CC0D6ED4247E0A6800051A7F /* MainWeatherViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D6ED3247E0A6800051A7F /* MainWeatherViewContainer.swift */; };
 		CC0D6ED9247E0AF100051A7F /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D6ED7247E0AF100051A7F /* WeatherViewController.swift */; };
 		CC0D6EDD247E0B7900051A7F /* PlanetInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D6EDB247E0B7900051A7F /* PlanetInfoViewController.swift */; };
@@ -75,6 +77,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC06D92624A57B8D00A7AA8C /* MainWeatherViewContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWeatherViewContainerTests.swift; sourceTree = "<group>"; };
+		CC0A160924A57EF20048701D /* TermsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewControllerTests.swift; sourceTree = "<group>"; };
 		CC0D6ED3247E0A6800051A7F /* MainWeatherViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWeatherViewContainer.swift; sourceTree = "<group>"; };
 		CC0D6ED7247E0AF100051A7F /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		CC0D6EDB247E0B7900051A7F /* PlanetInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetInfoViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +162,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC06D92524A57B5600A7AA8C /* MainWeather */ = {
+			isa = PBXGroup;
+			children = (
+				CC06D92624A57B8D00A7AA8C /* MainWeatherViewContainerTests.swift */,
+			);
+			path = MainWeather;
+			sourceTree = "<group>";
+		};
+		CC0A160824A57EDE0048701D /* Terms */ = {
+			isa = PBXGroup;
+			children = (
+				CC0A160924A57EF20048701D /* TermsViewControllerTests.swift */,
+			);
+			path = Terms;
+			sourceTree = "<group>";
+		};
 		CC0D6ECD247E098500051A7F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +268,8 @@
 		CC2B6A0624A3B14400C64FCE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CC0A160824A57EDE0048701D /* Terms */,
+				CC06D92524A57B5600A7AA8C /* MainWeather */,
 				CC1D192824A3F38000B1DC21 /* Weather */,
 				CC2B6A0724A3B15800C64FCE /* ForeignComparison */,
 			);
@@ -650,6 +672,8 @@
 				CCBB983E23F9A49800E53D22 /* WeatherApiTests.swift in Sources */,
 				CC31D99F240745A2002D68B7 /* MockJSONRequest.swift in Sources */,
 				CC187371240B1F2C009DD9F2 /* SWApiTests.swift in Sources */,
+				CC06D92724A57B8D00A7AA8C /* MainWeatherViewContainerTests.swift in Sources */,
+				CC0A160A24A57EF20048701D /* TermsViewControllerTests.swift in Sources */,
 				CC1D192724A3E78A00B1DC21 /* PLanetInfoViewControllerTests.swift in Sources */,
 				CC92E1C724A3E116007A4925 /* PlanetInfoViewTests.swift in Sources */,
 				CC2500DE24A3F5CB00165CEA /* WeatherViewControllerTests.swift in Sources */,
