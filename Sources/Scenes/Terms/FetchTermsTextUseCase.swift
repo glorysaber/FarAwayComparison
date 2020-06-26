@@ -20,7 +20,7 @@ final class FetchTermsTextUseCase {
 	}
 
 	func fetch() {
-		let termsString = NSLocalizedString("terms", tableName: "Terms", bundle: .main, value: "", comment: "")
+		let termsString = NSLocalizedString("Terms", tableName: "Terms", comment: "The terms for the user to accept")
 		output.didFetch(termsString)
 	}
 }

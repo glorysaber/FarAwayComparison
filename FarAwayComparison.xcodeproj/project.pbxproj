@@ -31,6 +31,8 @@
 		CC2806BB24A675E500ED7DA1 /* TermsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2806BA24A675E500ED7DA1 /* TermsPresenter.swift */; };
 		CC2806BF24A6761F00ED7DA1 /* TermsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2806BE24A6761F00ED7DA1 /* TermsPresenterTests.swift */; };
 		CC2806C124A6786E00ED7DA1 /* FetchTermsTextUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2806C024A6786E00ED7DA1 /* FetchTermsTextUseCase.swift */; };
+		CC2806C324A6832300ED7DA1 /* FetchTermsTextUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2806C224A6832300ED7DA1 /* FetchTermsTextUseCaseTests.swift */; };
+		CC2806C624A68ACC00ED7DA1 /* TermsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2806C524A68ACC00ED7DA1 /* TermsComposer.swift */; };
 		CC31D99F240745A2002D68B7 /* MockJSONRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC31D99D24074576002D68B7 /* MockJSONRequest.swift */; };
 		CC3FE12D24A53B8F0030A74B /* PlanetInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3FE12C24A53B8F0030A74B /* PlanetInfoView.swift */; };
 		CC60416123F1A2A50035705A /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC60416023F1A2A50035705A /* ApiClient.swift */; };
@@ -105,6 +107,8 @@
 		CC2806BA24A675E500ED7DA1 /* TermsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsPresenter.swift; sourceTree = "<group>"; };
 		CC2806BE24A6761F00ED7DA1 /* TermsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsPresenterTests.swift; sourceTree = "<group>"; };
 		CC2806C024A6786E00ED7DA1 /* FetchTermsTextUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTermsTextUseCase.swift; sourceTree = "<group>"; };
+		CC2806C224A6832300ED7DA1 /* FetchTermsTextUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTermsTextUseCaseTests.swift; sourceTree = "<group>"; };
+		CC2806C524A68ACC00ED7DA1 /* TermsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsComposer.swift; sourceTree = "<group>"; };
 		CC31D99D24074576002D68B7 /* MockJSONRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJSONRequest.swift; sourceTree = "<group>"; };
 		CC3FE12C24A53B8F0030A74B /* PlanetInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetInfoView.swift; sourceTree = "<group>"; };
 		CC60416023F1A2A50035705A /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 			children = (
 				CC0A160924A57EF20048701D /* TermsViewControllerTests.swift */,
 				CC2806BE24A6761F00ED7DA1 /* TermsPresenterTests.swift */,
+				CC2806C224A6832300ED7DA1 /* FetchTermsTextUseCaseTests.swift */,
 			);
 			path = Terms;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 				CC155A95247F0AB700830A83 /* Terms.storyboard */,
 				CC2806BA24A675E500ED7DA1 /* TermsPresenter.swift */,
 				CC2806C024A6786E00ED7DA1 /* FetchTermsTextUseCase.swift */,
+				CC2806C524A68ACC00ED7DA1 /* TermsComposer.swift */,
 			);
 			path = Terms;
 			sourceTree = "<group>";
@@ -662,6 +668,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCC31A27248EF3EA00D499E4 /* UIViewController+FullScreen.swift in Sources */,
+				CC2806C624A68ACC00ED7DA1 /* TermsComposer.swift in Sources */,
 				CC0D6EE6247E0DB500051A7F /* Routers.swift in Sources */,
 				CCC31A1E248EF12F00D499E4 /* RootViewController.swift in Sources */,
 				CC8E5F5423E1F8D900893D8A /* TermsViewController.swift in Sources */,
@@ -706,6 +713,7 @@
 				CC0A160A24A57EF20048701D /* TermsViewControllerTests.swift in Sources */,
 				CC1D192724A3E78A00B1DC21 /* PlanetInfoViewControllerTests.swift in Sources */,
 				CC2806BF24A6761F00ED7DA1 /* TermsPresenterTests.swift in Sources */,
+				CC2806C324A6832300ED7DA1 /* FetchTermsTextUseCaseTests.swift in Sources */,
 				CC92E1C724A3E116007A4925 /* PlanetInfoViewTests.swift in Sources */,
 				CC2500DE24A3F5CB00165CEA /* WeatherViewControllerTests.swift in Sources */,
 				CC0A160E24A63CB90048701D /* PermissionsViewControllerTests.swift in Sources */,

@@ -32,23 +32,18 @@ class TermsViewControllerTests: XCTestCase {
 	func test_delegate_didAgree() {
 		let sut = makeSUT()
 
-		let delegate = SUTDelegate()
-
-		sut.delegate = delegate
-
-		XCTAssertEqual(delegate.didAgreeCount, 0)
-
-		sut.iAgreeButtonPressed()
-		XCTAssertEqual(delegate.didAgreeCount, 1)
-
-		sut.iAgreeButtonPressed()
-		XCTAssertEqual(delegate.didAgreeCount, 2)
-	}
-
-	func test_VC_instatiation_performance() throws {
-		self.measure {
-			_ = makeSUT()
+		var didAgreeCount = 0
+		sut.userTappedOnAgree = {
+			didAgreeCount += 1
 		}
+
+		XCTAssertEqual(didAgreeCount, 0)
+
+		sut.iAgreeButtonPressed()
+		XCTAssertEqual(didAgreeCount, 1)
+
+		sut.iAgreeButtonPressed()
+		XCTAssertEqual(didAgreeCount, 2)
 	}
 
 	// MARK: - Helpers
@@ -57,15 +52,6 @@ class TermsViewControllerTests: XCTestCase {
 		let vc = TermsViewController.instantiate()
 		_ = vc.view
 		return vc
-	}
-
-
-	private class SUTDelegate: TermsViewControllerDelegate {
-		var didAgreeCount = 0
-
-		func termsViewControllerDidAgree() {
-			didAgreeCount += 1
-		}
 	}
 
 }

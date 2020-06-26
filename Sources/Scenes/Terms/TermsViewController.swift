@@ -8,17 +8,12 @@
 
 import UIKit
 
-// MARK: - TermsViewController -
-
-protocol TermsViewControllerDelegate: class {
-
-	func termsViewControllerDidAgree()
-}
-
+// MARK: - TermsViewController
 
 class TermsViewController: UIViewController {
 
-  weak var delegate: TermsViewControllerDelegate?
+  var userTappedOnAgree: (() -> Void)?
+	var reloadData: (() -> Void)?
   
   // MARK: - IBoutlets
   @IBOutlet weak var termsTextView: UITextView!
@@ -28,13 +23,15 @@ class TermsViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+
+
+		reloadData?()
   }
   
   // MARK: - IBActions
   
   @IBAction func iAgreeButtonPressed() {
-		delegate?.termsViewControllerDidAgree()
+		userTappedOnAgree?()
   }
   
 }

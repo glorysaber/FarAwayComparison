@@ -25,10 +25,7 @@ class MainWeatherViewContainerTests: XCTestCase {
 	}
 
 	func testPerformance() throws {
-		// This is an example of a performance test case.
-		self.measure {
-			_ = makeSUT()
-		}
+
 	}
 
 	// Helpers
