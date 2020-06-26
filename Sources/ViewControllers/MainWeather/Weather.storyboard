@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,9 +27,6 @@
                                     </containerView>
                                     <containerView hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7qm-uW-hRz" userLabel="CurrentWeatherDetail">
                                         <rect key="frame" x="0.0" y="333.5" width="375" height="0.0"/>
-                                        <connections>
-                                            <segue destination="gak-JY-3wR" kind="embed" id="hWG-bL-3e7"/>
-                                        </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jmx-x4-2U1">
                                         <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
@@ -63,21 +59,6 @@
             </objects>
             <point key="canvasLocation" x="-401" y="-215"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="nEP-B3-aej">
-            <objects>
-                <viewController id="gak-JY-3wR" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="14o-Et-528">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="SAT-aL-Hxa"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kHb-J1-1am" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-463" y="20"/>
-        </scene>
         <!--PlanetInfoView-->
         <scene sceneID="0jh-FV-GlE">
             <objects>
@@ -87,9 +68,4 @@
             <point key="canvasLocation" x="-391" y="151"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
