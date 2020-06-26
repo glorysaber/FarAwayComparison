@@ -50,14 +50,24 @@ class PermissionsViewControllerTests: XCTestCase {
 		XCTAssertEqual(sut.allowLocationButton.titleLabel?.text, model.locationButtonTitle)
 		XCTAssertEqual(sut.locationRequireExplanationLabel.text, model.locationExplanation)
 	}
+
+	func test_doesCall_reloadData_whenViewLoads() {
+		var calls = 0
+		_ = makeSUT() {
+			calls += 1
+		}
+
+		XCTAssertEqual(calls, 1)
+	}
 }
 
 private extension PermissionsViewControllerTests {
 
 	//  MARK: - Helpers
 
-	private func makeSUT() -> PermissionsViewController {
+	private func makeSUT(reloadData: (() -> Void)? = nil) -> PermissionsViewController {
 		let sut = PermissionsViewController.instantiate()
+		sut.reloadData = reloadData
 		_ = sut.view
 		return sut
 	}

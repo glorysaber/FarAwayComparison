@@ -12,6 +12,7 @@ import UIKit
 class PermissionsViewController: UIViewController {
 
 	var allowPermissionsRequested: (() -> Void)?
+	var reloadData: (() -> Void)?
   
   // MARK: - IBOutlets
   @IBOutlet weak var locationRequireExplanationLabel: UILabel!
@@ -20,8 +21,7 @@ class PermissionsViewController: UIViewController {
   // MARK: - View events
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Do any additional setup after loading the view.
+		reloadData?()
   }
   
   // MARK: - IBActions
