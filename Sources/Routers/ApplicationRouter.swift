@@ -30,6 +30,9 @@ class ApplicationRouter: Routers {
 
 extension ApplicationRouter: RootViewControllerDelegate {
 	func rootViewControllerDidMoveToParent() {
-		rootViewController?.present(TermsViewController.instantiate(), animated: false)
+		let navigationController = UINavigationController()
+		navigationController.navigationBar.isHidden = true
+		navigationController.pushViewController(TermsViewController.instantiate(), animated: false)
+		rootViewController?.addFullScreen(childViewController: navigationController)
 	}
 }
