@@ -1,5 +1,5 @@
 //
-//  ForeignComparisonView.swift
+//  PlanetInfoView.swift
 //  FarAwayComparison
 //
 //  Created by Stephen Kac on 6/23/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ForeignComparisonBinderView: UIView {
+class PlanetInfoBinderView: UIView {
 	@IBOutlet weak var rootVerticalStackView: UIStackView!
 
 	@IBOutlet weak var topHorizontalStackView: UIStackView!

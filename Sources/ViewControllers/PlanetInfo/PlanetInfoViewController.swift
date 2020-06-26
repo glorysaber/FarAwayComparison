@@ -1,5 +1,5 @@
 //
-//  ForeignComparisonViewController.swift
+//  PlanetInfoViewController.swift
 //  FarAwayComparison
 //
 //  Created by Stephen Kac on 5/26/20.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ForeignComparisonViewController: UIViewController, ForeignComparisonView {
-	@IBOutlet weak var mainView: ForeignComparisonBinderView!
+class PlanetInfoViewController: UIViewController, PlanetInfoView {
+	@IBOutlet weak var mainView: PlanetInfoBinderView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -17,7 +17,7 @@ class ForeignComparisonViewController: UIViewController, ForeignComparisonView {
 		// Do any additional setup after loading the view.
 	}
 
-	func show(viewModel: ForeignComparisonViewModel) {
+	func show(viewModel: PlanetInfoViewModel) {
 		mainView.populationStack.text = viewModel.population
 		mainView.atmosphereStack.text = viewModel.atmosphereType
 		mainView.comparisonLabel.text = viewModel.description
@@ -31,6 +31,6 @@ class ForeignComparisonViewController: UIViewController, ForeignComparisonView {
 
 }
 
-extension ForeignComparisonViewController: Storyboarded {
-	static let storyboardName: String = "ForeignComparisonView"
+extension PlanetInfoViewController: Storyboarded {
+	static let storyboardName: String = "PlanetInfoView"
 }

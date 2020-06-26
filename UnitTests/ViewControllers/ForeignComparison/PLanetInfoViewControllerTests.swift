@@ -1,5 +1,5 @@
 //
-//  ForeignComparisonViewControllerTests.swift
+//  PlanetInfoViewControllerTests.swift
 //  FarAwayComparisonTests
 //
 //  Created by Stephen Kac on 6/24/20.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import FarAwayComparison
 
-class ForeignComparisonViewControllerTests: XCTestCase {
+class PlanetInfoViewControllerTests: XCTestCase {
 
 	func test_viewsNotNil() {
 		XCTAssertNotNil(makeSUT().view)
@@ -24,7 +24,7 @@ class ForeignComparisonViewControllerTests: XCTestCase {
 
 	func test_viewDoesShow_population() {
 		let sut = makeSUT()
-		let model = makeForeignComparisonModel()
+		let model = makePlanetInfoModel()
 
 		sut.show(viewModel: model)
 
@@ -39,14 +39,14 @@ class ForeignComparisonViewControllerTests: XCTestCase {
 		XCTAssertEqual(model.atmosphereType, sut.mainView.atmosphereStack.text)
 	}
 
-	func makeSUT() -> ForeignComparisonViewController {
-		let sut = ForeignComparisonViewController.instantiate()
+	func makeSUT() -> PlanetInfoViewController {
+		let sut = PlanetInfoViewController.instantiate()
 		_ = sut.view
 		return sut
 	}
 
-	func makeForeignComparisonModel() -> ForeignComparisonViewModel {
-		ForeignComparisonViewModel(
+	func makePlanetInfoModel() -> PlanetInfoViewModel {
+		PlanetInfoViewModel(
 			population: "11K",
 			planetEarthGComparison: "1.3G",
 			planetDiameter: "20km",

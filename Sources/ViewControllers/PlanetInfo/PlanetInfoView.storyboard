@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9m2-eN-MYj">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Foreign Comparison View Controller-->
+        <!--Planet Info View Controller-->
         <scene sceneID="Xab-RU-sW7">
             <objects>
-                <viewController storyboardIdentifier="ForeignComparisonViewController" id="9m2-eN-MYj" customClass="ForeignComparisonViewController" customModule="FarAwayComparison" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azE-Oj-eaF" customClass="ForeignComparisonBinderView" customModule="FarAwayComparison" customModuleProvider="target">
+                <viewController storyboardIdentifier="PlanetInfoViewController" id="9m2-eN-MYj" customClass="PlanetInfoViewController" customModule="FarAwayComparison" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azE-Oj-eaF" customClass="PlanetInfoBinderView" customModule="FarAwayComparison" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sF2-2x-vuk">
@@ -178,26 +176,6 @@
             <point key="canvasLocation" x="295.6521739130435" y="202.90178571428569"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="6tv-jU-FRZ">
-            <size key="intrinsicContentSize" width="168.5" height="70.5"/>
-        </designable>
-        <designable name="9em-KI-AWw">
-            <size key="intrinsicContentSize" width="99.5" height="38"/>
-        </designable>
-        <designable name="NjW-yE-3nE">
-            <size key="intrinsicContentSize" width="143" height="53.5"/>
-        </designable>
-        <designable name="a5t-Lg-RE2">
-            <size key="intrinsicContentSize" width="208.5" height="133.5"/>
-        </designable>
-        <designable name="cJf-nV-60n">
-            <size key="intrinsicContentSize" width="76.5" height="37.5"/>
-        </designable>
-        <designable name="eIp-kT-v7f">
-            <size key="intrinsicContentSize" width="178" height="90.5"/>
-        </designable>
-    </designables>
     <resources>
         <image name="Landscape" width="93" height="50"/>
         <image name="PlanetDiameter" width="338" height="334"/>

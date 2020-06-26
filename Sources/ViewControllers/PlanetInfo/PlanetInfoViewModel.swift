@@ -1,5 +1,5 @@
 //
-//  ForeignComparisonViewModel.swift
+//  PlanetInfoViewModel.swift
 //  FarAwayComparison
 //
 //  Created by Stephen Kac on 6/25/20.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ForeignComparisonViewModel {
+struct PlanetInfoViewModel {
 	/// Population of the planet
 	let population: String
 	/// Gravity measured in earth gravity units

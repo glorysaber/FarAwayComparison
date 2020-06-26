@@ -1,5 +1,5 @@
 //
-//  ForeignComparisonViewTests.swift
+//  PlanetInfoViewTests.swift
 //  FarAwayComparisonTests
 //
 //  Created by Stephen Kac on 6/24/20.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import FarAwayComparison
 
-class ForeignComparisonViewTests: XCTestCase {
+class PlanetInfoViewTests: XCTestCase {
 
 	func test_viewsWereBinded() {
 		let sut = makeSUT()
@@ -39,10 +39,10 @@ class ForeignComparisonViewTests: XCTestCase {
 	}
 
 
-	func makeSUT() -> ForeignComparisonBinderView {
-		let vc = ForeignComparisonViewController.instantiate()
+	func makeSUT() -> PlanetInfoBinderView {
+		let vc = PlanetInfoViewController.instantiate()
 
-		guard let viewSUT = vc.view as? ForeignComparisonBinderView else {
+		guard let viewSUT = vc.view as? PlanetInfoBinderView else {
 			fatalError("View was not of expected type or did not exist")
 		}
 

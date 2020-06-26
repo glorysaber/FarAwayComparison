@@ -78,10 +78,10 @@
             </objects>
             <point key="canvasLocation" x="-463" y="20"/>
         </scene>
-        <!--ForeignComparisonView-->
+        <!--PlanetInfoView-->
         <scene sceneID="0jh-FV-GlE">
             <objects>
-                <viewControllerPlaceholder storyboardName="ForeignComparisonView" id="G7y-uF-ojC" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="PlanetInfoView" id="G7y-uF-ojC" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hd3-3H-0z9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-391" y="151"/>

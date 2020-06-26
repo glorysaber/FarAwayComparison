@@ -1,5 +1,5 @@
 //
-//  ForeignComparisonView.swift
+//  PlanetInfoView.swift
 //  FarAwayComparison
 //
 //  Created by Stephen Kac on 6/25/20.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol ForeignComparisonView {
-	func show(viewModel: ForeignComparisonViewModel)
+protocol PlanetInfoView {
+	func show(viewModel: PlanetInfoViewModel)
 }
