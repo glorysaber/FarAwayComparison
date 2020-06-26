@@ -42,7 +42,7 @@
                                     <color key="titleColor" systemColor="systemYellowColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="allowLocationButtonPressed:" destination="B2m-tk-2M1" eventType="touchUpInside" id="xbT-t1-HNS"/>
+                                    <action selector="allowLocationButtonPressed" destination="B2m-tk-2M1" eventType="touchUpInside" id="8pu-Sh-GDF"/>
                                 </connections>
                             </button>
                         </subviews>

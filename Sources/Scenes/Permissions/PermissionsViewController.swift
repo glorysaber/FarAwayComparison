@@ -31,7 +31,7 @@ class PermissionsViewController: UIViewController {
   
   // MARK: - IBActions
   
-  @IBAction func allowLocationButtonPressed(_ sender: UIButton) {
+  @IBAction func allowLocationButtonPressed() {
 		delegate?.permissionsViewControllerPermissionsGranted()
   }
   

@@ -18,7 +18,11 @@ class PermissionsViewControllerTests: XCTestCase {
 		XCTAssertNotNil(sut.explanationLabel)
 	}
 
-	func test_locationButtonPressed() {
+	func test_delegate_nil_doesNotCrash_whenButtonIsPressed() {
+		makeSUT().allowLocationButtonPressed()
+	}
+
+	func test_delegate_calledOnce_whenButtonIsPressed() {
 		let sut = makeSUT()
 		var delegateCalls = 0
 
@@ -30,11 +34,11 @@ class PermissionsViewControllerTests: XCTestCase {
 
 		XCTAssertEqual(delegateCalls, 0)
 
-		sut.allowLocationButtonPressed(UIButton())
+		sut.allowLocationButtonPressed()
 
 		XCTAssertEqual(delegateCalls, 1)
 
-		sut.allowLocationButtonPressed(UIButton())
+		sut.allowLocationButtonPressed()
 
 		XCTAssertEqual(delegateCalls, 2)
 	}

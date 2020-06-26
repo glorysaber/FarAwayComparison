@@ -11,6 +11,15 @@ import XCTest
 
 class TermsViewControllerTests: XCTestCase {
 
+	func test_viewBindings_NotNil() {
+		XCTAssertNotNil(makeSUT().iAgreeButton)
+		XCTAssertNotNil(makeSUT().termsTextView)
+	}
+
+	func test_delegatNil_doesNotCrash() {
+		makeSUT().iAgreeButtonPressed()
+	}
+
 	func test_show_terms() {
 		let sut = makeSUT()
 		let terms = "Terms Test"
@@ -20,25 +29,26 @@ class TermsViewControllerTests: XCTestCase {
 		XCTAssertEqual(terms, sut.termsTextView.text)
 	}
 
+	func test_delegate_didAgree() {
+		let sut = makeSUT()
+
+		let delegate = SUTDelegate()
+
+		sut.delegate = delegate
+
+		XCTAssertEqual(delegate.didAgreeCount, 0)
+
+		sut.iAgreeButtonPressed()
+		XCTAssertEqual(delegate.didAgreeCount, 1)
+
+		sut.iAgreeButtonPressed()
+		XCTAssertEqual(delegate.didAgreeCount, 2)
+	}
+
 	func test_VC_instatiation_performance() throws {
 		self.measure {
 			_ = makeSUT()
 		}
-	}
-
-	func test_delegate_didAgree() {
-		let sut = makeSUT()
-		var didAgree = false
-
-		let delegate = SUTDelegate() {
-			didAgree = true
-		}
-
-		sut.delegate = delegate
-
-		sut.iAgreeButtonPressed(UIButton())
-
-		XCTAssert(didAgree)
 	}
 
 	// MARK: - Helpers
@@ -51,14 +61,10 @@ class TermsViewControllerTests: XCTestCase {
 
 
 	private class SUTDelegate: TermsViewControllerDelegate {
-		let closure: ()->Void
+		var didAgreeCount = 0
 
 		func termsViewControllerDidAgree() {
-			closure()
-		}
-
-		init(_ closure: @escaping ()->Void)  {
-			self.closure = closure
+			didAgreeCount += 1
 		}
 	}
 

@@ -12,7 +12,6 @@ class ApplicationRouter: Routers {
 
   let window: UIWindow
   weak var rootViewController: RootViewController?
-	var termsRouter: TermsRouter?
   
   init(window: UIWindow) {
     self.window = window
@@ -23,8 +22,6 @@ class ApplicationRouter: Routers {
 		rootViewController.delegate = self
 		self.rootViewController = rootViewController
 
-		termsRouter = TermsRouter(presenter: FullScreenViewControllerPresenter(presentingViewController: rootViewController))
-
 		window.rootViewController = rootViewController
     window.makeKeyAndVisible()
   }
@@ -33,6 +30,6 @@ class ApplicationRouter: Routers {
 
 extension ApplicationRouter: RootViewControllerDelegate {
 	func rootViewControllerDidMoveToParent() {
-			termsRouter?.start()
+		rootViewController?.present(TermsViewController.instantiate(), animated: false)
 	}
 }

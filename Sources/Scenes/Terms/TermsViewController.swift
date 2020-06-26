@@ -33,7 +33,7 @@ class TermsViewController: UIViewController {
   
   // MARK: - IBActions
   
-  @IBAction func iAgreeButtonPressed(_ sender: UIButton) {
+  @IBAction func iAgreeButtonPressed() {
 		delegate?.termsViewControllerDidAgree()
   }
   
