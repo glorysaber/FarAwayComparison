@@ -10,6 +10,7 @@
 		CC06D92724A57B8D00A7AA8C /* MainWeatherViewContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC06D92624A57B8D00A7AA8C /* MainWeatherViewContainerTests.swift */; };
 		CC0A160A24A57EF20048701D /* TermsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0A160924A57EF20048701D /* TermsViewControllerTests.swift */; };
 		CC0A160C24A580780048701D /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0A160B24A580780048701D /* TermsView.swift */; };
+		CC0A160E24A63CB90048701D /* PermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0A160D24A63CB90048701D /* PermissionsViewController.swift */; };
 		CC0D6ED4247E0A6800051A7F /* MainWeatherViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D6ED3247E0A6800051A7F /* MainWeatherViewContainer.swift */; };
 		CC0D6ED9247E0AF100051A7F /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D6ED7247E0AF100051A7F /* WeatherViewController.swift */; };
 		CC0D6EDD247E0B7900051A7F /* PlanetInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D6EDB247E0B7900051A7F /* PlanetInfoViewController.swift */; };
@@ -81,6 +82,7 @@
 		CC06D92624A57B8D00A7AA8C /* MainWeatherViewContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWeatherViewContainerTests.swift; sourceTree = "<group>"; };
 		CC0A160924A57EF20048701D /* TermsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewControllerTests.swift; sourceTree = "<group>"; };
 		CC0A160B24A580780048701D /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
+		CC0A160D24A63CB90048701D /* PermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
 		CC0D6ED3247E0A6800051A7F /* MainWeatherViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWeatherViewContainer.swift; sourceTree = "<group>"; };
 		CC0D6ED7247E0AF100051A7F /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		CC0D6EDB247E0B7900051A7F /* PlanetInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetInfoViewController.swift; sourceTree = "<group>"; };
@@ -180,7 +182,15 @@
 			path = Terms;
 			sourceTree = "<group>";
 		};
-		CC0D6ECD247E098500051A7F /* ViewControllers */ = {
+		CC0A160F24A63CBE0048701D /* Permissions */ = {
+			isa = PBXGroup;
+			children = (
+				CC0A160D24A63CB90048701D /* PermissionsViewController.swift */,
+			);
+			path = Permissions;
+			sourceTree = "<group>";
+		};
+		CC0D6ECD247E098500051A7F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				CCC31A1F248EF15E00D499E4 /* Root */,
@@ -190,7 +200,7 @@
 				CCC31A23248EF2BE00D499E4 /* PlanetInfo */,
 				CCC31A22248EF29600D499E4 /* Weather */,
 			);
-			path = ViewControllers;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		CC0D6ECE247E099500051A7F /* MainWeather */ = {
@@ -267,15 +277,16 @@
 			path = "Networking Model";
 			sourceTree = "<group>";
 		};
-		CC2B6A0624A3B14400C64FCE /* ViewControllers */ = {
+		CC2B6A0624A3B14400C64FCE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				CC0A160824A57EDE0048701D /* Terms */,
 				CC06D92524A57B5600A7AA8C /* MainWeather */,
 				CC1D192824A3F38000B1DC21 /* Weather */,
 				CC2B6A0724A3B15800C64FCE /* ForeignComparison */,
+				CC0A160F24A63CBE0048701D /* Permissions */,
 			);
-			path = ViewControllers;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		CC2B6A0724A3B15800C64FCE /* ForeignComparison */ = {
@@ -363,7 +374,7 @@
 			children = (
 				CCC31A25248EF3BD00D499E4 /* UIKit */,
 				CC0D6ECF247E09B500051A7F /* Routers */,
-				CC0D6ECD247E098500051A7F /* ViewControllers */,
+				CC0D6ECD247E098500051A7F /* Scenes */,
 				CC60415F23F1A1EF0035705A /* Common */,
 				CC48FEE723E9301000494BD7 /* Application */,
 			);
@@ -373,7 +384,7 @@
 		CC8E5F6523E1F8DA00893D8A /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				CC2B6A0624A3B14400C64FCE /* ViewControllers */,
+				CC2B6A0624A3B14400C64FCE /* Scenes */,
 				CC2B6A0424A3B0E500C64FCE /* Networking */,
 				CC8E5F6823E1F8DA00893D8A /* Info.plist */,
 			);
@@ -681,6 +692,7 @@
 				CC1D192724A3E78A00B1DC21 /* PLanetInfoViewControllerTests.swift in Sources */,
 				CC92E1C724A3E116007A4925 /* PlanetInfoViewTests.swift in Sources */,
 				CC2500DE24A3F5CB00165CEA /* WeatherViewControllerTests.swift in Sources */,
+				CC0A160E24A63CB90048701D /* PermissionsViewController.swift in Sources */,
 				CC8E5F8423E2158000893D8A /* AlamoFireTests.swift in Sources */,
 				CC1D192C24A3F3D800B1DC21 /* WeatherViewTests.swift in Sources */,
 			);
