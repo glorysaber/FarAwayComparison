@@ -15,7 +15,6 @@
 		CC0D6ED4247E0A6800051A7F /* MainWeatherViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D6ED3247E0A6800051A7F /* MainWeatherViewContainer.swift */; };
 		CC0D6ED9247E0AF100051A7F /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D6ED7247E0AF100051A7F /* WeatherViewController.swift */; };
 		CC0D6EDD247E0B7900051A7F /* PlanetInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D6EDB247E0B7900051A7F /* PlanetInfoViewController.swift */; };
-		CC0D6EE6247E0DB500051A7F /* Routers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D6EE5247E0DB500051A7F /* Routers.swift */; };
 		CC0D6EE8247E0DF400051A7F /* ApplicationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D6EE7247E0DF400051A7F /* ApplicationRouter.swift */; };
 		CC155A90247F03F200830A83 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC155A8F247F03F200830A83 /* Storyboarded.swift */; };
 		CC155A94247F0AA600830A83 /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC155A93247F0AA600830A83 /* Weather.storyboard */; };
@@ -95,7 +94,6 @@
 		CC0D6ED3247E0A6800051A7F /* MainWeatherViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWeatherViewContainer.swift; sourceTree = "<group>"; };
 		CC0D6ED7247E0AF100051A7F /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		CC0D6EDB247E0B7900051A7F /* PlanetInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetInfoViewController.swift; sourceTree = "<group>"; };
-		CC0D6EE5247E0DB500051A7F /* Routers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routers.swift; sourceTree = "<group>"; };
 		CC0D6EE7247E0DF400051A7F /* ApplicationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationRouter.swift; sourceTree = "<group>"; };
 		CC155A8F247F03F200830A83 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		CC155A93247F0AA600830A83 /* Weather.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Weather.storyboard; sourceTree = "<group>"; };
@@ -242,7 +240,6 @@
 		CC0D6ECF247E09B500051A7F /* Routers */ = {
 			isa = PBXGroup;
 			children = (
-				CC0D6EE5247E0DB500051A7F /* Routers.swift */,
 				CC0D6EE7247E0DF400051A7F /* ApplicationRouter.swift */,
 			);
 			path = Routers;
@@ -689,7 +686,6 @@
 			files = (
 				CCC31A27248EF3EA00D499E4 /* UIViewController+FullScreen.swift in Sources */,
 				CC2806C624A68ACC00ED7DA1 /* TermsComposer.swift in Sources */,
-				CC0D6EE6247E0DB500051A7F /* Routers.swift in Sources */,
 				CCC31A1E248EF12F00D499E4 /* RootViewController.swift in Sources */,
 				CC8E5F5423E1F8D900893D8A /* TermsViewController.swift in Sources */,
 				CCD88D6924A26DBF00456D0B /* ImageAndLabelView.swift in Sources */,
