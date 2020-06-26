@@ -15,7 +15,7 @@ class PermissionsViewControllerTests: XCTestCase {
 		let sut = makeSUT()
 
 		XCTAssertNotNil(sut.allowLocationButton)
-		XCTAssertNotNil(sut.explanationLabel)
+		XCTAssertNotNil(sut.locationRequireExplanationLabel)
 	}
 
 	func test_delegate_nil_doesNotCrash_whenButtonIsPressed() {
@@ -26,11 +26,9 @@ class PermissionsViewControllerTests: XCTestCase {
 		let sut = makeSUT()
 		var delegateCalls = 0
 
-		let delgate = SUTDelegate(){
+		sut.allowPermissionsRequested = {
 			delegateCalls += 1
 		}
-
-		sut.delegate = delgate
 
 		XCTAssertEqual(delegateCalls, 0)
 
@@ -43,6 +41,19 @@ class PermissionsViewControllerTests: XCTestCase {
 		XCTAssertEqual(delegateCalls, 2)
 	}
 
+	func test_doesPresentPermissiosnViewModel() {
+		let sut = makeSUT()
+		let model = makePermissionsViewModel()
+
+		sut.present(explanation: model)
+
+		XCTAssertEqual(sut.allowLocationButton.titleLabel?.text, model.locationButtonTitle)
+		XCTAssertEqual(sut.locationRequireExplanationLabel.text, model.locationExplanation)
+	}
+}
+
+private extension PermissionsViewControllerTests {
+
 	//  MARK: - Helpers
 
 	private func makeSUT() -> PermissionsViewController {
@@ -51,16 +62,8 @@ class PermissionsViewControllerTests: XCTestCase {
 		return sut
 	}
 
-	private class SUTDelegate: PermissionsViewControllerDelegate {
-		let closure: ()->Void
-
-		init(closure: @escaping ()->Void) {
-			self.closure = closure
-		}
-
-		func permissionsViewControllerPermissionsGranted() {
-			closure()
-		}
+	private func makePermissionsViewModel() -> PermissionsViewModel {
+		return PermissionsViewModel(locationExplanation: "Just a test", locationButtonTitle: "Truly, a test")
 	}
 
 }

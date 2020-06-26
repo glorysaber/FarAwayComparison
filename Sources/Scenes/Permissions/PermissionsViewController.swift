@@ -8,18 +8,13 @@
 
 import UIKit
 
-protocol PermissionsViewControllerDelegate: class {
-
-	func permissionsViewControllerPermissionsGranted()
-}
-
 // MARK: - PermissionsViewController
 class PermissionsViewController: UIViewController {
 
-	weak var delegate: PermissionsViewControllerDelegate?
+	var allowPermissionsRequested: (() -> Void)?
   
   // MARK: - IBOutlets
-  @IBOutlet weak var explanationLabel: UILabel!
+  @IBOutlet weak var locationRequireExplanationLabel: UILabel!
   @IBOutlet weak var allowLocationButton: UIButton!
   
   // MARK: - View events
@@ -32,13 +27,18 @@ class PermissionsViewController: UIViewController {
   // MARK: - IBActions
   
   @IBAction func allowLocationButtonPressed() {
-		delegate?.permissionsViewControllerPermissionsGranted()
+		allowPermissionsRequested?()
   }
   
 }
 
-extension PermissionsViewController: PermissionsView {
-	
+extension PermissionsViewController: PermissionsPresenterOutput {
+	func present(explanation: PermissionsViewModel) {
+		locationRequireExplanationLabel.text = explanation.locationExplanation
+		allowLocationButton.titleLabel?.text = explanation.locationButtonTitle
+	}
+
+
 }
 
 extension PermissionsViewController: Storyboarded {

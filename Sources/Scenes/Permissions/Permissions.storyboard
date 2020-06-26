@@ -61,7 +61,7 @@
                     </view>
                     <connections>
                         <outlet property="allowLocationButton" destination="IWk-Mb-mFH" id="aef-WZ-ADd"/>
-                        <outlet property="explanationLabel" destination="Tu9-SN-bEy" id="G7X-Vz-NWH"/>
+                        <outlet property="locationRequireExplanationLabel" destination="Tu9-SN-bEy" id="G7X-Vz-NWH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EL8-Rk-gFU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
