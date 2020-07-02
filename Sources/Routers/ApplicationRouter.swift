@@ -39,7 +39,7 @@ extension ApplicationRouter: RootViewControllerDelegate {
 	func rootViewControllerDidMoveToParent() {
 		let navigationController = UINavigationController()
 		navigationController.navigationBar.isHidden = true
-		navigationController.pushViewController(TermsViewController.instantiate(), animated: false)
+		navigationController.pushViewController(TermsComposure().composeTerms(), animated: false)
 		rootViewController?.addFullScreen(childViewController: navigationController)
 	}
 }

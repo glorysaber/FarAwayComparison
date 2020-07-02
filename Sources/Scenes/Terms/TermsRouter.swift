@@ -16,6 +16,10 @@ class TermsRouter {
 	}
 
 	func routeToPermissions() {
+		viewController?.present(PermissionsComposer().compose(), animated: true)
+	}
 
+	deinit {
+		
 	}
 }

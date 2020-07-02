@@ -9,12 +9,18 @@
 import Foundation
 
 protocol PermissionsPresenterOutput {
-	func present(explanation: PermissionsViewModel)
+	func display(_ model: PermissionsExplanationViewModel)
+	func display(_ model: PermissionsAlertViewModel)
 }
 
-struct PermissionsViewModel {
+struct PermissionsExplanationViewModel {
 	let locationExplanation: String
 	let locationButtonTitle: String
+}
+
+struct PermissionsAlertViewModel {
+	let explanation: String
+	let buttonTitle: String
 }
 
 class PermissionsPresenter {
@@ -22,5 +28,40 @@ class PermissionsPresenter {
 
 	init(output: PermissionsPresenterOutput) {
 		self.output = output
+	}
+
+	func start() {
+		let explanation = getLocalizedString(for: .locationExplanation, comment: "The explanation for the location permissions")
+		let buttonTitle = getLocalizedString(for: .locatonButtonTitle, comment: "The buttons title")
+
+		let model = PermissionsExplanationViewModel(locationExplanation: explanation, locationButtonTitle: buttonTitle)
+
+		output.display(model)
+	}
+
+	func didGetLocationPermissions() {
+		// Tell router to move on
+	}
+
+	func doesNotHaveLocationPermissions() {
+		let explanation = getLocalizedString(for: .failedToGetLocPermissions, comment: "Explaning next steps")
+		let buttonTitle = getLocalizedString(for: .failedToGetLocPermButtonTitle, comment: "Explaning next steps")
+		let model = PermissionsAlertViewModel(explanation: explanation, buttonTitle: buttonTitle)
+		output.display(model)
+	}
+
+}
+
+private extension PermissionsPresenter {
+
+	func getLocalizedString(for localizationString: LocalizedString, comment: String) -> String {
+		NSLocalizedString(localizationString.rawValue, tableName: "Permissions", comment: comment)
+	}
+
+	enum LocalizedString: String {
+		case locatonButtonTitle = "location button title"
+		case locationExplanation = "location permission explanataion"
+		case failedToGetLocPermissions = "failedToGetLocPermissions"
+		case failedToGetLocPermButtonTitle = "failedToGetLocPermButtonTitle"
 	}
 }

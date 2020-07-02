@@ -1,0 +1,15 @@
+/* 
+  Permissions.strings
+  FarAwayComparison
+
+  Created by Stephen Kac on 7/1/20.
+  Copyright © 2020 Stephen Kac. All rights reserved.
+*/
+
+"location permission explanataion" = "Location is used to get local weather information from the WeatherBit service.";
+
+"location button title" = "Allow Location Services";
+"failedToGetLocPermissions" = "Failed to get permissions for location.
+Please go to Setting->Privacy->FarAwayComparison
+and then change to allow permissions.";
+"failedToGetLocPermButtonTitle" = "Ok";

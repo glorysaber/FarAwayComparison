@@ -29,15 +29,11 @@ class PermissionsViewController: UIViewController {
   @IBAction func allowLocationButtonPressed() {
 		allowPermissionsRequested?()
   }
-  
-}
 
-extension PermissionsViewController: PermissionsPresenterOutput {
-	func present(explanation: PermissionsViewModel) {
+	func display(explanation: PermissionsExplanationViewModel) {
 		locationRequireExplanationLabel.text = explanation.locationExplanation
 		allowLocationButton.titleLabel?.text = explanation.locationButtonTitle
 	}
-
 
 }
 
