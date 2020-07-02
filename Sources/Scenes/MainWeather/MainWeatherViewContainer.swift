@@ -17,7 +17,7 @@ class MainWeatherViewContainer: UIViewController {
 		addChild(weatherViewController)
 		stackView.addArrangedSubview(weatherViewController.view)
 
-		let planetInfoViewController = WeatherViewController.instantiate()
+		let planetInfoViewController = PlanetInfoViewController.instantiate()
 		addChild(planetInfoViewController)
 		stackView.addArrangedSubview(planetInfoViewController.view)
 	}

@@ -9,11 +9,11 @@
 import Foundation
 
 class TermsComposure {
-	func composeTerms() -> TermsViewController {
+	func composeTerms(activity: RoutingActivity) -> TermsViewController {
 		let vc = TermsViewController.instantiate()
 		let presenter = TermsPresenter(output: WeakRef(vc))
 		let useCase = FetchTermsTextUseCase(output: presenter)
-		let router = TermsRouter(vc)
+		let router = TermsRouter(vc, activity: activity)
 
 		vc.reloadData = useCase.fetch
 		vc.userTappedOnAgree = router.routeToPermissions

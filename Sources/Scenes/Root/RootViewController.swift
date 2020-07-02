@@ -16,7 +16,7 @@ class RootViewController: UIViewController {
 
 	weak var delegate: RootViewControllerDelegate? = nil
 
-	override func viewWillAppear(_ animated: Bool) {
+	override func viewDidAppear(_ animated: Bool) {
 		delegate?.rootViewControllerDidMoveToParent()
 	}
 }

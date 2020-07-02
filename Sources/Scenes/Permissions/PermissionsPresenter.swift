@@ -11,16 +11,7 @@ import Foundation
 protocol PermissionsPresenterOutput {
 	func display(_ model: PermissionsExplanationViewModel)
 	func display(_ model: PermissionsAlertViewModel)
-}
-
-struct PermissionsExplanationViewModel {
-	let locationExplanation: String
-	let locationButtonTitle: String
-}
-
-struct PermissionsAlertViewModel {
-	let explanation: String
-	let buttonTitle: String
+	func display(_ model: PermissionsGrantedViewModel)
 }
 
 class PermissionsPresenter {
@@ -40,7 +31,7 @@ class PermissionsPresenter {
 	}
 
 	func didGetLocationPermissions() {
-		// Tell router to move on
+		output.display(PermissionsGrantedViewModel())
 	}
 
 	func doesNotHaveLocationPermissions() {

@@ -46,6 +46,11 @@
 		CC3FF4A424A6BADB00788AD2 /* WeakRef+PermissionsPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3FF4A324A6BADB00788AD2 /* WeakRef+PermissionsPresenterOutput.swift */; };
 		CC60416123F1A2A50035705A /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC60416023F1A2A50035705A /* ApiClient.swift */; };
 		CC60416323F1A7EF0035705A /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC60416223F1A7EF0035705A /* WeatherAPI.swift */; };
+		CC6CC05324AE82F0009BF4F2 /* PermissionsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6CC05224AE82F0009BF4F2 /* PermissionsRouter.swift */; };
+		CC6CC05524AE8480009BF4F2 /* RoutingActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6CC05424AE8480009BF4F2 /* RoutingActivity.swift */; };
+		CC6CC05924AE872D009BF4F2 /* PermissionsExplanationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6CC05824AE872D009BF4F2 /* PermissionsExplanationViewModel.swift */; };
+		CC6CC05C24AE875F009BF4F2 /* PermissionsAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6CC05B24AE875F009BF4F2 /* PermissionsAlertViewModel.swift */; };
+		CC6CC05E24AE878E009BF4F2 /* PermissionsGrantedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6CC05D24AE878E009BF4F2 /* PermissionsGrantedViewModel.swift */; };
 		CC87F380246AF65800E15EFD /* PermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC87F37F246AF65800E15EFD /* PermissionsViewController.swift */; };
 		CC8E5F5023E1F8D900893D8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8E5F4F23E1F8D900893D8A /* AppDelegate.swift */; };
 		CC8E5F5223E1F8D900893D8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8E5F5123E1F8D900893D8A /* SceneDelegate.swift */; };
@@ -132,6 +137,11 @@
 		CC3FF4A324A6BADB00788AD2 /* WeakRef+PermissionsPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeakRef+PermissionsPresenterOutput.swift"; sourceTree = "<group>"; };
 		CC60416023F1A2A50035705A /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		CC60416223F1A7EF0035705A /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
+		CC6CC05224AE82F0009BF4F2 /* PermissionsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsRouter.swift; sourceTree = "<group>"; };
+		CC6CC05424AE8480009BF4F2 /* RoutingActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingActivity.swift; sourceTree = "<group>"; };
+		CC6CC05824AE872D009BF4F2 /* PermissionsExplanationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsExplanationViewModel.swift; sourceTree = "<group>"; };
+		CC6CC05B24AE875F009BF4F2 /* PermissionsAlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsAlertViewModel.swift; sourceTree = "<group>"; };
+		CC6CC05D24AE878E009BF4F2 /* PermissionsGrantedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsGrantedViewModel.swift; sourceTree = "<group>"; };
 		CC87F37F246AF65800E15EFD /* PermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
 		CC8E5F4C23E1F8D900893D8A /* FarAwayComparison.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FarAwayComparison.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC8E5F4F23E1F8D900893D8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -233,8 +243,8 @@
 			isa = PBXGroup;
 			children = (
 				CCC31A1F248EF15E00D499E4 /* Root */,
-				CC155A86247EEDAD00830A83 /* Permissions */,
 				CC87F381246AFC1F00E15EFD /* Terms */,
+				CC155A86247EEDAD00830A83 /* Permissions */,
 				CC0D6ECE247E099500051A7F /* MainWeather */,
 				CCC31A23248EF2BE00D499E4 /* PlanetInfo */,
 				CCC31A22248EF29600D499E4 /* Weather */,
@@ -251,22 +261,24 @@
 			path = MainWeather;
 			sourceTree = "<group>";
 		};
-		CC0D6ECF247E09B500051A7F /* Routers */ = {
+		CC0D6ECF247E09B500051A7F /* Routing */ = {
 			isa = PBXGroup;
 			children = (
 				CC0D6EE7247E0DF400051A7F /* ApplicationRouter.swift */,
+				CC6CC05424AE8480009BF4F2 /* RoutingActivity.swift */,
 			);
-			path = Routers;
+			path = Routing;
 			sourceTree = "<group>";
 		};
 		CC155A86247EEDAD00830A83 /* Permissions */ = {
 			isa = PBXGroup;
 			children = (
-				CC87F37F246AF65800E15EFD /* PermissionsViewController.swift */,
+				CC6CC05F24AE87DD009BF4F2 /* ui */,
 				CCDD353424AE757A00D21616 /* Composition */,
 				CCE4EEFE24AD253B00F420AC /* LocationPermissionsServiceMock.swift */,
 				CC3FF49F24A6B44D00788AD2 /* PermissionsPresenter.swift */,
-				CC155A97247F0AE200830A83 /* Permissions.storyboard */,
+				CC6CC05224AE82F0009BF4F2 /* PermissionsRouter.swift */,
+				CC6CC05A24AE873B009BF4F2 /* ViewModel */,
 			);
 			path = Permissions;
 			sourceTree = "<group>";
@@ -393,6 +405,25 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		CC6CC05A24AE873B009BF4F2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CC6CC05824AE872D009BF4F2 /* PermissionsExplanationViewModel.swift */,
+				CC6CC05B24AE875F009BF4F2 /* PermissionsAlertViewModel.swift */,
+				CC6CC05D24AE878E009BF4F2 /* PermissionsGrantedViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CC6CC05F24AE87DD009BF4F2 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				CC87F37F246AF65800E15EFD /* PermissionsViewController.swift */,
+				CC155A97247F0AE200830A83 /* Permissions.storyboard */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
 		CC87F381246AFC1F00E15EFD /* Terms */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,7 +466,7 @@
 			children = (
 				CC0A161024A63D3B0048701D /* Networking */,
 				CCC31A25248EF3BD00D499E4 /* UIKit */,
-				CC0D6ECF247E09B500051A7F /* Routers */,
+				CC0D6ECF247E09B500051A7F /* Routing */,
 				CC0D6ECD247E098500051A7F /* Scenes */,
 				CC60415F23F1A1EF0035705A /* Common */,
 				CC48FEE723E9301000494BD7 /* Application */,
@@ -724,6 +755,7 @@
 			files = (
 				CC3FF4A224A6BA4E00788AD2 /* PermissionsComposer.swift in Sources */,
 				CCC31A27248EF3EA00D499E4 /* UIViewController+FullScreen.swift in Sources */,
+				CC6CC05C24AE875F009BF4F2 /* PermissionsAlertViewModel.swift in Sources */,
 				CC2806C624A68ACC00ED7DA1 /* TermsComposer.swift in Sources */,
 				CCC31A1E248EF12F00D499E4 /* RootViewController.swift in Sources */,
 				CC8E5F5423E1F8D900893D8A /* TermsViewController.swift in Sources */,
@@ -735,6 +767,7 @@
 				CC8E5F5023E1F8D900893D8A /* AppDelegate.swift in Sources */,
 				CCC31A2C248F022400D499E4 /* FullScreenViewControllerPresenter.swift in Sources */,
 				CCD88D6624A26BD500456D0B /* WeatherBinderView.swift in Sources */,
+				CC6CC05524AE8480009BF4F2 /* RoutingActivity.swift in Sources */,
 				CC0D6ED4247E0A6800051A7F /* MainWeatherViewContainer.swift in Sources */,
 				CC0D6EE8247E0DF400051A7F /* ApplicationRouter.swift in Sources */,
 				CC8E5F5223E1F8D900893D8A /* SceneDelegate.swift in Sources */,
@@ -752,6 +785,7 @@
 				CC60416323F1A7EF0035705A /* WeatherAPI.swift in Sources */,
 				CC3FF4A424A6BADB00788AD2 /* WeakRef+PermissionsPresenterOutput.swift in Sources */,
 				CC2806C824A6A41700ED7DA1 /* TermsRouter.swift in Sources */,
+				CC6CC05E24AE878E009BF4F2 /* PermissionsGrantedViewModel.swift in Sources */,
 				CCC31A2E248F024700D499E4 /* UIViewControllerPresenter.swift in Sources */,
 				CC60416123F1A2A50035705A /* ApiClient.swift in Sources */,
 				CCC31A29248EF7CF00D499E4 /* ViewControllerPresenter.swift in Sources */,
@@ -760,8 +794,10 @@
 				CCBB983C23F99B2E00E53D22 /* MainBundleInfo.swift in Sources */,
 				CCD1C5F323F9F316003B57B5 /* Logging.swift in Sources */,
 				CC2806CA24A6A43B00ED7DA1 /* WeakRef.swift in Sources */,
+				CC6CC05324AE82F0009BF4F2 /* PermissionsRouter.swift in Sources */,
 				CC0D6ED9247E0AF100051A7F /* WeatherViewController.swift in Sources */,
 				CC9754D524A2D51F00110DB0 /* ForeignPlanetView.swift in Sources */,
+				CC6CC05924AE872D009BF4F2 /* PermissionsExplanationViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 import UIKit
 
 class PermissionsViewControllerAdapter: PermissionsPresenterOutput {
+
 	private weak var adaptee: PermissionsViewController?
 
 	init(adaptee: PermissionsViewController) {
@@ -25,5 +26,7 @@ class PermissionsViewControllerAdapter: PermissionsPresenterOutput {
 		adaptee?.present(alert, animated: true, completion: nil)
 	}
 
-
+	func display(_: PermissionsGrantedViewModel) {
+		adaptee?.router?.finish()
+	}
 }

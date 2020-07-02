@@ -19,9 +19,8 @@ class LocationPermissionsServiceMock {
 	}
 
 	func getPermission() {
-		currentPermissionsStatus = .denied
+		currentPermissionsStatus = currentPermissionsStatus == .denied ? .allowed : .denied
 		callback(currentPermissionsStatus)
-		currentPermissionsStatus = .allowed
 	}
 
 	func currentPermissionStatus() {

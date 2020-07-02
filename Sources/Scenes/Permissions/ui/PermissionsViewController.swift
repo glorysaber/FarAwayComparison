@@ -13,11 +13,12 @@ class PermissionsViewController: UIViewController {
 
 	var allowPermissionsRequested: (() -> Void)?
 	var reloadData: (() -> Void)?
+	var router: PermissionsRouter?
   
   // MARK: - IBOutlets
   @IBOutlet weak var locationRequireExplanationLabel: UILabel!
   @IBOutlet weak var allowLocationButton: UIButton!
-  
+
   // MARK: - View events
   override func viewDidLoad() {
     super.viewDidLoad()

@@ -1,14 +1,14 @@
 //
-//  TermsRouter.swift
+//  PermissionsRouter.swift
 //  FarAwayComparison
 //
-//  Created by Stephen Kac on 6/26/20.
+//  Created by Stephen Kac on 7/2/20.
 //  Copyright © 2020 Stephen Kac. All rights reserved.
 //
 
 import UIKit
 
-class TermsRouter {
+class PermissionsRouter {
 	var activity: RoutingActivity
 	weak var viewController: UIViewController?
 
@@ -17,8 +17,7 @@ class TermsRouter {
 		self.activity = activity
 	}
 
-	func routeToPermissions() {
-		let permisionsViewController = PermissionsComposer().compose(activity: activity)
-		viewController?.navigationController?.pushViewController(permisionsViewController, animated: true)
+	func finish() {
+		activity.finish()
 	}
 }

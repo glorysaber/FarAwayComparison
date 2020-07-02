@@ -9,6 +9,10 @@
 import Foundation
 
 extension WeakRef: PermissionsPresenterOutput where T: PermissionsPresenterOutput {
+	func display(_ model: PermissionsGrantedViewModel) {
+		object?.display(model)
+	}
+
 	func display(_ model: PermissionsExplanationViewModel) {
 		object?.display(model)
 	}
