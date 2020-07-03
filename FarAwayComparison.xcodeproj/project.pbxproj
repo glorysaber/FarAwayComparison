@@ -487,6 +487,38 @@
 			path = ui;
 			sourceTree = "<group>";
 		};
+		CC84B53C24AFEAC700554834 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CC3FE12C24A53B8F0030A74B /* PlanetInfoView.swift */,
+				CC6CC07824AFB51C009BF4F2 /* PlanetInfoPresenter.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CC84B53D24AFEADA00554834 /* Composition */ = {
+			isa = PBXGroup;
+			children = (
+				CC84B53524AFE37B00554834 /* PlanetInfoComposer.swift */,
+			);
+			path = Composition;
+			sourceTree = "<group>";
+		};
+		CC84B53E24AFEAE100554834 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CC19F7C724A5363E0071D26D /* PlanetInfoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CC84B53F24AFEAE900554834 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		CC87F381246AFC1F00E15EFD /* Terms */ = {
 			isa = PBXGroup;
 			children = (
@@ -625,11 +657,11 @@
 		CCC31A23248EF2BE00D499E4 /* PlanetInfo */ = {
 			isa = PBXGroup;
 			children = (
+				CC84B53F24AFEAE900554834 /* Services */,
 				CC6CC07724AFB4F3009BF4F2 /* ui */,
-				CC19F7C724A5363E0071D26D /* PlanetInfoViewModel.swift */,
-				CC3FE12C24A53B8F0030A74B /* PlanetInfoView.swift */,
-				CC6CC07824AFB51C009BF4F2 /* PlanetInfoPresenter.swift */,
-				CC84B53524AFE37B00554834 /* PlanetInfoComposer.swift */,
+				CC84B53E24AFEAE100554834 /* ViewModel */,
+				CC84B53C24AFEAC700554834 /* Presentation */,
+				CC84B53D24AFEADA00554834 /* Composition */,
 			);
 			path = PlanetInfo;
 			sourceTree = "<group>";
