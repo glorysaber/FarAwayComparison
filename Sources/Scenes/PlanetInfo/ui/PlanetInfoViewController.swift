@@ -10,14 +10,16 @@ import UIKit
 
 class PlanetInfoViewController: UIViewController, PlanetInfoView {
 	@IBOutlet weak var mainView: PlanetInfoBinderView!
+
+	var refreshData: (() -> Void)?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		// Do any additional setup after loading the view.
+		refreshData?()
 	}
 
-	func show(viewModel: PlanetInfoViewModel) {
+	func display(viewModel: PlanetInfoViewModel) {
 		mainView.populationStack.text = viewModel.population
 		mainView.atmosphereStack.text = viewModel.atmosphereType
 		mainView.comparisonLabel.text = viewModel.description

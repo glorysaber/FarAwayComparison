@@ -9,5 +9,5 @@
 import Foundation
 
 protocol PlanetInfoView {
-	func show(viewModel: PlanetInfoViewModel)
+	func display(viewModel: PlanetInfoViewModel)
 }
