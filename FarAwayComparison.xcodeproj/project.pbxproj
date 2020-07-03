@@ -56,6 +56,7 @@
 		CC6CC06924AED0B1009BF4F2 /* PermissionsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6CC06824AED0B1009BF4F2 /* PermissionsPresenterTests.swift */; };
 		CC6CC06B24AED553009BF4F2 /* PermissionsComposerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6CC06A24AED553009BF4F2 /* PermissionsComposerTests.swift */; };
 		CC6CC06E24AED5BE009BF4F2 /* PermissionsRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6CC06D24AED5BE009BF4F2 /* PermissionsRouterTests.swift */; };
+		CC6CC07024AFAC4C009BF4F2 /* LocationPermissionAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6CC06F24AFAC4C009BF4F2 /* LocationPermissionAdapterTests.swift */; };
 		CC87F380246AF65800E15EFD /* PermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC87F37F246AF65800E15EFD /* PermissionsViewController.swift */; };
 		CC8E5F5023E1F8D900893D8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8E5F4F23E1F8D900893D8A /* AppDelegate.swift */; };
 		CC8E5F5223E1F8D900893D8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8E5F5123E1F8D900893D8A /* SceneDelegate.swift */; };
@@ -152,6 +153,7 @@
 		CC6CC06824AED0B1009BF4F2 /* PermissionsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsPresenterTests.swift; sourceTree = "<group>"; };
 		CC6CC06A24AED553009BF4F2 /* PermissionsComposerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsComposerTests.swift; sourceTree = "<group>"; };
 		CC6CC06D24AED5BE009BF4F2 /* PermissionsRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsRouterTests.swift; sourceTree = "<group>"; };
+		CC6CC06F24AFAC4C009BF4F2 /* LocationPermissionAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissionAdapterTests.swift; sourceTree = "<group>"; };
 		CC87F37F246AF65800E15EFD /* PermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
 		CC8E5F4C23E1F8D900893D8A /* FarAwayComparison.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FarAwayComparison.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC8E5F4F23E1F8D900893D8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -458,6 +460,7 @@
 			isa = PBXGroup;
 			children = (
 				CC6CC06A24AED553009BF4F2 /* PermissionsComposerTests.swift */,
+				CC6CC06F24AFAC4C009BF4F2 /* LocationPermissionAdapterTests.swift */,
 			);
 			path = Composition;
 			sourceTree = "<group>";
@@ -857,6 +860,7 @@
 				CC6CC06B24AED553009BF4F2 /* PermissionsComposerTests.swift in Sources */,
 				CC2806C324A6832300ED7DA1 /* FetchTermsTextUseCaseTests.swift in Sources */,
 				CC6CC06E24AED5BE009BF4F2 /* PermissionsRouterTests.swift in Sources */,
+				CC6CC07024AFAC4C009BF4F2 /* LocationPermissionAdapterTests.swift in Sources */,
 				CC92E1C724A3E116007A4925 /* PlanetInfoViewTests.swift in Sources */,
 				CC2500DE24A3F5CB00165CEA /* WeatherViewControllerTests.swift in Sources */,
 				CC0A160E24A63CB90048701D /* PermissionsViewControllerTests.swift in Sources */,
