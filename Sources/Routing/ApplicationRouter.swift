@@ -44,7 +44,7 @@ class ApplicationRouter {
 			self?.finishOnboardingActivity()
 		}
 
-		navigationController.pushViewController(TermsComposure().composeTerms(activity: activity), animated: false)
+		navigationController.pushViewController(TermsComposer().composeTerms(activity: activity), animated: false)
 		rootViewController?.present(navigationController, animated: false)
 		onboardingNavigationController = navigationController
 	}
