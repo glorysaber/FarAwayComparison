@@ -18,7 +18,7 @@ class TermsComposerTests: XCTestCase {
 	}
 
 	func test_noStrongReferences() {
-			let sut = TermsComposer().composeTerms()
+		let sut = TermsComposer().composeTerms(activity: RoutingActivity() {})
 			weakSut = sut
 	}
 }
