@@ -14,7 +14,7 @@ class PlanetInfoPresenterTests: XCTestCase {
 	func test() {
 		let (sut, spy) = makeSUT()
 
-		sut.didGetUpdatedComparison()
+		sut.didGetUpdatedComparison(info: makeViewModel())
 
 		XCTAssertEqual(spy.displayCalls, 1)
 	}
@@ -34,5 +34,18 @@ private extension PlanetInfoPresenterTests {
 		let spy = PlanetInfoPresenterViewSpy()
 		let sut = PlanetInfoPresenter(view: spy)
 		return (sut, spy)
+	}
+
+	func makeViewModel() -> PlanetInfoViewModel {
+		PlanetInfoViewModel(
+			population: "200k",
+			planetEarthGComparison: "1G",
+			planetDiameter: "12km",
+			description: "Just Like Tatooine",
+			terrainType: "Desert",
+			earthYearEquivalence: "304 Days",
+			earthDayEquivalence: "23 Hours",
+			waterCoverage: "1%",
+			atmosphereType: "Arid")
 	}
 }

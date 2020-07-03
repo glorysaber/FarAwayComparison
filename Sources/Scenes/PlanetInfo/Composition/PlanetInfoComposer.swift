@@ -15,7 +15,9 @@ class PlanetInfoComposer {
 
 		let presenter = PlanetInfoPresenter(view: WeakRef(vc))
 
-		vc.refreshData = presenter.didGetUpdatedComparison
+		let service = PlanetComparisonService(callback: presenter.didGetUpdatedComparison)
+
+		vc.refreshData = service.getCurrentComparison
 
 		return vc
 	}

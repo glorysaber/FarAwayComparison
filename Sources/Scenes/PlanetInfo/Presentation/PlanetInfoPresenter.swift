@@ -16,18 +16,8 @@ class PlanetInfoPresenter {
 		self.view = view
 	}
 
-	func didGetUpdatedComparison() {
-		view.display(
-			viewModel: PlanetInfoViewModel(
-				population: "200k",
-				planetEarthGComparison: "1G",
-				planetDiameter: "12km",
-				description: "Just Like Tatooine",
-				terrainType: "Desert",
-				earthYearEquivalence: "304 Days",
-				earthDayEquivalence: "23 Hours",
-				waterCoverage: "1%",
-				atmosphereType: "Arid"))
+	func didGetUpdatedComparison(info: PlanetInfoViewModel) {
+		view.display(viewModel: info)
 	}
 
 }
