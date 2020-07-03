@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LocationPermissionsServiceMock {
+final class LocationPermissionsServiceMock {
 
 	private var currentPermissionsStatus: PermissionsStatus = .unRequested
 
