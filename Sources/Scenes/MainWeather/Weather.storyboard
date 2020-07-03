@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wb6-na-Pe1">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Weather View Controller-->
+        <scene sceneID="3wg-6D-4qd">
+            <objects>
+                <viewController storyboardIdentifier="MainWeatherViewContainer" title="Main Weather View Controller" id="Wb6-na-Pe1" customClass="MainWeatherViewContainer" customModule="FarAwayComparison" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Snx-Kc-DYi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="RGl-Fb-82U">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="E40-mP-Joi"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="E40-mP-Joi" firstAttribute="bottom" secondItem="RGl-Fb-82U" secondAttribute="bottom" id="JFs-KD-rCS"/>
+                            <constraint firstItem="RGl-Fb-82U" firstAttribute="top" secondItem="E40-mP-Joi" secondAttribute="top" id="fcx-Rp-c3Q"/>
+                            <constraint firstItem="E40-mP-Joi" firstAttribute="trailing" secondItem="RGl-Fb-82U" secondAttribute="trailing" id="igP-fy-Hc4"/>
+                            <constraint firstItem="RGl-Fb-82U" firstAttribute="leading" secondItem="E40-mP-Joi" secondAttribute="leading" id="rbJ-AW-Xsr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="stackView" destination="RGl-Fb-82U" id="hV5-rf-Otg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VM3-3m-1k5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1202" y="22"/>
+        </scene>
+    </scenes>
+</document>

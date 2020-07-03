@@ -1,0 +1,22 @@
+/* 
+  Terms.strings
+  FarAwayComparison
+
+  Created by Stephen Kac on 6/26/20.
+  Copyright © 2020 Stephen Kac. All rights reserved.
+*/
+
+"Terms" = "The App FarAway Comparison, which will be referred to as “App”, is provided free of charge with no warranty of any kind.
+
+Terms, and images used are being used under United States of America fair use and are not endorsing this product.
+
+The App uses 3rd party services services and data sent is subject to their privacy policies.
+
+WeatherBit
+https://www.weatherbit.io/privacy
+
+SWAPI
+https://swapi.dev
+
+This text will be pulled from a resource.
+";
