@@ -40,6 +40,8 @@
 		CC341D1A24B00BA300EFAFE1 /* WeatherComposerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC341D1924B00BA300EFAFE1 /* WeatherComposerTests.swift */; };
 		CC341D1C24B00C1700EFAFE1 /* WeatherInfoServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC341D1B24B00C1700EFAFE1 /* WeatherInfoServiceTests.swift */; };
 		CC341D1E24B00CA900EFAFE1 /* PlanetComparisonServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC341D1D24B00CA900EFAFE1 /* PlanetComparisonServiceTests.swift */; };
+		CC341D2024B00E6700EFAFE1 /* MainWeatherComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC341D1F24B00E6700EFAFE1 /* MainWeatherComposer.swift */; };
+		CC341D2324B00FEC00EFAFE1 /* MainWeatherComposerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC341D2124B00FA200EFAFE1 /* MainWeatherComposerTests.swift */; };
 		CC3C705224AD6ECA00EAC8FD /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C705124AD6ECA00EAC8FD /* MainQueueDispatchDecorator.swift */; };
 		CC3C705424AD717200EAC8FD /* Permissions.strings in Resources */ = {isa = PBXBuildFile; fileRef = CC3C705324AD717200EAC8FD /* Permissions.strings */; };
 		CC3C705624AD7BC700EAC8FD /* PermissionsViewControllerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C705524AD7BC700EAC8FD /* PermissionsViewControllerAdapter.swift */; };
@@ -145,6 +147,8 @@
 		CC341D1924B00BA300EFAFE1 /* WeatherComposerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherComposerTests.swift; sourceTree = "<group>"; };
 		CC341D1B24B00C1700EFAFE1 /* WeatherInfoServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoServiceTests.swift; sourceTree = "<group>"; };
 		CC341D1D24B00CA900EFAFE1 /* PlanetComparisonServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetComparisonServiceTests.swift; sourceTree = "<group>"; };
+		CC341D1F24B00E6700EFAFE1 /* MainWeatherComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWeatherComposer.swift; sourceTree = "<group>"; };
+		CC341D2124B00FA200EFAFE1 /* MainWeatherComposerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWeatherComposerTests.swift; sourceTree = "<group>"; };
 		CC3C705124AD6ECA00EAC8FD /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
 		CC3C705324AD717200EAC8FD /* Permissions.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Permissions.strings; sourceTree = "<group>"; };
 		CC3C705524AD7BC700EAC8FD /* PermissionsViewControllerAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsViewControllerAdapter.swift; sourceTree = "<group>"; };
@@ -236,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				CC06D92624A57B8D00A7AA8C /* MainWeatherViewContainerTests.swift */,
+				CC341D2124B00FA200EFAFE1 /* MainWeatherComposerTests.swift */,
 			);
 			path = MainWeather;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				CC0D6ED3247E0A6800051A7F /* MainWeatherViewContainer.swift */,
+				CC341D1F24B00E6700EFAFE1 /* MainWeatherComposer.swift */,
 				CC155A93247F0AA600830A83 /* Weather.storyboard */,
 			);
 			path = MainWeather;
@@ -919,6 +925,7 @@
 				CC2806C824A6A41700ED7DA1 /* TermsRouter.swift in Sources */,
 				CC6CC05E24AE878E009BF4F2 /* PermissionsGrantedViewModel.swift in Sources */,
 				CC60416123F1A2A50035705A /* ApiClient.swift in Sources */,
+				CC341D2024B00E6700EFAFE1 /* MainWeatherComposer.swift in Sources */,
 				CC87F380246AF65800E15EFD /* PermissionsViewController.swift in Sources */,
 				CC6CC07924AFB51C009BF4F2 /* PlanetInfoPresenter.swift in Sources */,
 				CCBB984023F9DABF00E53D22 /* SWAPI.swift in Sources */,
@@ -937,6 +944,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCBB983E23F9A49800E53D22 /* WeatherApiTests.swift in Sources */,
+				CC341D2324B00FEC00EFAFE1 /* MainWeatherComposerTests.swift in Sources */,
 				CC31D99F240745A2002D68B7 /* MockJSONRequest.swift in Sources */,
 				CC6CC06224AECC3E009BF4F2 /* WeakRefTests.swift in Sources */,
 				CC6CC07624AFB32D009BF4F2 /* TermsRouterTests.swift in Sources */,
