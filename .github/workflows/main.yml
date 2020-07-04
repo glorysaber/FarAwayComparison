@@ -12,17 +12,20 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  iOS:
-    name: Test iOS 
+  test:
+    # Job name is Test
+    name: Test
+    # This job runs on macOS
     runs-on: macOS-latest
-    env: 
-      DEVELOPER_DIR: /Applications/Xcode_11.5.app/Contents/Developer
     strategy:
       matrix:
-        destination: ["OS=13.5,name=iPhone 11 Pro"] #, "OS=12.4,name=iPhone XS", "OS=11.4,name=iPhone X", "OS=10.3.1,name=iPhone SE"]
+        destination: ['platform=iOS Simulator,OS=13.1,name=iPhone 8']
+        xcode: ['/Applications/Xcode_11.5.app/Contents/Developer']
     steps:
-      - uses: actions/checkout@v2
-      - name: iOS - ${{ matrix.destination }}
-        run: set -o pipefail && env NSUnbufferedIO=YES xcodebuild -project "FarAwayComparison.xcodeproj" -scheme "FarAwayComparison" -destination "${{ matrix.destination }}" clean test | xcpretty
-      
-
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Build and test
+        run: bundle exec fastlane scan --destination "${destination}" --scheme "FarAwayComparison"
+        env:
+          destination: ${{ matrix.destination }}
+          DEVELOPER_DIR: ${{ matrix.xcode }}
