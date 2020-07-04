@@ -26,6 +26,6 @@ jobs:
     - name: Xcodebuild Action
       uses: sersoft-gmbh/xcodebuild-action@v1.1
       with:
-        project: FarAwayComparison
+        project: FarAwayComparison.xcodeproj
       
 
