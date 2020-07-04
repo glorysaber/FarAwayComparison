@@ -27,5 +27,6 @@ jobs:
       uses: sersoft-gmbh/xcodebuild-action@v1.1
       with:
         project: FarAwayComparison.xcodeproj
+        scheme: FarAwayComparison
       
 
