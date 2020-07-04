@@ -28,7 +28,9 @@ class WeatherViewController: UIViewController, WeatherView {
 		mainView.rainChance.text = weatherInfo.precipitation
 		mainView.cloudSnow.text = weatherInfo.snowfall
 		mainView.weatherDescriptionLabel.text = weatherInfo.description
-		mainView.weatherBreifImage.image = UIImage(named: weatherInfo.imageBriefName)
+		mainView.weatherBreifImage.image =
+			UIImage(named: weatherInfo.imageBriefName) ??
+			UIImage(systemName: weatherInfo.imageBriefName)
 		mainView.visibilityView.text = weatherInfo.visibility
 	}
 

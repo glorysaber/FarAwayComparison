@@ -29,7 +29,7 @@ class WeatherViewControllerTests: XCTestCase {
 		sut.display(weatherInfo: model)
 
 		XCTAssertEqual(model.description, sut.mainView.weatherDescriptionLabel.text)
-		XCTAssertEqual(UIImage(contentsOfFile: model.imageBriefName), sut.mainView.weatherBreifImage.image)
+		XCTAssertEqual(UIImage(systemName: model.imageBriefName), sut.mainView.weatherBreifImage.image)
 		XCTAssertEqual(model.temperature, sut.mainView.temperatureView.text)
 		XCTAssertEqual(model.uvIndex, sut.mainView.uvIndexView.text)
 		XCTAssertEqual(model.cloudCoveragePercentage, sut.mainView.cloudCoverageView.text)
