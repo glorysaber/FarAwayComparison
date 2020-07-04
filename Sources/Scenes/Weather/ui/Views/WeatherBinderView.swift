@@ -22,5 +22,5 @@ class WeatherBinderView: UIView {
 	
 	@IBOutlet weak var rainChance: ImageAndLabelView!
 	@IBOutlet weak var cloudSnow: ImageAndLabelView!
-	@IBOutlet weak var cloudBolt: ImageAndLabelView!
+	@IBOutlet weak var sunriseOrSetTime: ImageAndLabelView!
 }

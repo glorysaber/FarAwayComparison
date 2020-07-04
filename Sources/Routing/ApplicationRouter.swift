@@ -44,13 +44,13 @@ class ApplicationRouter {
 			self?.finishOnboardingActivity()
 		}
 
-		navigationController.pushViewController(TermsComposure().composeTerms(activity: activity), animated: false)
+		navigationController.pushViewController(TermsComposer().composeTerms(activity: activity), animated: false)
 		rootViewController?.present(navigationController, animated: false)
 		onboardingNavigationController = navigationController
 	}
 
 	func routeToWeather() {
-		let mainWeatherViewContainer = MainWeatherViewContainer.instantiate()
+		let mainWeatherViewContainer = MainWeatherComposer().compose()
 		rootViewController?.addFullScreen(childViewController: mainWeatherViewContainer)
 		self.mainWeatherViewContainer = mainWeatherViewContainer
 	}

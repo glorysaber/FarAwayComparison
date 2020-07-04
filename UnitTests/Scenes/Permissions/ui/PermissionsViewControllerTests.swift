@@ -45,7 +45,7 @@ class PermissionsViewControllerTests: XCTestCase {
 		let sut = makeSUT()
 		let model = makePermissionsViewModel()
 
-		sut.present(explanation: model)
+		sut.display(explanation: model)
 
 		XCTAssertEqual(sut.allowLocationButton.titleLabel?.text, model.locationButtonTitle)
 		XCTAssertEqual(sut.locationRequireExplanationLabel.text, model.locationExplanation)
@@ -72,8 +72,8 @@ private extension PermissionsViewControllerTests {
 		return sut
 	}
 
-	private func makePermissionsViewModel() -> PermissionsViewModel {
-		return PermissionsViewModel(locationExplanation: "Just a test", locationButtonTitle: "Truly, a test")
+	private func makePermissionsViewModel() -> PermissionsExplanationViewModel {
+		return PermissionsExplanationViewModel(locationExplanation: "Just a test", locationButtonTitle: "Truly, a test")
 	}
 
 }

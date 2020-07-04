@@ -184,7 +184,7 @@ enum WeatherAPI {
       }
       /// Visibility (default KM).
       case visibility = "vis"
-      ///  Liquid equivalent precipitation rate (default mm/hr
+      ///  Liquid equivalent precipitation rate (default mm/hr)
       case precipitation = "precip"
       /// Snowfall (default mm/hr)
       case snowfall = "snow"

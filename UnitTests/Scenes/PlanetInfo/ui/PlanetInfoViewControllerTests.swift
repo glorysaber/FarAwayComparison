@@ -26,7 +26,7 @@ class PlanetInfoViewControllerTests: XCTestCase {
 		let sut = makeSUT()
 		let model = makePlanetInfoModel()
 
-		sut.show(viewModel: model)
+		sut.display(viewModel: model)
 
 		XCTAssertEqual(model.population, sut.mainView.populationStack.text)
 		XCTAssertEqual(model.planetEarthGComparison, sut.mainView.planetContainerView.earthGravityUnitsLabel.text)

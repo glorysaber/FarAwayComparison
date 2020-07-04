@@ -27,7 +27,7 @@ class PermissionsComposer {
 
 	private func composeVC(_ activity: RoutingActivity) -> PermissionsViewController {
 		let vc = PermissionsViewController.instantiate()
-		let router = PermissionsRouter(vc, activity: activity)
+		let router = PermissionsRouter( activity: activity)
 		vc.router = router
 		return vc
 	}

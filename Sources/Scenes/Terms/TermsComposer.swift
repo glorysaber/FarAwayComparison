@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TermsComposure {
+class TermsComposer {
 	func composeTerms(activity: RoutingActivity) -> TermsViewController {
 		let vc = TermsViewController.instantiate()
 		let presenter = TermsPresenter(output: WeakRef(vc))

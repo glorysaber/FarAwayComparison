@@ -10,10 +10,8 @@ import UIKit
 
 class PermissionsRouter {
 	var activity: RoutingActivity
-	weak var viewController: UIViewController?
 
-	init(_ viewController: UIViewController, activity: RoutingActivity) {
-		self.viewController = viewController
+	init(activity: RoutingActivity) {
 		self.activity = activity
 	}
 

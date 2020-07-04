@@ -12,14 +12,31 @@ class MainWeatherViewContainer: UIViewController {
 
 	@IBOutlet weak var stackView: UIStackView!
 
-	override func viewDidLoad() {
-		let weatherViewController = WeatherViewController.instantiate()
-		addChild(weatherViewController)
-		stackView.addArrangedSubview(weatherViewController.view)
+	private let topViewController: UIViewController
+	private let bottomViewController: UIViewController
 
-		let planetInfoViewController = PlanetInfoViewController.instantiate()
-		addChild(planetInfoViewController)
-		stackView.addArrangedSubview(planetInfoViewController.view)
+	// MARK - ViewLifeCycle
+
+	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+		fatalError("Does not Support initialization from nib")
+	}
+
+	required init?(coder: NSCoder) {
+		fatalError("Does not Support initialization from coder")
+	}
+
+	required init?(coder: NSCoder, topView: UIViewController, bottomView: UIViewController) {
+		topViewController = topView
+		bottomViewController = bottomView
+		super.init(coder: coder)
+	}
+
+	override func viewDidLoad() {
+		addChild(topViewController)
+		stackView.addArrangedSubview(topViewController.view)
+
+		addChild(bottomViewController)
+		stackView.addArrangedSubview(bottomViewController.view)
 	}
 }
 

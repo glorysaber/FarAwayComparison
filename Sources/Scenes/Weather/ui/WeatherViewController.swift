@@ -11,22 +11,26 @@ import UIKit
 class WeatherViewController: UIViewController, WeatherView {
 
 	@IBOutlet weak var mainView: WeatherBinderView!
+
+	var requestModelRefresh: (() -> Void)?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		// Do any additional setup after loading the view.
+		requestModelRefresh?()
 	}
 
-	func show(weatherInfo: WeatherViewModel) {
-		mainView.cloudBolt.text = weatherInfo.lightningChance
+	func display(weatherInfo: WeatherViewModel) {
+		mainView.sunriseOrSetTime.text = weatherInfo.sunriseOrSet
 		mainView.cloudCoverageView.text = weatherInfo.cloudCoveragePercentage
 		mainView.temperatureView.text = weatherInfo.temperature
 		mainView.uvIndexView.text = weatherInfo.uvIndex
 		mainView.rainChance.text = weatherInfo.precipitation
 		mainView.cloudSnow.text = weatherInfo.snowfall
 		mainView.weatherDescriptionLabel.text = weatherInfo.description
-		mainView.weatherBreifImage.image = UIImage(named: weatherInfo.imageBriefName)
+		mainView.weatherBreifImage.image =
+			UIImage(named: weatherInfo.imageBriefName) ??
+			UIImage(systemName: weatherInfo.imageBriefName)
 		mainView.visibilityView.text = weatherInfo.visibility
 	}
 
