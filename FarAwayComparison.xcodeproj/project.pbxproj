@@ -160,7 +160,6 @@
 		CC3FF49F24A6B44D00788AD2 /* PermissionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsPresenter.swift; sourceTree = "<group>"; };
 		CC3FF4A124A6BA4E00788AD2 /* PermissionsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsComposer.swift; sourceTree = "<group>"; };
 		CC60416023F1A2A50035705A /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
-		CC60416223F1A7EF0035705A /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		CC6CC05224AE82F0009BF4F2 /* PermissionsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsRouter.swift; sourceTree = "<group>"; };
 		CC6CC05424AE8480009BF4F2 /* RoutingActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingActivity.swift; sourceTree = "<group>"; };
 		CC6CC05824AE872D009BF4F2 /* PermissionsExplanationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsExplanationViewModel.swift; sourceTree = "<group>"; };
@@ -695,7 +694,6 @@
 			isa = PBXGroup;
 			children = (
 				CC60416023F1A2A50035705A /* ApiClient.swift */,
-				CC60416223F1A7EF0035705A /* WeatherAPI.swift */,
 				CCBB983F23F9DABF00E53D22 /* SWAPI.swift */,
 			);
 			path = ApiClient;
