@@ -1,5 +1,5 @@
 //
-//  ApiTests.swift
+//  SWAPIClientTests.swift
 //  FarAwayComparisonTests
 //
 //  Created by Stephen Kac on 2/16/20.
@@ -9,9 +9,9 @@
 import XCTest
 @testable import FarAwayComparison
 
-class SWApiTests: XCTestCase {
+class SWAPIClientTests: XCTestCase {
   
-  var api: ApiClient! = MockJSONRequest()
+  var api = SWAPIClient()
   
   override func setUp() {
     // Put setup code here. This method is called before the invocation of each test method in the class.

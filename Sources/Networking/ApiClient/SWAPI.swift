@@ -19,10 +19,10 @@ protocol SWAPIKey: RawRepresentable, CaseIterable, Hashable where RawValue == St
  */
 protocol SWAPIResource {
   associatedtype Key: SWAPIKey
-  
+
   subscript(_ key: Key) -> [String]? { get }
-  
-  init(json: ApiClient.JSON)
+
+  init(json: SWAPIClient.JSON)
 }
 
 /**
@@ -36,7 +36,7 @@ enum SWAPI {
     case json = ""
     case wookiee = "wookiee"
   }
-  
+
   /// A response Key to Attribute.root and the available attributes
   enum Attribute: String, SWAPIKey {
     case root = ""
@@ -46,11 +46,11 @@ enum SWAPI {
     case species
     case starships
     case vehicles
-    
+
     static var attribute: SWAPI.Attribute = .root
     static let searchableKeys: [Self] = []
   }
-  
+
   // The endpoint to get the resource with
   enum Endpoint {
     /** Will get all results
@@ -70,12 +70,12 @@ enum SWAPI {
      */
     case search(String)
   }
-  
+
   /// A type to allow encapsulation of a pages URL
   struct Page {
     fileprivate let url: String?
   }
-  
+
   /// Based on: https://swapi.co/documentation#people
   enum ResponseKeys {
     enum People: String, SWAPIKey {
@@ -111,11 +111,11 @@ enum SWAPI {
       case url = "url"
       /// Contains a list of urls of vehicles this person has piloted
       case vehicles = "vehicles"
-      
+
       static var attribute: SWAPI.Attribute = .people
       static let searchableKeys: [Self] = [.name]
     }
-    
+
     // TODO: Add markup documentation from https://swapi.co/documentation#films
     enum Films: String, SWAPIKey {
       case title = "title"
@@ -132,11 +132,11 @@ enum SWAPI {
       case url = "url"
       case created = "created"
       case edited = "edited"
-      
+
       static var attribute: SWAPI.Attribute = .films
       static let searchableKeys: [Self] = [.title]
     }
-    
+
     // TODO: Refractor case names and add static string rawRepresentable equal to current case name
     // TODO: Add markup documentation for Starships fields from https://swapi.co/documentation#starships
     enum Starships: String, SWAPIKey {
@@ -158,11 +158,11 @@ enum SWAPI {
       case url
       case created
       case edited
-      
+
       static var attribute: SWAPI.Attribute = .starships
       static let searchableKeys: [Self] = [.name, .model]
     }
-    
+
     // TODO: Refractor case names and add static string rawRepresentable equal to current case name
     // TODO: Add markup documentation for Starships fields from https://swapi.co/documentation#vehicles
     enum Vehicles: String, SWAPIKey {
@@ -182,11 +182,11 @@ enum SWAPI {
       case url
       case created
       case edited
-      
+
       static var attribute: SWAPI.Attribute = .vehicles
       static let searchableKeys: [Self] = [.name, .model]
     }
-    
+
     // TODO: Refractor case names and add static string rawRepresentable equal to current case name
     // TODO: Add markup documentation for Starships fields from https://swapi.co/documentation#species
     enum Species: String, SWAPIKey {
@@ -205,11 +205,11 @@ enum SWAPI {
       case url
       case created
       case edited
-      
+
       static var attribute: SWAPI.Attribute = .species
       static let searchableKeys: [Self] = [.name]
     }
-    
+
     // TODO: Refractor case names and add static string rawRepresentable equal to current case name
     // TODO: Add markup documentation for Starships fields from https://swapi.co/documentation#species
     enum Planets: String, SWAPIKey {
@@ -227,20 +227,20 @@ enum SWAPI {
       case url
       case created
       case edited
-      
+
       static var attribute: SWAPI.Attribute = .planets
       static let searchableKeys: [Self] = [.name]
     }
   }
-  
+
   // TODO: Make explicit SWAPIResource types for all keys with all allowed variables
   struct ResponseData<Key: SWAPIKey>: SWAPIResource {
-    
+
     private let data: [Key: [String]]
-    
-    init(json: ApiClient.JSON) {
+
+    init(json: SWAPIClient.JSON) {
       var localData = type(of: data).init()
-      
+
       for key in Key.allCases {
         if let value = json[key.rawValue] as? String {
           localData[key] = [value]
@@ -252,32 +252,32 @@ enum SWAPI {
           localData[key] = values
         }
       }
-      
+
       data = localData
     }
-    
+
     subscript(_ key: Key) -> [String]? {
       return data[key]
     }
   }
-  
+
   typealias Person = ResponseData<SWAPI.ResponseKeys.People>
   typealias Planet = ResponseData<SWAPI.ResponseKeys.Planets>
   typealias Vehicle = ResponseData<SWAPI.ResponseKeys.Vehicles>
   typealias Starship = ResponseData<SWAPI.ResponseKeys.Starships>
   typealias Species = ResponseData<SWAPI.ResponseKeys.Species>
   typealias Film = ResponseData<SWAPI.ResponseKeys.Films>
-  
+
   struct ResourceResponse<Resource: SWAPIResource> {
     let endPoint: Endpoint
     fileprivate let next: String?
     fileprivate let previous: String?
-    
+
     let results: [Resource]
-    
-    init(data: ApiClient.JSON, endPoint: Endpoint) throws {
+
+    init(data: SWAPIClient.JSON, endPoint: Endpoint) throws {
       self.endPoint = endPoint
-      
+
       switch endPoint {
       case .schema:
         fallthrough
@@ -289,58 +289,90 @@ enum SWAPI {
       default:
         break
       }
-      
+
       next = data["next"] as? String
       previous = data["previous"] as? String
-      
-      guard let jsonResults = data["results"] as? [ApiClient.JSON] else {
-        throw ApiClient.Error.keyNotFound(key: "results")
+
+      guard let jsonResults = data["results"] as? [SWAPIClient.JSON] else {
+        throw SWAPIClient.Error.keyNotFound(key: "results")
       }
-      
+
       var results = type(of: self.results).init()
-      
+
       for result in jsonResults {
         results.append(Resource.init(json: result))
       }
-      
+
       self.results = results
     }
-    
+
     var hasNextPage: Bool {
       next != nil
     }
-    
+
     var hasPreviousPage: Bool {
       previous != nil
     }
-     
+
     var getNextPage: Page {
       return Page(url: next)
     }
-    
+
     var getPreviousPage: Page {
       return Page(url: previous)
     }
   }
-  
-  typealias Result<Resource: SWAPIResource> = Swift.Result<SWAPI.ResourceResponse<Resource>, ApiClient.Error>
+
+  typealias Result<Resource: SWAPIResource> = Swift.Result<SWAPI.ResourceResponse<Resource>, SWAPIClient.Error>
 }
 
-extension ApiClient {
+import Alamofire
+
+class SWAPIClient {
+	typealias HTTPHeaders = [String:String]
+	typealias Parameters = [String:String]
+	typealias JSON = [String:NSObject]
+
+	enum Error: Swift.Error {
+		case bundleInfoNotFound(MainBundleInfo)
+		case keyNotFound(key: String)
+		case urlNotFound(url: String? = nil)
+		case internalError(String)
+		case requestFailed
+		case error(Swift.Error)
+
+		var localizedDescription: String {
+			switch self {
+			case .keyNotFound(let key):
+				return "Could Not find result for key: \(key)"
+			case .urlNotFound(let url):
+				return "Could not connect to URL \(url as Any?)"
+			case .internalError(let errorMessage):
+				return "InternalError: \(errorMessage)"
+			case .requestFailed:
+				return "Failed API resquest"
+			case .error(let error):
+				return "UnMapped Error: \(error)"
+			case .bundleInfoNotFound(let info):
+				return "Could not find required bundle info: \(info)"
+			}
+		}
+	}
+
   func requestStarWarsInfo<Resource: SWAPIResource>(with endpoint: SWAPI.Endpoint, as format: SWAPI.Format = .json, resource: Resource.Type = Resource.self, completion: @escaping (SWAPI.Result<Resource>) -> ()) {
-    
+
     guard let stringURL = MainBundleInfo.swApiUrl.getInfo() else {
       completion(.failure(Error.urlNotFound()))
       return
     }
-    
+
     guard var url = URL(string: stringURL) else {
       completion(.failure(Error.urlNotFound(url: stringURL)))
       return
     }
-    
+
     url.appendPathComponent(Resource.Key.attribute.rawValue)
-    
+
     // The root attribute does not use endpoints
     if Resource.self != SWAPI.Attribute.self {
       switch endpoint {
@@ -357,38 +389,37 @@ extension ApiClient {
           completion(.failure(Error.urlNotFound(url: stringURL)))
           return
         }
-        
+
         url = newURL
       case .page(let page):
         guard let pageString = page.url else {
           completion(.failure(.internalError("Could not make request for page")))
           return
         }
-        
+
         guard let pageURL = URL(string: pageString) else {
           completion(.failure(.internalError("Could not make request for page")))
           return
         }
-        
+
         url = pageURL
       }
     }
     
-    self.requestJSON(url, method: .get) { response in
-      switch response {
-      case .failure(let error):
-        completion(.failure(error))
-      case .success(let json):
-        do {
-          let responseData = try SWAPI.ResourceResponse<Resource>(data: json, endPoint: endpoint)
-          completion(.success(responseData))
-        } catch let error as ApiClient.Error {
-          completion(.failure(error))
-        } catch let error {
-          completion(.failure(.error(error)))
-        }
-      }
-    }
-    
+		AF.request(url, method: .get, parameters: nil).responseJSON { response in
+			switch response.result {
+			case .failure(let error):
+				completion(.failure(.error(error)))
+			case .success(let json):
+				do {
+					let responseData = try SWAPI.ResourceResponse<Resource>(data: json as! SWAPIClient.JSON, endPoint: endpoint)
+					completion(.success(responseData))
+				} catch let error as Error {
+					completion(.failure(error))
+				} catch let error {
+					completion(.failure(.error(error)))
+				}
+			}
+		}
   }
 }
