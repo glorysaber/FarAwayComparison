@@ -6,14 +6,18 @@
 //  Copyright © 2020 Stephen Kac. All rights reserved.
 //
 
+import Alamofire
 import Foundation
 
 extension WeatherBit {
 
-	class WeatherBitClientAPIProduction: WeatherBitClientAPI {
+	class ClientAPIProduction: WeatherBitClientAPI {
+
 		enum Error: Swift.Error {
 			case bundleInfoNotFound(MainBundleInfo)
 			case urlNotFound(String)
+			case malformedResponse
+			case errorFromServer(String)
 		}
 
 		/// Sends a weather request and then processes the return to either failure with an error or success with a WeatherAPI.Data object.
@@ -22,17 +26,17 @@ extension WeatherBit {
 		///   - language: Language to use in descriptions
 		///   - units: Units for measurements
 		///   - completion: The closure to process the results
-		func requestWeather(location: WeatherBit.Location, language: WeatherBit.Language = .english, units: WeatherBit.Units = .fahrenheit, completion: @escaping (Swift.Result<WeatherBit.Response, Error>) -> ()) {
+		func requestWeather(location: WeatherBit.Location, language: WeatherBit.Language = .english, units: WeatherBit.Units = .fahrenheit, completion: @escaping (Result<[WeatherBit.ResultData], Swift.Error>) -> ()) {
 
 			guard let key = MainBundleInfo.weatherBitApiKey.getInfo() else {
-				completion(.failure(.bundleInfoNotFound(MainBundleInfo.weatherBitApiKey)))
+				completion(.failure(Error.bundleInfoNotFound(MainBundleInfo.weatherBitApiKey)))
 				return
 			}
 
-			let requestMeta = RequestMeta(key: key, language: language, units: units)
+			let headerMeta = HeaderMeta(key: key, language: language, units: units)
 
 			guard  let stringURL = MainBundleInfo.weatherBitApiUrl.getInfo() else {
-				completion(.failure(.bundleInfoNotFound(MainBundleInfo.weatherBitApiUrl)))
+				completion(.failure(Error.bundleInfoNotFound(MainBundleInfo.weatherBitApiUrl)))
 				return
 			}
 
@@ -42,10 +46,27 @@ extension WeatherBit {
 			}
 
 
-			let request = WeatherBit.Request(meta: requestMeta, location: <#T##WeatherBit.Location#>)
+			let headers = WeatherBit.Header(meta: headerMeta, location: location).getParameters()
 
+			let httpHeaders = HTTPHeaders(headers)
 
+			AF.request(url, method: .get, parameters: headers).responseDecodable { (dataResponse: DataResponse<WeatherBit.Response, AFError>) in
+				switch dataResponse.result {
+				case let .success(result):
+					guard let data = result.data else {
+						if let error = result.error {
+							completion(.failure(Error.errorFromServer(error)))
+						} else {
+							completion(.failure(Error.malformedResponse))
+						}
+						return
+					}
 
+					completion(.success(data))
+				case let .failure(error):
+					completion(.failure(error))
+				}
+			}
 		}
 	}
 }
