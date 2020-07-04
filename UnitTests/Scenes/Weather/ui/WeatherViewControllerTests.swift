@@ -26,7 +26,7 @@ class WeatherViewControllerTests: XCTestCase {
 		let sut = makeSUT()
 		let model = makeWeatherViewModel()
 
-		sut.show(weatherInfo: model)
+		sut.display(weatherInfo: model)
 
 		XCTAssertEqual(model.description, sut.mainView.weatherDescriptionLabel.text)
 		XCTAssertEqual(UIImage(contentsOfFile: model.imageBriefName), sut.mainView.weatherBreifImage.image)
@@ -36,13 +36,24 @@ class WeatherViewControllerTests: XCTestCase {
 		XCTAssertEqual(model.visibility, sut.mainView.visibilityView.text)
 		XCTAssertEqual(model.precipitation, sut.mainView.rainChance.text)
 		XCTAssertEqual(model.snowfall, sut.mainView.cloudSnow.text)
-		XCTAssertEqual(model.lightningChance, sut.mainView.cloudBolt.text)
+		XCTAssertEqual(model.sunriseOrSet, sut.mainView.sunriseOrSetTime.text)
+	}
+
+	func test_sut_doesCall_refresh_once() {
+		var refreshCalls = 0
+
+		_ = makeSUT() {
+			refreshCalls += 1
+		}
+
+		XCTAssertEqual(refreshCalls, 1)
 	}
 
 	// MARK: Helpers
 
-	func makeSUT() -> WeatherViewController {
+	func makeSUT(refreshClosure: (() -> Void)? = nil) -> WeatherViewController {
 		let sut = WeatherViewController.instantiate()
+		sut.requestModelRefresh = refreshClosure
 		_ = sut.view
 		return sut
 	}
@@ -57,7 +68,7 @@ class WeatherViewControllerTests: XCTestCase {
 			visibility: "4km",
 			precipitation: "0",
 			snowfall: "0",
-			lightningChance: "0")
+			sunriseOrSet: "0")
 	}
 
 }

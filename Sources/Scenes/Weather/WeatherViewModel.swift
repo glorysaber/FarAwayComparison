@@ -15,5 +15,5 @@ struct WeatherViewModel {
 	var visibility: String
 	var precipitation: String
 	var snowfall: String
-	var lightningChance: String
+	var sunriseOrSet: String
 }

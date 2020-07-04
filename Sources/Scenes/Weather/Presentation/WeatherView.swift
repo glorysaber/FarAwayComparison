@@ -9,5 +9,5 @@
 import Foundation
 
 protocol WeatherView {
-	func show(weatherInfo: WeatherViewModel)
+	func display(weatherInfo: WeatherViewModel)
 }

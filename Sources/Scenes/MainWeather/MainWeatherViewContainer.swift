@@ -28,7 +28,7 @@ class MainWeatherViewContainer: UIViewController {
 	}
 
 	override func viewDidLoad() {
-		let weatherViewController = WeatherViewController.instantiate()
+		let weatherViewController = WeatherComposer().compose()
 		addChild(weatherViewController)
 		stackView.addArrangedSubview(weatherViewController.view)
 

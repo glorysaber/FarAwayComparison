@@ -26,7 +26,7 @@ class WeatherViewTests: XCTestCase {
 		XCTAssertNotNil(sut.visibilityView)
 		XCTAssertNotNil(sut.rainChance)
 		XCTAssertNotNil(sut.cloudSnow)
-		XCTAssertNotNil(sut.cloudBolt)
+		XCTAssertNotNil(sut.sunriseOrSetTime)
 	}
 
 
