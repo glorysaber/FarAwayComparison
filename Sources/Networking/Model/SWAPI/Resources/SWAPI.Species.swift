@@ -10,7 +10,7 @@ import Foundation
 
 extension SWAPI {
 	/// A species within the Star Wars universe
-	struct Species: Codable {
+	struct Species: SWAPIResource {
 		/// The average height of this person in centimeters.
 		let averageHeight: String
 		/// The average lifespan of this species in years.
@@ -44,6 +44,8 @@ extension SWAPI {
 		let skinColors: String
 		/// The hypermedia URL of this resource.
 		let url: String
+
+		static var attribute: SWAPI.Attribute = .species
 
 		enum CodingKeys: String, CodingKey {
 			case averageHeight = "average_height"

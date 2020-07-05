@@ -10,7 +10,7 @@ import Foundation
 
 extension SWAPI{
 	/// A Starship
-	struct Starship: Codable {
+	struct Starship: SWAPIResource {
 		/// The maximum number of kilograms that this starship can transport.
 		let cargoCapacity: String
 		/// The maximum length of time that this starship can provide consumables for its entire crew
@@ -54,6 +54,8 @@ extension SWAPI{
 		let starshipClass: String
 		/// The hypermedia URL of this resource.
 		let url: String
+
+		static var attribute: SWAPI.Attribute = .starships
 
 		enum CodingKeys: String, CodingKey {
 			case cargoCapacity = "cargo_capacity"

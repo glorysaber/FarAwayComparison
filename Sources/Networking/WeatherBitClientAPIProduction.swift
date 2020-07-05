@@ -15,9 +15,10 @@ extension WeatherBit {
 
 		enum Error: Swift.Error {
 			case bundleInfoNotFound(MainBundleInfo)
-			case urlNotFound(String)
+			case urlNotFound(url: String)
 			case malformedResponse
 			case errorFromServer(String)
+			case error(String)
 		}
 
 		/// Sends a weather request and then processes the return to either failure with an error or success with a WeatherAPI.Data object.
@@ -26,45 +27,43 @@ extension WeatherBit {
 		///   - language: Language to use in descriptions
 		///   - units: Units for measurements
 		///   - completion: The closure to process the results
-		func requestWeather(location: WeatherBit.Location, language: WeatherBit.Language = .english, units: WeatherBit.Units = .fahrenheit, completion: @escaping (Result<[WeatherBit.ResultData], Swift.Error>) -> ()) {
+		func requestWeather(location: WeatherBit.Location, language: WeatherBit.Language = .english, units: WeatherBit.Units = .fahrenheit, completion: @escaping (Result<[WeatherBit.ResultData], Error>) -> ()) {
 
 			guard let key = MainBundleInfo.weatherBitApiKey.getInfo() else {
-				completion(.failure(Error.bundleInfoNotFound(MainBundleInfo.weatherBitApiKey)))
+				completion(.failure(.bundleInfoNotFound(MainBundleInfo.weatherBitApiKey)))
 				return
 			}
 
 			let headerMeta = HeaderMeta(key: key, language: language, units: units)
 
 			guard  let stringURL = MainBundleInfo.weatherBitApiUrl.getInfo() else {
-				completion(.failure(Error.bundleInfoNotFound(MainBundleInfo.weatherBitApiUrl)))
+				completion(.failure(.bundleInfoNotFound(MainBundleInfo.weatherBitApiUrl)))
 				return
 			}
 
 			guard let url = URL(string: stringURL) else {
-				completion(.failure(Error.urlNotFound(stringURL)))
+				completion(.failure(.urlNotFound(url: stringURL)))
 				return
 			}
 
 
 			let headers = WeatherBit.Header(meta: headerMeta, location: location).getParameters()
 
-			let httpHeaders = HTTPHeaders(headers)
-
 			AF.request(url, method: .get, parameters: headers).responseDecodable { (dataResponse: DataResponse<WeatherBit.Response, AFError>) in
 				switch dataResponse.result {
 				case let .success(result):
 					guard let data = result.data else {
 						if let error = result.error {
-							completion(.failure(Error.errorFromServer(error)))
+							completion(.failure(.errorFromServer(error)))
 						} else {
-							completion(.failure(Error.malformedResponse))
+							completion(.failure(.malformedResponse))
 						}
 						return
 					}
 
 					completion(.success(data))
 				case let .failure(error):
-					completion(.failure(error))
+					completion(.failure(.error(error.localizedDescription)))
 				}
 			}
 		}

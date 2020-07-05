@@ -11,7 +11,7 @@ import Foundation
 extension SWAPI {
 
 	/// A person within the Star Wars universe
-	struct Person: Codable {
+	struct Person: SWAPIResource {
 		/// The birth year of this person. BBY (Before the Battle of Yavin) or ABY (After the Battle
 		/// of Yavin).
 		let birthYear: String
@@ -45,6 +45,8 @@ extension SWAPI {
 		let url: String
 		/// An array of vehicle resources that this person has piloted
 		let vehicles: [String]
+
+		static var attribute: SWAPI.Attribute = .people
 
 		enum CodingKeys: String, CodingKey {
 			case birthYear = "birth_year"

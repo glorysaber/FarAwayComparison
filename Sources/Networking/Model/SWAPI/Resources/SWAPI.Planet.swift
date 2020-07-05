@@ -10,7 +10,7 @@ import Foundation
 
 extension SWAPI {
 	/// A planet.
-	struct Planet: Codable {
+	struct Planet: SWAPIResource {
 		/// The climate of this planet. Comma-seperated if diverse.
 		let climate: String
 		/// The ISO 8601 date format of the time that this resource was created.
@@ -41,6 +41,8 @@ extension SWAPI {
 		let terrain: String
 		/// The hypermedia URL of this resource.
 		let url: String
+
+		static var attribute: SWAPI.Attribute = .planets
 
 		enum CodingKeys: String, CodingKey {
 			case climate, created, diameter, edited, films, gravity, name

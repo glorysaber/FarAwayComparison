@@ -9,5 +9,7 @@
 import Foundation
 
 protocol SWAPIClient {
-	
+	associatedtype Error: Swift.Error
+
+	func requestResource<Resource: SWAPIResource>(with id: Int, as format: SWAPI.Format, resource: Resource.Type, completion: @escaping (Result<Resource, Error>) -> Void)
 }

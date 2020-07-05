@@ -1,5 +1,5 @@
 //
-//  SWAPI+Films.swift
+//  SWAPI+Film.swift
 //  FarAwayComparison
 //
 //  Created by Stephen Kac on 7/4/20.
@@ -11,7 +11,7 @@ import Foundation
 extension SWAPI {
 
 	/// A Star Wars film
-	struct Films: Codable {
+	struct Film: SWAPIResource {
 		/// The people resources featured within this film.
 		let characters: [String]
 		/// The ISO 8601 date format of the time that this resource was created.
@@ -40,6 +40,8 @@ extension SWAPI {
 		let url: String
 		/// The vehicle resources featured within this film.
 		let vehicles: [String]
+
+		static var attribute: SWAPI.Attribute = .films
 
 		enum CodingKeys: String, CodingKey {
 			case characters, created, director, edited

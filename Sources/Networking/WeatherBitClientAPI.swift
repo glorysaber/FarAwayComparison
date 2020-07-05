@@ -8,6 +8,8 @@
 
 import Foundation
 protocol WeatherBitClientAPI {
+	associatedtype Error: Swift.Error
+
 	/// Sends a weather request and then processes the return to either failure with an error or success with a WeatherAPI.Data object.
 	/// - Parameters:
 	///   - location: The location to get the current weather forcast for.
