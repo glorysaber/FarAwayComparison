@@ -53,6 +53,9 @@
 		CC3FE12D24A53B8F0030A74B /* PlanetInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3FE12C24A53B8F0030A74B /* PlanetInfoView.swift */; };
 		CC3FF4A024A6B44D00788AD2 /* PermissionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3FF49F24A6B44D00788AD2 /* PermissionsPresenter.swift */; };
 		CC3FF4A224A6BA4E00788AD2 /* PermissionsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3FF4A124A6BA4E00788AD2 /* PermissionsComposer.swift */; };
+		CC6A31EA24B250960008D88D /* SAKLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6A31E924B250960008D88D /* SAKLocationManager.swift */; };
+		CC6A31EC24B253930008D88D /* SAKLocationManagerCLADelegateAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6A31EB24B253930008D88D /* SAKLocationManagerCLADelegateAdapter.swift */; };
+		CC6A31EF24B2718F0008D88D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6A31EE24B2718F0008D88D /* Location.swift */; };
 		CC6CC05324AE82F0009BF4F2 /* PermissionsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6CC05224AE82F0009BF4F2 /* PermissionsRouter.swift */; };
 		CC6CC05524AE8480009BF4F2 /* RoutingActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6CC05424AE8480009BF4F2 /* RoutingActivity.swift */; };
 		CC6CC05924AE872D009BF4F2 /* PermissionsExplanationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6CC05824AE872D009BF4F2 /* PermissionsExplanationViewModel.swift */; };
@@ -175,6 +178,9 @@
 		CC3FE12C24A53B8F0030A74B /* PlanetInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetInfoView.swift; sourceTree = "<group>"; };
 		CC3FF49F24A6B44D00788AD2 /* PermissionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsPresenter.swift; sourceTree = "<group>"; };
 		CC3FF4A124A6BA4E00788AD2 /* PermissionsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsComposer.swift; sourceTree = "<group>"; };
+		CC6A31E924B250960008D88D /* SAKLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAKLocationManager.swift; sourceTree = "<group>"; };
+		CC6A31EB24B253930008D88D /* SAKLocationManagerCLADelegateAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAKLocationManagerCLADelegateAdapter.swift; sourceTree = "<group>"; };
+		CC6A31EE24B2718F0008D88D /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		CC6CC05224AE82F0009BF4F2 /* PermissionsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsRouter.swift; sourceTree = "<group>"; };
 		CC6CC05424AE8480009BF4F2 /* RoutingActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingActivity.swift; sourceTree = "<group>"; };
 		CC6CC05824AE872D009BF4F2 /* PermissionsExplanationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsExplanationViewModel.swift; sourceTree = "<group>"; };
@@ -479,6 +485,24 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		CC6A31E824B250770008D88D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CC6A31ED24B271840008D88D /* Location */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CC6A31ED24B271840008D88D /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				CC6A31E924B250960008D88D /* SAKLocationManager.swift */,
+				CC6A31EB24B253930008D88D /* SAKLocationManagerCLADelegateAdapter.swift */,
+				CC6A31EE24B2718F0008D88D /* Location.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		CC6CC05A24AE873B009BF4F2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -633,6 +657,7 @@
 		CC8E5F4E23E1F8D900893D8A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				CC6A31E824B250770008D88D /* Model */,
 				CC0A161024A63D3B0048701D /* Networking */,
 				CCC31A25248EF3BD00D499E4 /* UIKit */,
 				CC0D6ECF247E09B500051A7F /* Routing */,
@@ -956,9 +981,11 @@
 				CC84B54724B0050400554834 /* WeatherInfoService.swift in Sources */,
 				CCD88D6924A26DBF00456D0B /* ImageAndLabelView.swift in Sources */,
 				CC28116924B11265004EC0F5 /* WeatherBit.Client.swift in Sources */,
+				CC6A31EA24B250960008D88D /* SAKLocationManager.swift in Sources */,
 				CC3C705224AD6ECA00EAC8FD /* MainQueueDispatchDecorator.swift in Sources */,
 				CC84B54124AFEB3600554834 /* PlanetComparisonService.swift in Sources */,
 				CCAA72CA24B187E5001C75B7 /* SWAPIResource.swift in Sources */,
+				CC6A31EF24B2718F0008D88D /* Location.swift in Sources */,
 				CC3FF4A024A6B44D00788AD2 /* PermissionsPresenter.swift in Sources */,
 				CC0096F824B12C3C003C86C7 /* WeatherBitLocation.swift in Sources */,
 				CC84B54424B0045C00554834 /* WeatherPresenter.swift in Sources */,
@@ -984,6 +1011,7 @@
 				CC2500E224A3FC3800165CEA /* WeatherView.swift in Sources */,
 				CC3C705824AD8DAF00EAC8FD /* LocationPermissionAdapter.swift in Sources */,
 				CCE4EEFF24AD253B00F420AC /* LocationPermissionsServiceMock.swift in Sources */,
+				CC6A31EC24B253930008D88D /* SAKLocationManagerCLADelegateAdapter.swift in Sources */,
 				CC2806BB24A675E500ED7DA1 /* TermsPresenter.swift in Sources */,
 				CC2806C124A6786E00ED7DA1 /* FetchTermsTextUseCase.swift in Sources */,
 				CC3C705624AD7BC700EAC8FD /* PermissionsViewControllerAdapter.swift in Sources */,
