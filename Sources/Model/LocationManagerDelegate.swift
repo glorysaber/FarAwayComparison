@@ -8,7 +8,7 @@
 
 import CoreLocation
 
-class LocationManagerDelegate: NSObject, CLLocationManagerDelegate {
+class CLALocationManagerDelegateAdapter: NSObject, CLLocationManagerDelegate {
 
 	override init() {
 		
