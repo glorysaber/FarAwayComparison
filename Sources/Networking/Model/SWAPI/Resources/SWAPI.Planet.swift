@@ -43,6 +43,9 @@ extension SWAPI {
 		let url: String
 
 		static var attribute: SWAPI.Attribute = .planets
+		enum SearchableKeys: String {
+			case name
+		}
 
 		enum CodingKeys: String, CodingKey {
 			case climate, created, diameter, edited, films, gravity, name

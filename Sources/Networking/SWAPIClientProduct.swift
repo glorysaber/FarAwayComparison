@@ -17,6 +17,60 @@ class SWAPIClientProduct: SWAPIClient {
 		case malformedResponse(String)
 		case errorFromServer(String)
 		case error(String)
+		case pageDoesNotExist
+	}
+
+	func getNextPage<Resource: SWAPIResource>(from page: SWAPI.Page<Resource>, completion: @escaping (Result<SWAPI.Page<Resource>, Error>) -> Void) {
+		guard let pageURL = page.next else {
+			completion(.failure(.pageDoesNotExist))
+			return
+		}
+
+		guard let url = URL(string: pageURL) else {
+			completion(.failure(.urlNotFound(url: pageURL)))
+			return
+		}
+
+		request(url, completion)
+	}
+
+	func getPrevPage<Resource: SWAPIResource>(from page: SWAPI.Page<Resource>, completion: @escaping (Result<SWAPI.Page<Resource>, Error>) -> Void) {
+		guard let pageURL = page.previous else {
+			completion(.failure(.pageDoesNotExist))
+			return
+		}
+
+		guard let url = URL(string: pageURL) else {
+			completion(.failure(.urlNotFound(url: pageURL)))
+			return
+		}
+
+		request(url, completion)
+	}
+
+	func searchFor<Resource: SWAPIResource>(resource: Resource.Type = Resource.self, matching term: String, completion: @escaping (Result<SWAPI.Page<Resource>, Error>) -> Void) {
+		guard let stringURL = MainBundleInfo.swApiUrl.getInfo() else {
+			completion(.failure(.bundleInfoNotFound(.swApiUrl)))
+			return
+		}
+
+		guard var url = URL(string: stringURL) else {
+			completion(.failure(.urlNotFound(url: stringURL)))
+			return
+		}
+
+		url.appendPathComponent(Resource.attribute.rawValue)
+
+		var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
+		urlComponents?.queryItems = [ URLQueryItem(name: "search", value: term)]
+		guard let newURL = urlComponents?.url else {
+			completion(.failure(Error.urlNotFound(url: stringURL)))
+			return
+		}
+
+		url = newURL
+
+		request(url, completion)
 	}
 
 	func requestAll<Resource: SWAPIResource>(of resource: Resource.Type = Resource.self, completion: @escaping (Result<SWAPI.Page<Resource>, Error>) -> Void) {

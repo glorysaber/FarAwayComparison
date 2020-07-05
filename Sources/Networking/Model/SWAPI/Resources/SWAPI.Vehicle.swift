@@ -46,6 +46,9 @@ extension SWAPI {
 		let vehicleClass: String
 
 		static var attribute: SWAPI.Attribute = .vehicles
+		enum SearchableKeys: String {
+			case name, model
+		}
 
 		enum CodingKeys: String, CodingKey {
 			case cargoCapacity = "cargo_capacity"

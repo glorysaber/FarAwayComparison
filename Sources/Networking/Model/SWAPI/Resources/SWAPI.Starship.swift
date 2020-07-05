@@ -56,6 +56,9 @@ extension SWAPI{
 		let url: String
 
 		static var attribute: SWAPI.Attribute = .starships
+		enum SearchableKeys: String {
+			case name, model
+		}
 
 		enum CodingKeys: String, CodingKey {
 			case cargoCapacity = "cargo_capacity"

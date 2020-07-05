@@ -116,7 +116,7 @@ class SWAPIClientTests: XCTestCase {
 			switch response {
 			case .failure(let error):
 				XCTAssert(false, error.localizedDescription)
-			case let .success(data):
+			case .success(_):
 				// Success!
 				break
 			}
@@ -127,90 +127,88 @@ class SWAPIClientTests: XCTestCase {
 		wait(for: [requestExpect], timeout: 30)
 	}
   
-//  func testSWAPISearchSpecific() {
-//
-//    let requestExpect = XCTestExpectation(description: "SWAPISearchSpecific")
-//
-//    let nameToSearchFor = "Luke Skywalker"
-//
-//    api.requestStarWarsInfo(with: .search(nameToSearchFor)) { (response: SWAPI.Result<SWAPI.Person>) in
-//
-//      switch response {
-//      case .failure(let error):
-//        XCTAssert(false, error.localizedDescription)
-//      case .success(let data):
-//        var foundName = false
-//        // We should have all keys present. .weather need to be checked seperately
-//        for record in data.results {
-//          foundName = record[.name]?[0] == .some(nameToSearchFor) || foundName
-//        }
-//
-//        assert(foundName)
-//      }
-//
-//      requestExpect.fulfill()
-//    }
-//
-//    wait(for: [requestExpect], timeout: 30)
-//
-//  }
+  func testSWAPISearchSpecific() {
+
+    let requestExpect = XCTestExpectation(description: "SWAPISearchSpecific")
+
+    let nameToSearchFor = "Luke Skywalker"
+
+		api.searchFor(resource: SWAPI.Person.self, matching: nameToSearchFor) { response in
+      switch response {
+      case .failure(let error):
+        XCTAssert(false, error.localizedDescription)
+      case .success(let data):
+        var foundName = false
+        // We should have all keys present. .weather need to be checked seperately
+        for record in data.results {
+					foundName = record.name == .some(nameToSearchFor) || foundName
+        }
+
+        assert(foundName)
+      }
+
+      requestExpect.fulfill()
+    }
+
+    wait(for: [requestExpect], timeout: 30)
+
+  }
   
-//  func testSWAPISearchUnSpecific() {
-//
-//    let requestExpect = XCTestExpectation(description: "SWAPISearchUnSpecific")
-//
-//    let nameToSearchFor = "L"
-//
-//    // Create a repsonse we expect to have more than one page of results
-//    api.requestStarWarsInfo(with: .search(nameToSearchFor)) { (response: SWAPI.Result<SWAPI.Person>) in
-//
-//      switch response {
-//      case .failure(let error):
-//        XCTAssert(false, error.localizedDescription)
-//      case .success(let firstPageData):
-//        guard let nameToCompare = firstPageData.results.first?[.name]?[0] else {
-//          requestExpect.fulfill()
-//          XCTAssert(false, "There was no results")
-//          return
-//        }
-//        if (firstPageData.hasNextPage) {
-//          // If We have a next page we want to check the next page of results
-//          self.api.requestStarWarsInfo(with: .page(firstPageData.getNextPage)) { (response: SWAPI.Result<SWAPI.Person>) in
-//            switch response {
-//            case .failure(let error):
-//              XCTAssert(false, error.localizedDescription)
-//            case .success(let secondPageData):
-//              // Success lets go back to first page
-//              self.api.requestStarWarsInfo(with: .page(secondPageData.getPreviousPage)) { (response: SWAPI.Result<SWAPI.Person>) in
-//                switch response {
-//                case .failure(let error):
-//                  XCTAssert(false, error.localizedDescription)
-//                case .success(let returnToFirstPageData):
-//                  // Lets make sure the name that we grabbed in page 1 still exists
-//                  guard returnToFirstPageData.results.contains(where: {$0[.name]?[0] == nameToCompare}) else {
-//                    XCTAssert(false, "There was no results when returning to page 1")
-//                    requestExpect.fulfill()
-//                    return
-//                  }
-//                  break
-//                }
-//
-//                requestExpect.fulfill()
-//              }
-//              break
-//            }
-//          }
-//        } else {
-//          XCTAssert(false, "Expected multiple responses, please change search parameters")
-//          requestExpect.fulfill()
-//        }
-//      }
-//
-//    }
-//
-//    wait(for: [requestExpect], timeout: 30)
-//
-//  }
+  func testSWAPISearchUnSpecific() {
+
+    let requestExpect = XCTestExpectation(description: "SWAPISearchUnSpecific")
+
+    let nameToSearchFor = "L"
+
+    // Create a repsonse we expect to have more than one page of results
+    api.searchFor(resource: SWAPI.Person.self, matching: nameToSearchFor) { response in
+      switch response {
+      case .failure(let error):
+        XCTAssert(false, error.localizedDescription)
+      case .success(let firstPageData):
+				guard let nameToCompare = firstPageData.results.first?.name else {
+          requestExpect.fulfill()
+          XCTAssert(false, "There was no results")
+          return
+        }
+        if (firstPageData.next != nil) {
+          // If We have a next page we want to check the next page of results
+					self.api.getNextPage(from: firstPageData) { response in
+            switch response {
+            case .failure(let error):
+              XCTAssert(false, error.localizedDescription)
+            case .success(let secondPageData):
+              // Success lets go back to first page
+              self.api.getPrevPage(from: secondPageData) { response in
+                switch response {
+                case .failure(let error):
+                  XCTAssert(false, error.localizedDescription)
+                case .success(let returnToFirstPageData):
+                  // Lets make sure the name that we grabbed in page 1 still exists
+									guard returnToFirstPageData.results.contains(where: {$0.name == nameToCompare}) else {
+                    XCTAssert(false, "There was no results when returning to page 1")
+                    requestExpect.fulfill()
+                    return
+                  }
+                  break
+                }
+
+                requestExpect.fulfill()
+              }
+              break
+            }
+          }
+        } else {
+          XCTAssert(false, "Expected multiple responses, please change search parameters")
+          requestExpect.fulfill()
+        }
+      }
+
+    }
+
+    wait(for: [requestExpect], timeout: 30)
+
+  }
   
   
   

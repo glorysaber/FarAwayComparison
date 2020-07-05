@@ -42,6 +42,9 @@ extension SWAPI {
 		let vehicles: [String]
 
 		static var attribute: SWAPI.Attribute = .films
+		enum SearchableKeys: String {
+			case title
+		}
 
 		enum CodingKeys: String, CodingKey {
 			case characters, created, director, edited

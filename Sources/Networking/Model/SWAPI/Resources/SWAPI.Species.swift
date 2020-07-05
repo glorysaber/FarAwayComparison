@@ -46,6 +46,9 @@ extension SWAPI {
 		let url: String
 
 		static var attribute: SWAPI.Attribute = .species
+		enum SearchableKeys: String {
+			case name
+		}
 
 		enum CodingKeys: String, CodingKey {
 			case averageHeight = "average_height"

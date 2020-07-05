@@ -231,7 +231,6 @@
 		CCBB983823F997CC00E53D22 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		CCBB983B23F99B2E00E53D22 /* MainBundleInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBundleInfo.swift; sourceTree = "<group>"; };
 		CCBB983D23F9A49800E53D22 /* WeatherBitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherBitTests.swift; sourceTree = "<group>"; };
-		CCBB983F23F9DABF00E53D22 /* SWAPI-OLD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SWAPI-OLD.swift"; sourceTree = "<group>"; };
 		CCC31A1D248EF12F00D499E4 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		CCC31A20248EF18000D499E4 /* Root.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
 		CCC31A26248EF3EA00D499E4 /* UIViewController+FullScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+FullScreen.swift"; sourceTree = "<group>"; };
@@ -304,7 +303,6 @@
 			isa = PBXGroup;
 			children = (
 				CC8E535924B0F76E006DA8D3 /* Model */,
-				CCBB984123F9ECEA00E53D22 /* ApiClient */,
 				CC28116624B111F4004EC0F5 /* WeatherBitClientAPI.swift */,
 				CC28116824B11265004EC0F5 /* WeatherBitClientAPIProduction.swift */,
 				CCAA72C524B18669001C75B7 /* SWAPIClient.swift */,
@@ -746,14 +744,6 @@
 				CCBB983823F997CC00E53D22 /* Debug.xcconfig */,
 			);
 			path = Config;
-			sourceTree = "<group>";
-		};
-		CCBB984123F9ECEA00E53D22 /* ApiClient */ = {
-			isa = PBXGroup;
-			children = (
-				CCBB983F23F9DABF00E53D22 /* SWAPI-OLD.swift */,
-			);
-			path = ApiClient;
 			sourceTree = "<group>";
 		};
 		CCC31A1F248EF15E00D499E4 /* Root */ = {

@@ -48,6 +48,10 @@ extension SWAPI {
 
 		static var attribute: SWAPI.Attribute = .people
 
+		enum SearchableKeys: String {
+			case name
+		}
+
 		enum CodingKeys: String, CodingKey {
 			case birthYear = "birth_year"
 			case created, edited

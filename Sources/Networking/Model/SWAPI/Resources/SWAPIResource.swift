@@ -9,6 +9,7 @@
 import Foundation
 
 protocol SWAPIResource: Decodable {
+	associatedtype SearchableKeys: RawRepresentable
 	static var attribute: SWAPI.Attribute { get }
 }
 
