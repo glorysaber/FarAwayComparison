@@ -39,7 +39,7 @@
 		CC2806CD24A6A53C00ED7DA1 /* WeakRef+TermsPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2806CC24A6A53C00ED7DA1 /* WeakRef+TermsPresenterOutput.swift */; };
 		CC2806D024A6A67A00ED7DA1 /* TermsComposerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2806CE24A6A5BE00ED7DA1 /* TermsComposerTests.swift */; };
 		CC28116724B111F4004EC0F5 /* WeatherBitClientAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28116624B111F4004EC0F5 /* WeatherBitClientAPI.swift */; };
-		CC28116924B11265004EC0F5 /* WeatherBitClientAPIProduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28116824B11265004EC0F5 /* WeatherBitClientAPIProduction.swift */; };
+		CC28116924B11265004EC0F5 /* WeatherBit.Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC28116824B11265004EC0F5 /* WeatherBit.Client.swift */; };
 		CC341D1824B00A8200EFAFE1 /* WeatherPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC341D1724B00A8200EFAFE1 /* WeatherPresenterTests.swift */; };
 		CC341D1A24B00BA300EFAFE1 /* WeatherComposerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC341D1924B00BA300EFAFE1 /* WeatherComposerTests.swift */; };
 		CC341D1C24B00C1700EFAFE1 /* WeatherInfoServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC341D1B24B00C1700EFAFE1 /* WeatherInfoServiceTests.swift */; };
@@ -67,6 +67,7 @@
 		CC6CC07624AFB32D009BF4F2 /* TermsRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6CC07524AFB32D009BF4F2 /* TermsRouterTests.swift */; };
 		CC6CC07924AFB51C009BF4F2 /* PlanetInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6CC07824AFB51C009BF4F2 /* PlanetInfoPresenter.swift */; };
 		CC7BED2724B1A42700B96904 /* SWAPI.Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7BED2624B1A42700B96904 /* SWAPI.Page.swift */; };
+		CC7BED2924B1B0BF00B96904 /* WeatherBitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB983D23F9A49800E53D22 /* WeatherBitTests.swift */; };
 		CC84B53624AFE37B00554834 /* PlanetInfoComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC84B53524AFE37B00554834 /* PlanetInfoComposer.swift */; };
 		CC84B53824AFE78000554834 /* PlanetInfoComposerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC84B53724AFE78000554834 /* PlanetInfoComposerTests.swift */; };
 		CC84B53A24AFE94200554834 /* PlanetInfoPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC84B53924AFE94200554834 /* PlanetInfoPresenterTests.swift */; };
@@ -95,7 +96,7 @@
 		CCAA72C224B18470001C75B7 /* SWAPI.Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA72C124B18470001C75B7 /* SWAPI.Film.swift */; };
 		CCAA72C424B18502001C75B7 /* SWAPI.Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA72C324B18502001C75B7 /* SWAPI.Vehicle.swift */; };
 		CCAA72C624B18669001C75B7 /* SWAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA72C524B18669001C75B7 /* SWAPIClient.swift */; };
-		CCAA72C824B18683001C75B7 /* SWAPIClientProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA72C724B18683001C75B7 /* SWAPIClientProduct.swift */; };
+		CCAA72C824B18683001C75B7 /* SWAPI.Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA72C724B18683001C75B7 /* SWAPI.Client.swift */; };
 		CCAA72CA24B187E5001C75B7 /* SWAPIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA72C924B187E5001C75B7 /* SWAPIResource.swift */; };
 		CCAA72CD24B18A8D001C75B7 /* SWAPI.Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA72CC24B18A8D001C75B7 /* SWAPI.Attribute.swift */; };
 		CCAA72CF24B18B2F001C75B7 /* SWAPI.Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA72CE24B18B2F001C75B7 /* SWAPI.Format.swift */; };
@@ -160,7 +161,7 @@
 		CC2806CC24A6A53C00ED7DA1 /* WeakRef+TermsPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeakRef+TermsPresenterOutput.swift"; sourceTree = "<group>"; };
 		CC2806CE24A6A5BE00ED7DA1 /* TermsComposerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsComposerTests.swift; sourceTree = "<group>"; };
 		CC28116624B111F4004EC0F5 /* WeatherBitClientAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherBitClientAPI.swift; sourceTree = "<group>"; };
-		CC28116824B11265004EC0F5 /* WeatherBitClientAPIProduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherBitClientAPIProduction.swift; sourceTree = "<group>"; };
+		CC28116824B11265004EC0F5 /* WeatherBit.Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherBit.Client.swift; sourceTree = "<group>"; };
 		CC341D1724B00A8200EFAFE1 /* WeatherPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPresenterTests.swift; sourceTree = "<group>"; };
 		CC341D1924B00BA300EFAFE1 /* WeatherComposerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherComposerTests.swift; sourceTree = "<group>"; };
 		CC341D1B24B00C1700EFAFE1 /* WeatherInfoServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoServiceTests.swift; sourceTree = "<group>"; };
@@ -215,7 +216,7 @@
 		CC9754CE24A2C72C00110DB0 /* WeatherView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeatherView.storyboard; sourceTree = "<group>"; };
 		CC9754D024A2D3FE00110DB0 /* PlanetInfoView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlanetInfoView.storyboard; sourceTree = "<group>"; };
 		CC9754D424A2D51F00110DB0 /* ForeignPlanetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeignPlanetView.swift; sourceTree = "<group>"; };
-		CCAA72B624B1819F001C75B7 /* SWAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SWAPI.swift; path = Sources/Networking/Model/SWAPI/SWAPI.swift; sourceTree = SOURCE_ROOT; };
+		CCAA72B624B1819F001C75B7 /* SWAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPI.swift; sourceTree = "<group>"; };
 		CCAA72B924B18203001C75B7 /* SWAPI.Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPI.Person.swift; sourceTree = "<group>"; };
 		CCAA72BB24B182C8001C75B7 /* SWAPI.Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPI.Planet.swift; sourceTree = "<group>"; };
 		CCAA72BD24B18354001C75B7 /* SWAPI.Starship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPI.Starship.swift; sourceTree = "<group>"; };
@@ -223,7 +224,7 @@
 		CCAA72C124B18470001C75B7 /* SWAPI.Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPI.Film.swift; sourceTree = "<group>"; };
 		CCAA72C324B18502001C75B7 /* SWAPI.Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPI.Vehicle.swift; sourceTree = "<group>"; };
 		CCAA72C524B18669001C75B7 /* SWAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPIClient.swift; sourceTree = "<group>"; };
-		CCAA72C724B18683001C75B7 /* SWAPIClientProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPIClientProduct.swift; sourceTree = "<group>"; };
+		CCAA72C724B18683001C75B7 /* SWAPI.Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPI.Client.swift; sourceTree = "<group>"; };
 		CCAA72C924B187E5001C75B7 /* SWAPIResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPIResource.swift; sourceTree = "<group>"; };
 		CCAA72CC24B18A8D001C75B7 /* SWAPI.Attribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPI.Attribute.swift; sourceTree = "<group>"; };
 		CCAA72CE24B18B2F001C75B7 /* SWAPI.Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPI.Format.swift; sourceTree = "<group>"; };
@@ -302,11 +303,8 @@
 		CC0A161024A63D3B0048701D /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				CC8E535924B0F76E006DA8D3 /* Model */,
-				CC28116624B111F4004EC0F5 /* WeatherBitClientAPI.swift */,
-				CC28116824B11265004EC0F5 /* WeatherBitClientAPIProduction.swift */,
-				CCAA72C524B18669001C75B7 /* SWAPIClient.swift */,
-				CCAA72C724B18683001C75B7 /* SWAPIClientProduct.swift */,
+				CCAA72B524B1818C001C75B7 /* WeatherBit */,
+				CCAA72B824B181F3001C75B7 /* SWAPI */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -608,15 +606,6 @@
 			path = Terms;
 			sourceTree = "<group>";
 		};
-		CC8E535924B0F76E006DA8D3 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				CCAA72B824B181F3001C75B7 /* SWAPI */,
-				CCAA72B524B1818C001C75B7 /* WeatherBit */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		CC8E5F4323E1F8D900893D8A = {
 			isa = PBXGroup;
 			children = (
@@ -704,6 +693,8 @@
 		CCAA72B524B1818C001C75B7 /* WeatherBit */ = {
 			isa = PBXGroup;
 			children = (
+				CC28116624B111F4004EC0F5 /* WeatherBitClientAPI.swift */,
+				CC28116824B11265004EC0F5 /* WeatherBit.Client.swift */,
 				CC0096F724B12C3C003C86C7 /* WeatherBitLocation.swift */,
 				CC8E535A24B0F786006DA8D3 /* WeatherBitAPIModel.swift */,
 				CC0096F924B12C6E003C86C7 /* WeatherBit.Language.swift */,
@@ -715,6 +706,8 @@
 		CCAA72B824B181F3001C75B7 /* SWAPI */ = {
 			isa = PBXGroup;
 			children = (
+				CCAA72C524B18669001C75B7 /* SWAPIClient.swift */,
+				CCAA72C724B18683001C75B7 /* SWAPI.Client.swift */,
 				CCAA72B624B1819F001C75B7 /* SWAPI.swift */,
 				CCAA72CB24B189A8001C75B7 /* Resources */,
 				CCAA72CC24B18A8D001C75B7 /* SWAPI.Attribute.swift */,
@@ -952,7 +945,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC3FF4A224A6BA4E00788AD2 /* PermissionsComposer.swift in Sources */,
-				CCAA72C824B18683001C75B7 /* SWAPIClientProduct.swift in Sources */,
+				CCAA72C824B18683001C75B7 /* SWAPI.Client.swift in Sources */,
 				CCC31A27248EF3EA00D499E4 /* UIViewController+FullScreen.swift in Sources */,
 				CC28116724B111F4004EC0F5 /* WeatherBitClientAPI.swift in Sources */,
 				CC6CC05C24AE875F009BF4F2 /* PermissionsAlertViewModel.swift in Sources */,
@@ -962,7 +955,7 @@
 				CC8E5F5423E1F8D900893D8A /* TermsViewController.swift in Sources */,
 				CC84B54724B0050400554834 /* WeatherInfoService.swift in Sources */,
 				CCD88D6924A26DBF00456D0B /* ImageAndLabelView.swift in Sources */,
-				CC28116924B11265004EC0F5 /* WeatherBitClientAPIProduction.swift in Sources */,
+				CC28116924B11265004EC0F5 /* WeatherBit.Client.swift in Sources */,
 				CC3C705224AD6ECA00EAC8FD /* MainQueueDispatchDecorator.swift in Sources */,
 				CC84B54124AFEB3600554834 /* PlanetComparisonService.swift in Sources */,
 				CCAA72CA24B187E5001C75B7 /* SWAPIResource.swift in Sources */,
@@ -1038,6 +1031,7 @@
 				CC84B53824AFE78000554834 /* PlanetInfoComposerTests.swift in Sources */,
 				CC6CC06B24AED553009BF4F2 /* PermissionsComposerTests.swift in Sources */,
 				CC2806C324A6832300ED7DA1 /* FetchTermsTextUseCaseTests.swift in Sources */,
+				CC7BED2924B1B0BF00B96904 /* WeatherBitTests.swift in Sources */,
 				CC6CC06E24AED5BE009BF4F2 /* PermissionsRouterTests.swift in Sources */,
 				CC6CC07024AFAC4C009BF4F2 /* LocationPermissionAdapterTests.swift in Sources */,
 				CC341D1824B00A8200EFAFE1 /* WeatherPresenterTests.swift in Sources */,

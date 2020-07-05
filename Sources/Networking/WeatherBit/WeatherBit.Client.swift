@@ -11,7 +11,7 @@ import Foundation
 
 extension WeatherBit {
 
-	class ClientAPIProduction: WeatherBitClientAPI {
+	class Client: WeatherBitClient {
 
 		enum Error: Swift.Error {
 			case bundleInfoNotFound(MainBundleInfo)

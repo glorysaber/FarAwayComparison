@@ -11,7 +11,7 @@ import XCTest
 
 class WeatherApiTests: XCTestCase {
   
-	var api = WeatherBit.ClientAPIProduction()
+	var api = WeatherBit.Client()
   
   /// Tests getting the data and converting it to our weather data type and that all expected weather values are present
   func testWeatherAPI() {
