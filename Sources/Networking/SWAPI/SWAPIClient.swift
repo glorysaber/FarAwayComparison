@@ -9,7 +9,11 @@
 import Foundation
 
 protocol SWAPIClient {
-	associatedtype Error: Swift.Error
+	typealias Error = SWAPI.Error
 
+	func getNextPage<Resource: SWAPIResource>(from page: SWAPI.Page<Resource>, completion: @escaping (Result<SWAPI.Page<Resource>, Error>) -> Void)
+	func getPrevPage<Resource: SWAPIResource>(from page: SWAPI.Page<Resource>, completion: @escaping (Result<SWAPI.Page<Resource>, Error>) -> Void)
+	func searchFor<Resource: SWAPIResource>(resource: Resource.Type, matching term: String, completion: @escaping (Result<SWAPI.Page<Resource>, Error>) -> Void)
+	func requestAll<Resource: SWAPIResource>(of resource: Resource.Type, completion: @escaping (Result<SWAPI.Page<Resource>, Error>) -> Void)
 	func requestResource<Resource: SWAPIResource>(with id: Int, as format: SWAPI.Format, resource: Resource.Type, completion: @escaping (Result<Resource, Error>) -> Void)
 }

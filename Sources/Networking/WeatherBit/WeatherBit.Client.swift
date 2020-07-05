@@ -13,14 +13,6 @@ extension WeatherBit {
 
 	class Client: WeatherBitClient {
 
-		enum Error: Swift.Error {
-			case bundleInfoNotFound(MainBundleInfo)
-			case urlNotFound(url: String)
-			case malformedResponse
-			case errorFromServer(String)
-			case error(String)
-		}
-
 		/// Sends a weather request and then processes the return to either failure with an error or success with a WeatherAPI.Data object.
 		/// - Parameters:
 		///   - location: The location to get the current weather forcast for.

@@ -13,15 +13,6 @@ extension SWAPI {
 
 	class Client: SWAPIClient {
 
-		enum Error: Swift.Error {
-			case bundleInfoNotFound(MainBundleInfo)
-			case urlNotFound(url: String)
-			case malformedResponse(String)
-			case errorFromServer(String)
-			case error(String)
-			case pageDoesNotExist
-		}
-
 		func getNextPage<Resource: SWAPIResource>(from page: Page<Resource>, completion: @escaping (Result<Page<Resource>, Error>) -> Void) {
 			guard let pageURL = page.next else {
 				completion(.failure(.pageDoesNotExist))

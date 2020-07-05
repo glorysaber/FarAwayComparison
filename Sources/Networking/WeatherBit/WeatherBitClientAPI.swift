@@ -8,7 +8,7 @@
 
 import Foundation
 protocol WeatherBitClient {
-	associatedtype Error: Swift.Error
+	typealias Error = WeatherBit.Error
 
 	/// Sends a weather request and then processes the return to either failure with an error or success with a WeatherAPI.Data object.
 	/// - Parameters:
