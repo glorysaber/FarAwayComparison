@@ -1,5 +1,5 @@
 //
-//  ApiTests.swift
+//  SWAPIClientTests.swift
 //  FarAwayComparisonTests
 //
 //  Created by Stephen Kac on 2/16/20.
@@ -9,9 +9,9 @@
 import XCTest
 @testable import FarAwayComparison
 
-class SWApiTests: XCTestCase {
+class SWAPIClientTests: XCTestCase {
   
-  var api: ApiClient! = MockJSONRequest()
+	var api = SWAPI.Client()
   
   override func setUp() {
     // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -22,18 +22,13 @@ class SWApiTests: XCTestCase {
   }
   
   fileprivate func checkAllCasesPresentFor<ResourceType: SWAPIResource>(_ resourceType: ResourceType.Type, _ requestExpect: XCTestExpectation, id: Int = 1) {
-    api.requestStarWarsInfo(with: .id(id), as: .json, resource: resourceType) { response in
-      
+    api.requestResource(with: id, resource: resourceType) { response in
       switch response {
       case .failure(let error):
         XCTAssert(false, error.localizedDescription)
-      case .success(let data):
-        // We should have all keys present. .weather need to be checked seperately
-        for key in resourceType.Key.allCases {
-          if data.results.first?[key] == nil {
-            XCTAssert(false, "Missing Key: \(key)")
-          }
-        }
+      case .success(_):
+        // Success!
+				break
       }
       
       requestExpect.fulfill()
@@ -69,7 +64,7 @@ class SWApiTests: XCTestCase {
     
     let requestExpect = XCTestExpectation(description: "VehiclesID4")
     
-    let resourceType = SWAPI.Vehicle.self
+		let resourceType = SWAPI.Vehicle.self
     
     checkAllCasesPresentFor(resourceType, requestExpect, id: 4)
     
@@ -111,16 +106,34 @@ class SWApiTests: XCTestCase {
     
     wait(for: [requestExpect], timeout: 30)
   }
-  
+
+	func test_SWAPI_ALL_People() {
+		let requestExpect = XCTestExpectation(description: "StarshipID2")
+
+		let resourceType = SWAPI.Starship.self
+
+		api.requestAll(of: resourceType) { (response) in
+			switch response {
+			case .failure(let error):
+				XCTAssert(false, error.localizedDescription)
+			case .success(_):
+				// Success!
+				break
+			}
+
+			requestExpect.fulfill()
+		}
+
+		wait(for: [requestExpect], timeout: 30)
+	}
   
   func testSWAPISearchSpecific() {
-    
+
     let requestExpect = XCTestExpectation(description: "SWAPISearchSpecific")
-    
+
     let nameToSearchFor = "Luke Skywalker"
-    
-    api.requestStarWarsInfo(with: .search(nameToSearchFor)) { (response: SWAPI.Result<SWAPI.Person>) in
-      
+
+		api.searchFor(resource: SWAPI.Person.self, matching: nameToSearchFor) { response in
       switch response {
       case .failure(let error):
         XCTAssert(false, error.localizedDescription)
@@ -128,59 +141,58 @@ class SWApiTests: XCTestCase {
         var foundName = false
         // We should have all keys present. .weather need to be checked seperately
         for record in data.results {
-          foundName = record[.name]?[0] == .some(nameToSearchFor) || foundName
+					foundName = record.name == .some(nameToSearchFor) || foundName
         }
-        
+
         assert(foundName)
       }
-      
+
       requestExpect.fulfill()
     }
-    
+
     wait(for: [requestExpect], timeout: 30)
-    
+
   }
   
   func testSWAPISearchUnSpecific() {
-    
+
     let requestExpect = XCTestExpectation(description: "SWAPISearchUnSpecific")
-    
+
     let nameToSearchFor = "L"
-    
+
     // Create a repsonse we expect to have more than one page of results
-    api.requestStarWarsInfo(with: .search(nameToSearchFor)) { (response: SWAPI.Result<SWAPI.Person>) in
-      
+    api.searchFor(resource: SWAPI.Person.self, matching: nameToSearchFor) { response in
       switch response {
       case .failure(let error):
         XCTAssert(false, error.localizedDescription)
       case .success(let firstPageData):
-        guard let nameToCompare = firstPageData.results.first?[.name]?[0] else {
+				guard let nameToCompare = firstPageData.results.first?.name else {
           requestExpect.fulfill()
           XCTAssert(false, "There was no results")
           return
         }
-        if (firstPageData.hasNextPage) {
+        if (firstPageData.next != nil) {
           // If We have a next page we want to check the next page of results
-          self.api.requestStarWarsInfo(with: .page(firstPageData.getNextPage)) { (response: SWAPI.Result<SWAPI.Person>) in
+					self.api.getNextPage(from: firstPageData) { response in
             switch response {
             case .failure(let error):
               XCTAssert(false, error.localizedDescription)
             case .success(let secondPageData):
               // Success lets go back to first page
-              self.api.requestStarWarsInfo(with: .page(secondPageData.getPreviousPage)) { (response: SWAPI.Result<SWAPI.Person>) in
+              self.api.getPrevPage(from: secondPageData) { response in
                 switch response {
                 case .failure(let error):
                   XCTAssert(false, error.localizedDescription)
                 case .success(let returnToFirstPageData):
                   // Lets make sure the name that we grabbed in page 1 still exists
-                  guard returnToFirstPageData.results.contains(where: {$0[.name]?[0] == nameToCompare}) else {
+									guard returnToFirstPageData.results.contains(where: {$0.name == nameToCompare}) else {
                     XCTAssert(false, "There was no results when returning to page 1")
                     requestExpect.fulfill()
                     return
                   }
                   break
                 }
-                
+
                 requestExpect.fulfill()
               }
               break
@@ -193,9 +205,9 @@ class SWApiTests: XCTestCase {
       }
 
     }
-    
+
     wait(for: [requestExpect], timeout: 30)
-    
+
   }
   
   
