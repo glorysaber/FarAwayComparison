@@ -19,6 +19,22 @@ class SWAPIClientProduct: SWAPIClient {
 		case error(String)
 	}
 
+	func requestAll<Resource: SWAPIResource>(of resource: Resource.Type = Resource.self, completion: @escaping (Result<SWAPI.Page<Resource>, Error>) -> Void) {
+		guard let stringURL = MainBundleInfo.swApiUrl.getInfo() else {
+			completion(.failure(.bundleInfoNotFound(.swApiUrl)))
+			return
+		}
+
+		guard var url = URL(string: stringURL) else {
+			completion(.failure(.urlNotFound(url: stringURL)))
+			return
+		}
+
+		url.appendPathComponent(Resource.attribute.rawValue)
+
+		request(url, completion)
+	}
+
 	func requestResource<Resource: SWAPIResource>(with id: Int, as format: SWAPI.Format = .json, resource: Resource.Type = Resource.self, completion: @escaping (Result<Resource, Error>) -> Void) {
 		guard let stringURL = MainBundleInfo.swApiUrl.getInfo() else {
 			completion(.failure(.bundleInfoNotFound(.swApiUrl)))
@@ -34,6 +50,11 @@ class SWAPIClientProduct: SWAPIClient {
 
 		url.appendPathComponent(String(id))
 
+		request(url, completion)
+	}
+	
+	@discardableResult
+	private func request<Resource: Decodable>(_ url: URL, _ completion: @escaping (Result<Resource, SWAPIClientProduct.Error>) -> Void) -> DataRequest {
 		AF.request(url, method: .get).responseData {  (dataResponse: DataResponse<Data, AFError>) in
 			switch dataResponse.result {
 			case let .success(data):

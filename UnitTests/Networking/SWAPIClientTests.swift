@@ -106,7 +106,26 @@ class SWAPIClientTests: XCTestCase {
     
     wait(for: [requestExpect], timeout: 30)
   }
-  
+
+	func test_SWAPI_ALL_People() {
+		let requestExpect = XCTestExpectation(description: "StarshipID2")
+
+		let resourceType = SWAPI.Starship.self
+
+		api.requestAll(of: resourceType) { (response) in
+			switch response {
+			case .failure(let error):
+				XCTAssert(false, error.localizedDescription)
+			case let .success(data):
+				// Success!
+				break
+			}
+
+			requestExpect.fulfill()
+		}
+
+		wait(for: [requestExpect], timeout: 30)
+	}
   
 //  func testSWAPISearchSpecific() {
 //

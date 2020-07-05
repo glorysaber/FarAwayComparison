@@ -66,6 +66,7 @@
 		CC6CC07024AFAC4C009BF4F2 /* LocationPermissionAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6CC06F24AFAC4C009BF4F2 /* LocationPermissionAdapterTests.swift */; };
 		CC6CC07624AFB32D009BF4F2 /* TermsRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6CC07524AFB32D009BF4F2 /* TermsRouterTests.swift */; };
 		CC6CC07924AFB51C009BF4F2 /* PlanetInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6CC07824AFB51C009BF4F2 /* PlanetInfoPresenter.swift */; };
+		CC7BED2724B1A42700B96904 /* SWAPI.Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7BED2624B1A42700B96904 /* SWAPI.Page.swift */; };
 		CC84B53624AFE37B00554834 /* PlanetInfoComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC84B53524AFE37B00554834 /* PlanetInfoComposer.swift */; };
 		CC84B53824AFE78000554834 /* PlanetInfoComposerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC84B53724AFE78000554834 /* PlanetInfoComposerTests.swift */; };
 		CC84B53A24AFE94200554834 /* PlanetInfoPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC84B53924AFE94200554834 /* PlanetInfoPresenterTests.swift */; };
@@ -186,6 +187,7 @@
 		CC6CC06F24AFAC4C009BF4F2 /* LocationPermissionAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissionAdapterTests.swift; sourceTree = "<group>"; };
 		CC6CC07524AFB32D009BF4F2 /* TermsRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsRouterTests.swift; sourceTree = "<group>"; };
 		CC6CC07824AFB51C009BF4F2 /* PlanetInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetInfoPresenter.swift; sourceTree = "<group>"; };
+		CC7BED2624B1A42700B96904 /* SWAPI.Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPI.Page.swift; sourceTree = "<group>"; };
 		CC84B53524AFE37B00554834 /* PlanetInfoComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetInfoComposer.swift; sourceTree = "<group>"; };
 		CC84B53724AFE78000554834 /* PlanetInfoComposerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetInfoComposerTests.swift; sourceTree = "<group>"; };
 		CC84B53924AFE94200554834 /* PlanetInfoPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetInfoPresenterTests.swift; sourceTree = "<group>"; };
@@ -733,6 +735,7 @@
 				CCAA72BF24B183EE001C75B7 /* SWAPI.Species.swift */,
 				CCAA72C124B18470001C75B7 /* SWAPI.Film.swift */,
 				CCAA72C324B18502001C75B7 /* SWAPI.Vehicle.swift */,
+				CC7BED2624B1A42700B96904 /* SWAPI.Page.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -984,6 +987,7 @@
 				CCD88D6424A25CFD00456D0B /* PlanetInfoBinderView.swift in Sources */,
 				CC8E5F5023E1F8D900893D8A /* AppDelegate.swift in Sources */,
 				CCAA72B724B181A0001C75B7 /* SWAPI.swift in Sources */,
+				CC7BED2724B1A42700B96904 /* SWAPI.Page.swift in Sources */,
 				CCD88D6624A26BD500456D0B /* WeatherBinderView.swift in Sources */,
 				CC6CC05524AE8480009BF4F2 /* RoutingActivity.swift in Sources */,
 				CC0D6ED4247E0A6800051A7F /* MainWeatherViewContainer.swift in Sources */,
