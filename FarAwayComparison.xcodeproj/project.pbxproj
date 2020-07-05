@@ -11,7 +11,6 @@
 		CC0096FA24B12C6E003C86C7 /* WeatherBit+Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0096F924B12C6E003C86C7 /* WeatherBit+Language.swift */; };
 		CC0096FC24B12C9F003C86C7 /* WeatherBit+ResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0096FB24B12C9F003C86C7 /* WeatherBit+ResultData.swift */; };
 		CC0096FD24B142BD003C86C7 /* SWAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB983F23F9DABF00E53D22 /* SWAPI.swift */; };
-		CC0096FF24B143EE003C86C7 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0096FE24B143EE003C86C7 /* ApiClient.swift */; };
 		CC00970024B1457A003C86C7 /* SWAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC187370240B1F2C009DD9F2 /* SWAPIClientTests.swift */; };
 		CC06D92724A57B8D00A7AA8C /* MainWeatherViewContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC06D92624A57B8D00A7AA8C /* MainWeatherViewContainerTests.swift */; };
 		CC0A160A24A57EF20048701D /* TermsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0A160924A57EF20048701D /* TermsViewControllerTests.swift */; };
@@ -88,6 +87,15 @@
 		CC9754CF24A2C72C00110DB0 /* WeatherView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9754CE24A2C72C00110DB0 /* WeatherView.storyboard */; };
 		CC9754D124A2D3FE00110DB0 /* PlanetInfoView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9754D024A2D3FE00110DB0 /* PlanetInfoView.storyboard */; };
 		CC9754D524A2D51F00110DB0 /* ForeignPlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9754D424A2D51F00110DB0 /* ForeignPlanetView.swift */; };
+		CCAA72B724B181A0001C75B7 /* SWAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA72B624B1819F001C75B7 /* SWAPI.swift */; };
+		CCAA72BA24B18203001C75B7 /* SWAPI+Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA72B924B18203001C75B7 /* SWAPI+Person.swift */; };
+		CCAA72BC24B182C8001C75B7 /* SWAPI+Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA72BB24B182C8001C75B7 /* SWAPI+Planet.swift */; };
+		CCAA72BE24B18354001C75B7 /* SWAPI+Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA72BD24B18354001C75B7 /* SWAPI+Starship.swift */; };
+		CCAA72C024B183EE001C75B7 /* SWAPI+Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA72BF24B183EE001C75B7 /* SWAPI+Species.swift */; };
+		CCAA72C224B18470001C75B7 /* SWAPI+Films.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA72C124B18470001C75B7 /* SWAPI+Films.swift */; };
+		CCAA72C424B18502001C75B7 /* SWAPI+Vehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA72C324B18502001C75B7 /* SWAPI+Vehicles.swift */; };
+		CCAA72C624B18669001C75B7 /* SWAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA72C524B18669001C75B7 /* SWAPIClient.swift */; };
+		CCAA72C824B18683001C75B7 /* SWAPIClientProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA72C724B18683001C75B7 /* SWAPIClientProduct.swift */; };
 		CCBB983C23F99B2E00E53D22 /* MainBundleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB983B23F99B2E00E53D22 /* MainBundleInfo.swift */; };
 		CCC31A1E248EF12F00D499E4 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC31A1D248EF12F00D499E4 /* RootViewController.swift */; };
 		CCC31A21248EF18000D499E4 /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCC31A20248EF18000D499E4 /* Root.storyboard */; };
@@ -119,7 +127,6 @@
 		CC0096F724B12C3C003C86C7 /* WeatherBit+Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherBit+Location.swift"; sourceTree = "<group>"; };
 		CC0096F924B12C6E003C86C7 /* WeatherBit+Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherBit+Language.swift"; sourceTree = "<group>"; };
 		CC0096FB24B12C9F003C86C7 /* WeatherBit+ResultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherBit+ResultData.swift"; sourceTree = "<group>"; };
-		CC0096FE24B143EE003C86C7 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		CC06D92624A57B8D00A7AA8C /* MainWeatherViewContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWeatherViewContainerTests.swift; sourceTree = "<group>"; };
 		CC0A160924A57EF20048701D /* TermsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewControllerTests.swift; sourceTree = "<group>"; };
 		CC0A160D24A63CB90048701D /* PermissionsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsViewControllerTests.swift; sourceTree = "<group>"; };
@@ -203,6 +210,15 @@
 		CC9754CE24A2C72C00110DB0 /* WeatherView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeatherView.storyboard; sourceTree = "<group>"; };
 		CC9754D024A2D3FE00110DB0 /* PlanetInfoView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlanetInfoView.storyboard; sourceTree = "<group>"; };
 		CC9754D424A2D51F00110DB0 /* ForeignPlanetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeignPlanetView.swift; sourceTree = "<group>"; };
+		CCAA72B624B1819F001C75B7 /* SWAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SWAPI.swift; path = Sources/Networking/Model/SWAPI/SWAPI.swift; sourceTree = SOURCE_ROOT; };
+		CCAA72B924B18203001C75B7 /* SWAPI+Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SWAPI+Person.swift"; sourceTree = "<group>"; };
+		CCAA72BB24B182C8001C75B7 /* SWAPI+Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SWAPI+Planet.swift"; sourceTree = "<group>"; };
+		CCAA72BD24B18354001C75B7 /* SWAPI+Starship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SWAPI+Starship.swift"; sourceTree = "<group>"; };
+		CCAA72BF24B183EE001C75B7 /* SWAPI+Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SWAPI+Species.swift"; sourceTree = "<group>"; };
+		CCAA72C124B18470001C75B7 /* SWAPI+Films.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SWAPI+Films.swift"; sourceTree = "<group>"; };
+		CCAA72C324B18502001C75B7 /* SWAPI+Vehicles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SWAPI+Vehicles.swift"; sourceTree = "<group>"; };
+		CCAA72C524B18669001C75B7 /* SWAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPIClient.swift; sourceTree = "<group>"; };
+		CCAA72C724B18683001C75B7 /* SWAPIClientProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPIClientProduct.swift; sourceTree = "<group>"; };
 		CCBB983823F997CC00E53D22 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		CCBB983B23F99B2E00E53D22 /* MainBundleInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBundleInfo.swift; sourceTree = "<group>"; };
 		CCBB983D23F9A49800E53D22 /* WeatherBitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherBitTests.swift; sourceTree = "<group>"; };
@@ -282,6 +298,8 @@
 				CCBB984123F9ECEA00E53D22 /* ApiClient */,
 				CC28116624B111F4004EC0F5 /* WeatherBitClientAPI.swift */,
 				CC28116824B11265004EC0F5 /* WeatherBitClientAPIProduction.swift */,
+				CCAA72C524B18669001C75B7 /* SWAPIClient.swift */,
+				CCAA72C724B18683001C75B7 /* SWAPIClientProduct.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -585,10 +603,8 @@
 		CC8E535924B0F76E006DA8D3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CC8E535A24B0F786006DA8D3 /* WeatherBitAPIModel.swift */,
-				CC0096F924B12C6E003C86C7 /* WeatherBit+Language.swift */,
-				CC0096F724B12C3C003C86C7 /* WeatherBit+Location.swift */,
-				CC0096FB24B12C9F003C86C7 /* WeatherBit+ResultData.swift */,
+				CCAA72B824B181F3001C75B7 /* SWAPI */,
+				CCAA72B524B1818C001C75B7 /* WeatherBit */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -677,6 +693,31 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		CCAA72B524B1818C001C75B7 /* WeatherBit */ = {
+			isa = PBXGroup;
+			children = (
+				CC8E535A24B0F786006DA8D3 /* WeatherBitAPIModel.swift */,
+				CC0096F924B12C6E003C86C7 /* WeatherBit+Language.swift */,
+				CC0096F724B12C3C003C86C7 /* WeatherBit+Location.swift */,
+				CC0096FB24B12C9F003C86C7 /* WeatherBit+ResultData.swift */,
+			);
+			path = WeatherBit;
+			sourceTree = "<group>";
+		};
+		CCAA72B824B181F3001C75B7 /* SWAPI */ = {
+			isa = PBXGroup;
+			children = (
+				CCAA72B624B1819F001C75B7 /* SWAPI.swift */,
+				CCAA72B924B18203001C75B7 /* SWAPI+Person.swift */,
+				CCAA72BB24B182C8001C75B7 /* SWAPI+Planet.swift */,
+				CCAA72BD24B18354001C75B7 /* SWAPI+Starship.swift */,
+				CCAA72BF24B183EE001C75B7 /* SWAPI+Species.swift */,
+				CCAA72C124B18470001C75B7 /* SWAPI+Films.swift */,
+				CCAA72C324B18502001C75B7 /* SWAPI+Vehicles.swift */,
+			);
+			path = SWAPI;
+			sourceTree = "<group>";
+		};
 		CCBB983923F998DE00E53D22 /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -688,7 +729,6 @@
 		CCBB984123F9ECEA00E53D22 /* ApiClient */ = {
 			isa = PBXGroup;
 			children = (
-				CC0096FE24B143EE003C86C7 /* ApiClient.swift */,
 				CCBB983F23F9DABF00E53D22 /* SWAPI.swift */,
 			);
 			path = ApiClient;
@@ -900,9 +940,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC3FF4A224A6BA4E00788AD2 /* PermissionsComposer.swift in Sources */,
+				CCAA72C824B18683001C75B7 /* SWAPIClientProduct.swift in Sources */,
 				CCC31A27248EF3EA00D499E4 /* UIViewController+FullScreen.swift in Sources */,
 				CC28116724B111F4004EC0F5 /* WeatherBitClientAPI.swift in Sources */,
 				CC6CC05C24AE875F009BF4F2 /* PermissionsAlertViewModel.swift in Sources */,
+				CCAA72BE24B18354001C75B7 /* SWAPI+Starship.swift in Sources */,
 				CC2806C624A68ACC00ED7DA1 /* TermsComposer.swift in Sources */,
 				CCC31A1E248EF12F00D499E4 /* RootViewController.swift in Sources */,
 				CC8E5F5423E1F8D900893D8A /* TermsViewController.swift in Sources */,
@@ -914,11 +956,15 @@
 				CC3FF4A024A6B44D00788AD2 /* PermissionsPresenter.swift in Sources */,
 				CC0096F824B12C3C003C86C7 /* WeatherBit+Location.swift in Sources */,
 				CC84B54424B0045C00554834 /* WeatherPresenter.swift in Sources */,
+				CCAA72BC24B182C8001C75B7 /* SWAPI+Planet.swift in Sources */,
 				CC19F7C824A5363E0071D26D /* PlanetInfoViewModel.swift in Sources */,
 				CC0096FD24B142BD003C86C7 /* SWAPI.swift in Sources */,
+				CCAA72C624B18669001C75B7 /* SWAPIClient.swift in Sources */,
+				CCAA72BA24B18203001C75B7 /* SWAPI+Person.swift in Sources */,
 				CC8E535B24B0F786006DA8D3 /* WeatherBitAPIModel.swift in Sources */,
 				CCD88D6424A25CFD00456D0B /* PlanetInfoBinderView.swift in Sources */,
 				CC8E5F5023E1F8D900893D8A /* AppDelegate.swift in Sources */,
+				CCAA72B724B181A0001C75B7 /* SWAPI.swift in Sources */,
 				CCD88D6624A26BD500456D0B /* WeatherBinderView.swift in Sources */,
 				CC6CC05524AE8480009BF4F2 /* RoutingActivity.swift in Sources */,
 				CC0D6ED4247E0A6800051A7F /* MainWeatherViewContainer.swift in Sources */,
@@ -936,6 +982,7 @@
 				CC3C705624AD7BC700EAC8FD /* PermissionsViewControllerAdapter.swift in Sources */,
 				CC84B53624AFE37B00554834 /* PlanetInfoComposer.swift in Sources */,
 				CC2806CD24A6A53C00ED7DA1 /* WeakRef+TermsPresenterOutput.swift in Sources */,
+				CCAA72C424B18502001C75B7 /* SWAPI+Vehicles.swift in Sources */,
 				CC2806C824A6A41700ED7DA1 /* TermsRouter.swift in Sources */,
 				CC0096FC24B12C9F003C86C7 /* WeatherBit+ResultData.swift in Sources */,
 				CC6CC05E24AE878E009BF4F2 /* PermissionsGrantedViewModel.swift in Sources */,
@@ -946,10 +993,11 @@
 				CC2806CA24A6A43B00ED7DA1 /* WeakRef.swift in Sources */,
 				CC0096FA24B12C6E003C86C7 /* WeatherBit+Language.swift in Sources */,
 				CC6CC05324AE82F0009BF4F2 /* PermissionsRouter.swift in Sources */,
-				CC0096FF24B143EE003C86C7 /* ApiClient.swift in Sources */,
+				CCAA72C024B183EE001C75B7 /* SWAPI+Species.swift in Sources */,
 				CC0D6ED9247E0AF100051A7F /* WeatherViewController.swift in Sources */,
 				CC9754D524A2D51F00110DB0 /* ForeignPlanetView.swift in Sources */,
 				CC6CC05924AE872D009BF4F2 /* PermissionsExplanationViewModel.swift in Sources */,
+				CCAA72C224B18470001C75B7 /* SWAPI+Films.swift in Sources */,
 				CC84B54924B007AB00554834 /* WeatherComposer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
