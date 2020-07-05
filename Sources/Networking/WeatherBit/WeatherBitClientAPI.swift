@@ -16,5 +16,5 @@ protocol WeatherBitClient {
 	///   - language: Language to use in descriptions
 	///   - units: Units for measurements
 	///   - completion: The closure to process the results
-	func requestWeather(location: WeatherBit.Location, language: WeatherBit.Language, units: WeatherBit.Units, completion: @escaping (Result<[WeatherBit.ResultData], Error>) -> ())
+	func requestWeather(location: WeatherBit.Location, language: WeatherBit.Language, units: WeatherBit.Units, completion: @escaping (Result<[WeatherBit.WeatherData], Error>) -> ())
 }

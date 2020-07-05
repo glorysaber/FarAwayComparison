@@ -22,6 +22,9 @@ extension Location {
 
 		var delegate: SAKLocationManagerDelegate
 
+		/// The last location, updated after delegate call
+		var lastLocation: Coordinate?
+
 		init(delegate: SAKLocationManagerDelegate) {
 			self.delegate = delegate
 			super.init()
@@ -33,6 +36,7 @@ extension Location {
 			}
 			claDelegateAdapter.onLocationData = { [weak self] in
 				self?.delegate.locationChanged(location: $0)
+				self?.lastLocation = $0
 			}
 
 			locationManager.delegate = claDelegateAdapter
@@ -52,7 +56,7 @@ extension Location {
 			switch authType {
 			case .whileInUse:
 				locationManager.requestWhenInUseAuthorization()
-			case .always:
+			case .always: 
 				locationManager.requestAlwaysAuthorization()
 			}
 		}

@@ -19,7 +19,7 @@ extension WeatherBit {
 		///   - language: Language to use in descriptions
 		///   - units: Units for measurements
 		///   - completion: The closure to process the results
-		func requestWeather(location: WeatherBit.Location, language: WeatherBit.Language = .english, units: WeatherBit.Units = .fahrenheit, completion: @escaping (Result<[WeatherBit.ResultData], Error>) -> ()) {
+		func requestWeather(location: WeatherBit.Location, language: WeatherBit.Language = .english, units: WeatherBit.Units = .fahrenheit, completion: @escaping (Result<[WeatherBit.WeatherData], Error>) -> ()) {
 
 			guard let key = MainBundleInfo.weatherBitApiKey.getInfo() else {
 				completion(.failure(.bundleInfoNotFound(MainBundleInfo.weatherBitApiKey)))

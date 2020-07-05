@@ -13,7 +13,7 @@ enum WeatherBit {
 	typealias Location = WeatherBitLocation
 
 	struct Response: Codable {
-		let data: [ResultData]?
+		let data: [WeatherData]?
 		let count: Int?
 		let error: String?
 	}

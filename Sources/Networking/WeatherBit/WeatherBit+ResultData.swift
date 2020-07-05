@@ -10,7 +10,7 @@ import Foundation
 
 extension WeatherBit {
 
-	struct ResultData: Codable {
+	struct WeatherData: Codable {
 		/// Relative humidity (%).
 		let relativeHumidity: Int
 		/// Part of the day (d = day / n = night
