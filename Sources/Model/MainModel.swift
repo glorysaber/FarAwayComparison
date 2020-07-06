@@ -12,20 +12,36 @@ class MainModel {
 	private let locationManager: LocationManager
 	private let swapiClient: SWAPIClient
 	private let	weatherBitClient: WeatherBitClient
+	private let swapiCache = SWAPICache<SWAPI.Planet>()
 
-	var onLocationChange: ((Location.Coordinate) -> Void)? {
+	private var currentWeather: WeatherBit.WeatherData? {
 		didSet {
-			if let location = locationManager.lastLocation {
-				onLocationChange?(location)
+			if let weather = currentWeather {
+				onWeatherRefresh?(.success(weather))
 			}
 		}
 	}
 
-	var onLocationError: ((Location.Error) -> Void)? {
+	private var currentComparedPlanet: SWAPI.Planet? {
 		didSet {
-			guard locationManager.currentLocationPermissions().isAuthorized() else {
-				onLocationError?(.permissionsDenied)
-				return
+			if let planet = currentComparedPlanet {
+				onPlanetRefresh?(.success(planet))
+			}
+		}
+	}
+
+	var onPlanetRefresh: ((Result<SWAPI.Planet, Error>) -> Void)? {
+		didSet {
+			if let planet = currentComparedPlanet {
+				onPlanetRefresh?(.success(planet))
+			}
+		}
+	}
+
+	var onWeatherRefresh: ((Result<WeatherBit.WeatherData, Error>) -> Void)? {
+		didSet {
+			if let weather = currentWeather {
+				onWeatherRefresh?(.success(weather))
 			}
 		}
 	}
@@ -41,7 +57,7 @@ class MainModel {
 	private func startLocation() {
 		locationManager.delegate = self
 		guard locationManager.currentLocationPermissions().isAuthorized() else {
-			onLocationError?(.permissionsDenied)
+			//TODO: Show Error
 			return
 		}
 
@@ -51,15 +67,97 @@ class MainModel {
 
 	/// Searches for a comparible planet to the current weather conditions.
 	/// If the current weather is not already cached, a fetch request for weatherdata will also be generated.
-	/// - Parameter callback: Call back when a match is found.
-	func getComparisonPlanetModel(callback: @escaping (Result<SWAPI.Planet, Error>) -> Void) {
-
+	private func refreshPlanetComparison() {
+		cacheNextAvailablePage()
+		searchForMatch()
 	}
 
+	private func cacheNextAvailablePage() {
+		let completion = { [weak self] (response: Result<SWAPI.Page<SWAPI.Planet>, SWAPI.Error>) in
+			switch response {
+			case let .success(planetPage):
+				self?.swapiCache.pages.append(planetPage)
+				self?.searchForMatch()
+			case .failure(_):
+				break
+			//TODO: LOG OR SHOW
+			}
+		}
+
+		if swapiCache.pages.isEmpty {
+			swapiClient.requestAll(of: SWAPI.Planet.self, completion: completion)
+		} else if let lastPage = swapiCache.pages.last, lastPage.next != nil {
+			swapiClient.getNextPage(from: lastPage, completion: completion)
+		}
+	}
+
+	private func searchForMatch() {
+		guard let firstPlanet = swapiCache.pages.first?.results.first else {
+			assert(false, "Cache should ahve at least one resource stored")
+			return
+		}
+
+		var closestMatch = (planet: firstPlanet, score: scoreComparison(planet: firstPlanet))
+
+		let loopThroughPage = { (page: SWAPI.Page<SWAPI.Planet>) in
+			for planet in page.results {
+				let newScore = self.scoreComparison(planet: planet)
+				if closestMatch.score < newScore {
+					closestMatch = (planet, newScore)
+				}
+			}
+		}
+
+		swapiCache.pages.forEach(loopThroughPage)
+
+		while closestMatch.score < 50 || swapiCache.pages.last?.next == nil {
+			cacheNextAvailablePage()
+			guard let page = swapiCache.pages.last else {
+				break
+			}
+			loopThroughPage(page)
+		}
+
+		currentComparedPlanet = closestMatch.planet
+	}
+
+	private func scoreComparison(planet: SWAPI.Planet) -> Int {
+		guard let currentWeather = currentWeather else {
+			return -1 // TODO Log error
+		}
+
+		let planetSurfaceWater = Int(planet.surfaceWater) ?? 0
+		let precipitation =	currentWeather.precipitation
+
+		let difference = abs(planetSurfaceWater - precipitation) // TODO: Score apropriately
+		return 100 - difference
+	}
 
 	/// Fetches the weather info for the current location if possible.
-	/// - Parameter callback: Call back witht he weather data retrieved
-	func getCurrentWeather(callback: @escaping (Result<WeatherBit.WeatherData, Error>) -> Void) {
+	private func refreshWeather(location: Location.Coordinate? = nil) {
+		guard let location = location ?? locationManager.lastLocation else {
+			//TODO log or show user
+			return
+		}
+
+		let weatherLocation: WeatherBit.LatLong = WeatherBit.LatLong(
+			lattitude: String(location.latitude),
+			longitude: String(location.longitude))
+
+		weatherBitClient.requestWeather(location: weatherLocation, language: .english, units: .fahrenheit) { [weak self] response in
+			switch response {
+			case let .success(data):
+				guard let weatherResponse = data.first else {
+					//TODO: Log or Show error
+					return
+				}
+				self?.currentWeather = weatherResponse
+				self?.refreshPlanetComparison()
+			case .failure(_):
+				//TODO: Log or Show error
+				break
+			}
+		}
 		
 	}
 }
@@ -67,17 +165,17 @@ class MainModel {
 extension MainModel: SAKLocationManagerDelegate {
 	func authorizationStatusDidChange() {
 		guard locationManager.currentLocationPermissions().isAuthorized() else {
-			onLocationError?(.permissionsDenied)
+			// TODO: Show Error
 			return
 		}
 	}
 
 	func locationChanged(location: Location.Coordinate) {
-		onLocationChange?(location)
+		refreshWeather(location: location)
 	}
 
 	func locationError(error: Location.Error) {
-		onLocationError?(error)
+		// TODO: show error
 	}
 
 
