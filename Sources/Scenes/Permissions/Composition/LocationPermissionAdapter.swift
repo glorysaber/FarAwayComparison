@@ -16,7 +16,7 @@ class LocationPermissionAdapter {
 		self.adaptee = adaptee
 	}
 
-	func permissionsCallBackResult(_ permissions: LocationPermissionsServiceMock.PermissionsStatus) {
+	func permissionsCallBackResult(_ permissions: PermissionsStatus) {
 		switch permissions {
 		case .allowed:
 			adaptee.didGetLocationPermissions()

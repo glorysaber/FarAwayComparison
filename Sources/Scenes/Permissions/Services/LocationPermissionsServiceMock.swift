@@ -8,28 +8,19 @@
 
 import Foundation
 
-final class LocationPermissionsServiceMock {
+final class LocationPermissionsServiceMock: LocationPermissionsService {
 
 	private var currentPermissionsStatus: PermissionsStatus = .unRequested
 
-	private let callback: (PermissionsStatus) -> ()
-
-	init(callback: @escaping (PermissionsStatus) -> ()) {
-		self.callback = callback
-	}
+	var onPermissionsUpdate: ((PermissionsStatus) -> ())?
 
 	func getPermission() {
 		currentPermissionsStatus = currentPermissionsStatus == .denied ? .allowed : .denied
-		callback(currentPermissionsStatus)
+		onPermissionsUpdate?(currentPermissionsStatus)
 	}
 
 	func currentPermissionStatus() {
-		callback(currentPermissionsStatus)
+		onPermissionsUpdate?(currentPermissionsStatus)
 	}
 
-	enum PermissionsStatus {
-		case denied
-		case allowed
-		case unRequested
-	}
 }

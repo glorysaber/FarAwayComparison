@@ -9,7 +9,7 @@
 import Foundation
 
 protocol LocationManager: AnyObject {
-	var delegate: SAKLocationManagerDelegate { get set }
+	var delegate: SAKLocationManagerDelegate? { get set }
 	/// The last location, updated after delegate call
 	var lastLocation: Location.Coordinate? { get }
 	var locationServicesAvailable: Bool { get }

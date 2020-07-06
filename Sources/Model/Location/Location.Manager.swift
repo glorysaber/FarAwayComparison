@@ -16,26 +16,25 @@ protocol SAKLocationManagerDelegate {
 
 extension Location {
 
-	class Manager: NSObject {
+	class Manager: NSObject, LocationManager {
 		let locationManager = CLLocationManager()
 		let claDelegateAdapter = CLADelegateAdapter()
 
-		var delegate: SAKLocationManagerDelegate
+		var delegate: SAKLocationManagerDelegate?
 
 		/// The last location, updated after delegate call
 		var lastLocation: Coordinate?
 
-		init(delegate: SAKLocationManagerDelegate) {
-			self.delegate = delegate
+		override init() {
 			super.init()
 			claDelegateAdapter.onError = { [weak self] in
-				self?.delegate.locationError(error: $0)
+				self?.delegate?.locationError(error: $0)
 			}
 			claDelegateAdapter.onAuthorizationChange = { [weak self] in
-				self?.delegate.authorizationStatusDidChange()
+				self?.delegate?.authorizationStatusDidChange()
 			}
 			claDelegateAdapter.onLocationData = { [weak self] in
-				self?.delegate.locationChanged(location: $0)
+				self?.delegate?.locationChanged(location: $0)
 				self?.lastLocation = $0
 			}
 
@@ -49,7 +48,7 @@ extension Location {
 		func requestLocationPermissions(for authType: AuthorizationRequest) {
 
 			guard currentLocationPermissions() == .notDetermined else {
-				delegate.locationError(error: .permissionsDenied)
+				delegate?.locationError(error: .permissionsDenied)
 				return
 			}
 

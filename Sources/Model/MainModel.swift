@@ -27,7 +27,7 @@ class MainModel {
 			if let planet = currentComparedPlanet {
 				onPlanetRefresh?(.success(planet))
 			}
-		}
+		} 
 	}
 
 	var onPlanetRefresh: ((Result<SWAPI.Planet, Error>) -> Void)? {
