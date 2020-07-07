@@ -9,23 +9,30 @@
 import Foundation
 
 class PlanetComparisonService {
+	typealias Callback = (SWAPI.Planet) -> Void
 
-	private let callback: (PlanetInfoViewModel) -> Void
+	private let onComparisonUpdate: Callback
+	let mainModel: MainModel
 
-	init(callback: @escaping (PlanetInfoViewModel) -> Void) {
-		self.callback = callback
+	init(mainModel: MainModel, onComparisonUpdate: @escaping Callback) {
+		self.onComparisonUpdate = onComparisonUpdate
+		self.mainModel = mainModel
+
+		mainModel.onPlanetRefresh = { [weak self] result in
+			guard case let .success(planetInfo) = result else {
+				return
+			}
+
+			self?.onComparisonUpdate(planetInfo)
+		}
 	}
 
 	func getCurrentComparison() {
-		callback(PlanetInfoViewModel(
-							population: "201k",
-							planetEarthGComparison: "1G",
-							planetDiameter: "12km",
-							description: "Just Like Tatooine",
-							terrainType: "Desert",
-							earthYearEquivalence: "304 Days",
-							earthDayEquivalence: "23 Hours",
-							waterCoverage: "1%",
-							atmosphereType: "Arid"))
+		guard let currentComparedPlanet = mainModel.currentComparedPlanet else {
+			mainModel.refreshWeather()
+			return
+		}
+
+		onComparisonUpdate(currentComparedPlanet)
 	}
 }

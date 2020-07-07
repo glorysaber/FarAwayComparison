@@ -511,13 +511,13 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		CC57DCF724B3D8CC00376899 /* Composer */ = {
+		CC57DCF724B3D8CC00376899 /* Composition */ = {
 			isa = PBXGroup;
 			children = (
 				CC84B54824B007AB00554834 /* WeatherComposer.swift */,
 				CC57DCF824B3D93A00376899 /* WeatherPresenterAdapter.swift */,
 			);
-			path = Composer;
+			path = Composition;
 			sourceTree = "<group>";
 		};
 		CC60415F23F1A1EF0035705A /* Common */ = {
@@ -693,7 +693,7 @@
 				CC8E5F8523E243EA00893D8A /* Documentation */,
 				CC8E5F7F23E1F9D400893D8A /* Resources */,
 				CC8E5F4E23E1F8D900893D8A /* Sources */,
-				CC8E5F6523E1F8DA00893D8A /* UnitTests */,
+				CC8E5F6523E1F8DA00893D8A /* Tests */,
 				CC8E5F7023E1F8DA00893D8A /* UITests */,
 				CC8E5F4D23E1F8D900893D8A /* Products */,
 				CC48FEE323E756B600494BD7 /* Frameworks */,
@@ -726,7 +726,7 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		CC8E5F6523E1F8DA00893D8A /* UnitTests */ = {
+		CC8E5F6523E1F8DA00893D8A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				CC6CC06024AECC23009BF4F2 /* Common */,
@@ -734,7 +734,7 @@
 				CC2B6A0424A3B0E500C64FCE /* Networking */,
 				CC8E5F6823E1F8DA00893D8A /* Info.plist */,
 			);
-			path = UnitTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		CC8E5F7023E1F8DA00893D8A /* UITests */ = {
@@ -839,7 +839,7 @@
 				CC84B54224B0043E00554834 /* ui */,
 				CC84B54524B004E800554834 /* Presentation */,
 				CC7CED2424B3CD2900014C4F /* Services */,
-				CC57DCF724B3D8CC00376899 /* Composer */,
+				CC57DCF724B3D8CC00376899 /* Composition */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
