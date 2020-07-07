@@ -18,8 +18,34 @@ class PermissionsComposerTests: XCTestCase {
 	}
 
 	func test_noStrongReferences() {
-		let sut = PermissionsComposer().compose(activity: RoutingActivity() {})
+		let sut = PermissionsComposer().compose(activity: RoutingActivity() {}, locationManager: LocationManagerSpy())
 		weakSut = sut
 	}
+
+}
+
+class LocationManagerSpy: LocationManager {
+	var delegate: SAKLocationManagerDelegate?
+
+	var lastLocation: Location.Coordinate?
+
+	var locationServicesAvailable: Bool { true }
+
+	func requestLocationPermissions(for authType: Location.AuthorizationRequest) {
+
+	}
+
+	func currentLocationPermissions() -> Location.AuthorizationStatus {
+		return .notDetermined
+	}
+
+	func startListening() {
+
+	}
+
+	func stopListening() {
+
+	}
+
 
 }

@@ -16,7 +16,7 @@ class TermsRouterTests: XCTestCase {
 		let viewController = UIViewController()
 		window.rootViewController = viewController
 
-		let sut = TermsRouter(viewController, activity: RoutingActivity() {} )
+		let sut = TermsRouter(viewController, activity: RoutingActivity() {}, container: AppContainer() )
 
 		sut.routeToPermissions()
 	}

@@ -18,7 +18,7 @@ class MainWeatherComposerTests: XCTestCase {
 	}
 
 	func test_noStrongReferences() {
-		let sut = MainWeatherComposer().compose()
+		let sut = MainWeatherComposer().compose(appContainer: AppContainer())
 		weakSut = sut
 	}
 

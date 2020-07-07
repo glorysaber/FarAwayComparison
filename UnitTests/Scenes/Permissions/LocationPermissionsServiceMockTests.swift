@@ -12,9 +12,11 @@ import XCTest
 class LocationPermissionsServiceMockTests: XCTestCase {
 
 	func test_getPermissions_stateOrder() {
-		var callbackStatus = LocationPermissionsServiceMock.PermissionsStatus.denied
+		var callbackStatus = PermissionsStatus.denied
 
-		let sut = LocationPermissionsServiceMock() { status in
+		let sut = LocationPermissionsServiceMock()
+
+		sut.onPermissionsUpdate = { status in
 			callbackStatus = status
 		}
 
