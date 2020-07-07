@@ -10,12 +10,14 @@ import Foundation
 
 class WeatherComposer {
 
-	func compose() -> WeatherViewController {
+	func compose(appContainer: AppContainer) -> WeatherViewController {
 		let vc = WeatherViewController.instantiate()
 
 		let presenter = WeatherPresenter(view: WeakRef(vc))
 
-		let service = WeatherInfoService(callback: presenter.didGetUpdatedWeatherInfo)
+		let weatherAdapter = WeatherPresenterAdapter(adaptee: presenter)
+
+		let service = WeatherInfoService(mainModel: appContainer.model, weatherInfoUpdate: weatherAdapter.didGetUpdatedWeatherInfo)
 
 		vc.requestModelRefresh = service.getCurrentWeatherInfo
 

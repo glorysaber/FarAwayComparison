@@ -61,11 +61,7 @@ extension Location {
 		}
 
 		func currentLocationPermissions() -> AuthorizationStatus {
-			if #available(iOS 14.0, *) {
-				return AuthorizationStatus(status: locationManager.authorizationStatus())
-			} else {
-				return AuthorizationStatus(status: CLLocationManager.authorizationStatus())
-			}
+			return AuthorizationStatus(status: CLLocationManager.authorizationStatus())
 		}
 
 		func startListening() {

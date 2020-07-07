@@ -14,7 +14,7 @@ class WeatherInfoServiceTests: XCTestCase {
 	func test_doesCallCallBack() {
 		var callbacks = 0
 
-		let sut = WeatherInfoService() { _ in
+		let sut = WeatherInfoServiceMock() { _ in
 			callbacks += 1
 		}
 

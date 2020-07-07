@@ -52,7 +52,7 @@ class ApplicationRouter {
 	}
 
 	func routeToWeather() {
-		let mainWeatherViewContainer = MainWeatherComposer().compose()
+		let mainWeatherViewContainer = MainWeatherComposer().compose(appContainer: appContainer)
 		rootViewController?.addFullScreen(childViewController: mainWeatherViewContainer)
 		self.mainWeatherViewContainer = mainWeatherViewContainer
 	}

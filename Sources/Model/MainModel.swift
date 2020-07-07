@@ -14,7 +14,7 @@ class MainModel {
 	private let	weatherBitClient: WeatherBitClient
 	private let swapiCache = SWAPICache<SWAPI.Planet>()
 
-	private var currentWeather: WeatherBit.WeatherData? {
+	private(set) var currentWeather: WeatherBit.WeatherData? {
 		didSet {
 			if let weather = currentWeather {
 				onWeatherRefresh?(.success(weather))
@@ -22,7 +22,7 @@ class MainModel {
 		}
 	}
 
-	private var currentComparedPlanet: SWAPI.Planet? {
+	private(set) var currentComparedPlanet: SWAPI.Planet? {
 		didSet {
 			if let planet = currentComparedPlanet {
 				onPlanetRefresh?(.success(planet))
@@ -67,17 +67,19 @@ class MainModel {
 
 	/// Searches for a comparible planet to the current weather conditions.
 	/// If the current weather is not already cached, a fetch request for weatherdata will also be generated.
-	private func refreshPlanetComparison() {
-		cacheNextAvailablePage()
-		searchForMatch()
+	func refreshPlanetComparison() {
+		cacheNextAvailablePage(shouldUpdateComparison: true)
 	}
 
-	private func cacheNextAvailablePage() {
+	private func cacheNextAvailablePage(shouldUpdateComparison: Bool) {
 		let completion = { [weak self] (response: Result<SWAPI.Page<SWAPI.Planet>, SWAPI.Error>) in
 			switch response {
 			case let .success(planetPage):
 				self?.swapiCache.pages.append(planetPage)
-				self?.searchForMatch()
+				if shouldUpdateComparison {
+					self?.searchForMatch()
+				}
+
 			case .failure(_):
 				break
 			//TODO: LOG OR SHOW
@@ -111,7 +113,7 @@ class MainModel {
 		swapiCache.pages.forEach(loopThroughPage)
 
 		while closestMatch.score < 50 || swapiCache.pages.last?.next == nil {
-			cacheNextAvailablePage()
+			cacheNextAvailablePage(shouldUpdateComparison: false)
 			guard let page = swapiCache.pages.last else {
 				break
 			}
@@ -134,7 +136,7 @@ class MainModel {
 	}
 
 	/// Fetches the weather info for the current location if possible.
-	private func refreshWeather(location: Location.Coordinate? = nil) {
+	func refreshWeather(location: Location.Coordinate? = nil) {
 		guard let location = location ?? locationManager.lastLocation else {
 			//TODO log or show user
 			return
