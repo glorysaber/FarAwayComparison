@@ -21,6 +21,14 @@ final class LocationPermissionsServiceModel: LocationPermissionsService {
 	}
 
 	func getPermission() {
+		do {
+			let permissions = locationManager.currentLocationPermissions()
+			guard permissions.isAuthorized() == false else {
+				let status = PermissionsStatus(permissions)
+				onPermissionsUpdate?(status)
+				return
+			}
+		}
 		locationManager.requestLocationPermissions(for: .whileInUse)
 	}
 
