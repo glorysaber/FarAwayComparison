@@ -20,12 +20,12 @@ class WeatherPresenterAdapter {
 		let weatherViewModel = WeatherViewModel(
 			description: model.weather.weatherDescription,
 			imageBriefName: "sun.max", // TODO: Choose apropriate image
-			temperature: String(model.temperature),
-			uvIndex: String(model.uvIndex),
-			cloudCoveragePercentage: String(model.cloudCoverage),
-			visibility: String(model.visibility),
-			precipitation: String(model.precipitation),
-			snowfall: String(model.snowfall),
+			temperature: "\(model.temperature)°F",
+			uvIndex: String(Int(model.uvIndex)),
+			cloudCoveragePercentage: "\(model.cloudCoverage)%",
+			visibility: "\(model.visibility)km",
+			precipitation: "\(model.precipitation) mm/hr",
+			snowfall: "\(model.snowfall) mm/hr",
 			sunriseOrSet: model.sunrise)
 
 		adaptee.didGetUpdatedWeatherInfo(model: weatherViewModel)
