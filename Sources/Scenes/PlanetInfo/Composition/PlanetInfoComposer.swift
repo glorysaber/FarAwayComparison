@@ -10,12 +10,12 @@ import Foundation
 
 class PlanetInfoComposer {
 
-	func compose() -> PlanetInfoViewController {
+	func compose(appContainer: AppContainer) -> PlanetInfoViewController {
 		let vc = PlanetInfoViewController.instantiate()
 
 		let presenter = PlanetInfoPresenter(view: WeakRef(vc))
 
-		let service = PlanetComparisonService(callback: presenter.didGetUpdatedComparison)
+		let service = PlanetComparisonService(mainModel: appContainer.model, onComparisonUpdate: presenter.didGetUpdatedComparison)
 
 		vc.refreshData = service.getCurrentComparison
 

@@ -118,7 +118,7 @@ class ImageAndLabelView: UIView {
 
 	override var intrinsicContentSize: CGSize {
 		return {
-			CGSize(width: label.intrinsicContentSize.width + (imageView.image?.size.width ?? imageView.intrinsicContentSize.width) + 24,
+			CGSize(width: label.intrinsicContentSize.width + (imageView.image?.size.width ?? imageView.intrinsicContentSize.width) + 50,
 						 height: label.intrinsicContentSize.height + (imageView.image?.size.height ?? imageView.intrinsicContentSize.height))
 		}()
 	}

@@ -62,5 +62,7 @@
 	<string>$(WEATHERBIT_API_KEY)</string>
 	<key>WeatherbitApiUrl</key>
 	<string>$(WEATHERBIT_API_URL)</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Used for getting weather data</string>
 </dict>
 </plist>

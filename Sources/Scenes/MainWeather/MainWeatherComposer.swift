@@ -9,10 +9,10 @@
 import Foundation
 
 class MainWeatherComposer {
-	func compose() -> MainWeatherViewContainer {
+	func compose(appContainer: AppContainer) -> MainWeatherViewContainer {
 		MainWeatherViewContainer.instantiate() { coder in
-			let topVC = WeatherComposer().compose()
-			let bottomVC = PlanetInfoComposer().compose()
+			let topVC = WeatherComposer().compose(appContainer: appContainer)
+			let bottomVC = PlanetInfoComposer().compose(appContainer: appContainer)
 
 			return MainWeatherViewContainer(coder: coder, topView: topVC, bottomView: bottomVC)
 		}

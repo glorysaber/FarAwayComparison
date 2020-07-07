@@ -10,14 +10,14 @@ import Foundation
 
 class PermissionsComposer {
 
-	func compose(activity: RoutingActivity) -> PermissionsViewController {
+	func compose(activity: RoutingActivity, locationManager: LocationManager) -> PermissionsViewController {
 		let vc = composeVC(activity)
 
 		let presenter = PermissionsPresenter(output: PermissionsViewControllerAdapter(adaptee: vc))
 
 		let locationAdapter = LocationPermissionAdapter(adaptee: presenter)
-		let locationPermissionsService = LocationPermissionsServiceMock(callback: locationAdapter.permissionsCallBackResult)
-
+		let locationPermissionsService = LocationPermissionsServiceModel(locationManager: locationManager)
+		locationPermissionsService.onPermissionsUpdate =  locationAdapter.permissionsCallBackResult
 
 		vc.allowPermissionsRequested = locationPermissionsService.getPermission
 		vc.reloadData = presenter.start
