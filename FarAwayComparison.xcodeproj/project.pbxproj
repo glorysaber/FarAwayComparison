@@ -81,6 +81,7 @@
 		CC6CC07924AFB51C009BF4F2 /* PlanetInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6CC07824AFB51C009BF4F2 /* PlanetInfoPresenter.swift */; };
 		CC7BED2724B1A42700B96904 /* SWAPI.Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7BED2624B1A42700B96904 /* SWAPI.Page.swift */; };
 		CC7BED2924B1B0BF00B96904 /* WeatherBitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBB983D23F9A49800E53D22 /* WeatherBitTests.swift */; };
+		CC7D623824DF363100451423 /* SWAPIAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7D623724DF363100451423 /* SWAPIAdapter.swift */; };
 		CC84B53624AFE37B00554834 /* PlanetInfoComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC84B53524AFE37B00554834 /* PlanetInfoComposer.swift */; };
 		CC84B53824AFE78000554834 /* PlanetInfoComposerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC84B53724AFE78000554834 /* PlanetInfoComposerTests.swift */; };
 		CC84B53A24AFE94200554834 /* PlanetInfoPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC84B53924AFE94200554834 /* PlanetInfoPresenterTests.swift */; };
@@ -214,6 +215,7 @@
 		CC6CC07524AFB32D009BF4F2 /* TermsRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsRouterTests.swift; sourceTree = "<group>"; };
 		CC6CC07824AFB51C009BF4F2 /* PlanetInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetInfoPresenter.swift; sourceTree = "<group>"; };
 		CC7BED2624B1A42700B96904 /* SWAPI.Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPI.Page.swift; sourceTree = "<group>"; };
+		CC7D623724DF363100451423 /* SWAPIAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPIAdapter.swift; sourceTree = "<group>"; };
 		CC84B53524AFE37B00554834 /* PlanetInfoComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetInfoComposer.swift; sourceTree = "<group>"; };
 		CC84B53724AFE78000554834 /* PlanetInfoComposerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetInfoComposerTests.swift; sourceTree = "<group>"; };
 		CC84B53924AFE94200554834 /* PlanetInfoPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetInfoPresenterTests.swift; sourceTree = "<group>"; };
@@ -536,6 +538,7 @@
 			children = (
 				CC6A31ED24B271840008D88D /* Location */,
 				CC2FDA1F24B288BD00A43756 /* MainModel.swift */,
+				CC7D623724DF363100451423 /* SWAPIAdapter.swift */,
 				CC2FDA2524B2C29400A43756 /* SWAPICache.swift */,
 			);
 			path = Model;
@@ -1077,6 +1080,7 @@
 				CC6A31EC24B253930008D88D /* Location.CLADelegateAdapter.swift in Sources */,
 				CC2806BB24A675E500ED7DA1 /* TermsPresenter.swift in Sources */,
 				CC2806C124A6786E00ED7DA1 /* FetchTermsTextUseCase.swift in Sources */,
+				CC7D623824DF363100451423 /* SWAPIAdapter.swift in Sources */,
 				CC3C705624AD7BC700EAC8FD /* PermissionsViewControllerAdapter.swift in Sources */,
 				CC31B1C224B3C45700976C97 /* LocationPermissionsServiceModel.swift in Sources */,
 				CCAA72D124B19F65001C75B7 /* JSONDecoder.DateDecodingStrategy.swift in Sources */,

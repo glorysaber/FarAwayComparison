@@ -12,10 +12,13 @@ class AppContainer {
 	let locationManager = Location.Manager()
 	let swapiClient = SWAPI.Client()
 	let weatherBitClient = WeatherBit.Client()
+	
 	private(set) lazy var model: MainModel = {
-		MainModel(
+		let planetDataSource = SWAPIAdapter(swapiClient: swapiClient)
+		
+		return MainModel(
 			locationManager: locationManager,
-			swapiClient: swapiClient,
-			weatherBitClient: weatherBitClient)
+			weatherBitClient: weatherBitClient,
+			planetDataSource: planetDataSource)
 	}()
 }

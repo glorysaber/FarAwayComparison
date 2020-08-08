@@ -8,11 +8,16 @@
 
 import Foundation
 
+protocol PlanetDataSource {
+	func requestNewPlanetData(completion: ((Result<[SWAPI.Planet], Error>) -> Void)?)
+	func makeIterator() -> AnyIterator<SWAPI.Planet>
+	func canGetNewData() -> Bool
+}
+
 class MainModel {
 	private let locationManager: LocationManager
-	private let swapiClient: SWAPIClient
 	private let	weatherBitClient: WeatherBitClient
-	private let swapiCache = SWAPICache<SWAPI.Planet>()
+	private let planetDataSource: PlanetDataSource
 
 	private(set) var currentWeather: WeatherBit.WeatherData? {
 		didSet {
@@ -46,12 +51,16 @@ class MainModel {
 		}
 	}
 
-	init(locationManager: LocationManager, swapiClient: SWAPIClient, weatherBitClient: WeatherBitClient) {
+	init(locationManager: LocationManager, weatherBitClient: WeatherBitClient, planetDataSource: PlanetDataSource) {
 		self.locationManager = locationManager
-		self.swapiClient = swapiClient
 		self.weatherBitClient = weatherBitClient
+		self.planetDataSource = planetDataSource
 
 		startLocation()
+		
+		if let location = locationManager.lastLocation {
+			refreshWeather(location: location)
+		}
 	}
 
 	private func startLocation() {
@@ -68,59 +77,29 @@ class MainModel {
 	/// Searches for a comparible planet to the current weather conditions.
 	/// If the current weather is not already cached, a fetch request for weatherdata will also be generated.
 	func refreshPlanetComparison() {
-		cacheNextAvailablePage(shouldUpdateComparison: true)
-	}
-
-	private func cacheNextAvailablePage(shouldUpdateComparison: Bool) {
-		let completion = { [weak self] (response: Result<SWAPI.Page<SWAPI.Planet>, SWAPI.Error>) in
-			switch response {
-			case let .success(planetPage):
-				self?.swapiCache.pages.append(planetPage)
-				if shouldUpdateComparison {
-					self?.searchForMatch()
-				}
-
-			case .failure(_):
-				break
-			//TODO: LOG OR SHOW
-			}
-		}
-
-		if swapiCache.pages.isEmpty {
-			swapiClient.requestAll(of: SWAPI.Planet.self, completion: completion)
-		} else if let lastPage = swapiCache.pages.last, lastPage.next != nil {
-			swapiClient.getNextPage(from: lastPage, completion: completion)
+		planetDataSource.requestNewPlanetData { [weak self] (newResults) in
+			self?.searchForMatch()
 		}
 	}
 
 	private func searchForMatch() {
-		guard let firstPlanet = swapiCache.pages.first?.results.first else {
-			assert(false, "Cache should ahve at least one resource stored")
-			return
-		}
 
-		var closestMatch = (planet: firstPlanet, score: scoreComparison(planet: firstPlanet))
-
-		let loopThroughPage = { (page: SWAPI.Page<SWAPI.Planet>) in
-			for planet in page.results {
-				let newScore = self.scoreComparison(planet: planet)
-				if closestMatch.score < newScore {
-					closestMatch = (planet, newScore)
-				}
+		var closestMatch: (planet: SWAPI.Planet, score: Int)?
+		
+		for planet in planetDataSource.makeIterator() {
+			let newScore = self.scoreComparison(planet: planet)
+			if closestMatch?.score ?? 0 <= newScore {
+				closestMatch = (planet, newScore)
 			}
 		}
+		
+		currentComparedPlanet = closestMatch?.planet
 
-		swapiCache.pages.forEach(loopThroughPage)
-
-		while closestMatch.score < 50 || swapiCache.pages.last?.next == nil {
-			cacheNextAvailablePage(shouldUpdateComparison: false)
-			guard let page = swapiCache.pages.last else {
-				break
+		if closestMatch?.score ?? 0 < 50 && planetDataSource.canGetNewData() {
+			planetDataSource.requestNewPlanetData() { [weak self] _ in
+				self?.searchForMatch()
 			}
-			loopThroughPage(page)
 		}
-
-		currentComparedPlanet = closestMatch.planet
 	}
 
 	private func scoreComparison(planet: SWAPI.Planet) -> Int {
